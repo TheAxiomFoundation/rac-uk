@@ -1,0 +1,12 @@
+- name: base_case
+  period: 2025-04
+  output:
+    uc_standard_allowance_single_claimant_aged_25_or_over: 400.14
+- name: effective_date_boundary
+  period: 2025-04-07
+  output:
+    uc_standard_allowance_single_claimant_aged_25_or_over: 400.14
+- name: later_same_amount
+  period: 2025-05
+  output:
+    uc_standard_allowance_single_claimant_aged_25_or_over: 400.14

@@ -1,0 +1,872 @@
+{
+  "wave": "2026-03-30-wave1",
+  "seeded_from": {
+    "suite_manifest": "/Users/maxghenis/TheAxiomFoundation/autorac/benchmarks/uk_expanded.yaml",
+    "suite_results_json": "/tmp/autorac-uk-expanded-0.2.46-e81f67c-20260330b.json",
+    "autorac_commit": "e81f67c",
+    "autorac_version": "0.2.46",
+    "runner": "openai-gpt-5.4",
+    "all_ready": true,
+    "readiness": {
+      "total_cases": 22,
+      "success_rate": 1.0,
+      "compile_pass_rate": 1.0,
+      "ci_pass_rate": 1.0,
+      "zero_ungrounded_rate": 1.0,
+      "policyengine_case_count": 22,
+      "policyengine_pass_rate": 1.0,
+      "mean_policyengine_score": 1.0,
+      "mean_estimated_cost_usd": 0.017123,
+      "gate_results": [
+        {
+          "name": "min_cases",
+          "comparator": "min",
+          "threshold": 22,
+          "actual": 22,
+          "passed": true
+        },
+        {
+          "name": "min_success_rate",
+          "comparator": "min",
+          "threshold": 0.9,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "name": "min_compile_pass_rate",
+          "comparator": "min",
+          "threshold": 0.9,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "name": "min_ci_pass_rate",
+          "comparator": "min",
+          "threshold": 0.9,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "name": "min_zero_ungrounded_rate",
+          "comparator": "min",
+          "threshold": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "name": "min_policyengine_pass_rate",
+          "comparator": "min",
+          "threshold": 0.85,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "name": "max_mean_estimated_cost_usd",
+          "comparator": "max",
+          "threshold": 0.5,
+          "actual": 0.017123,
+          "passed": true
+        }
+      ],
+      "ready": true
+    }
+  },
+  "cases": [
+    {
+      "index": 1,
+      "name": "child-benefit-enhanced-rate",
+      "kind": "uk_legislation",
+      "citation": "child-benefit-enhanced-rate (uksi/2006/965/regulation/2/2025-04-07)",
+      "repo_rac_path": "legislation/uksi/2006/965/regulation/2/1/a.rac",
+      "repo_test_path": "legislation/uksi/2006/965/regulation/2/1/a.rac.test",
+      "source_path": "sources/official/uksi/2006/965/regulation/2/2025-04-07",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.016863,
+      "duration_ms": 13603,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 30,
+            "raw": "26.05",
+            "value": 26.05,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 2,
+      "name": "child-benefit-other-rate",
+      "kind": "uk_legislation",
+      "citation": "child-benefit-other-rate (uksi/2006/965/regulation/2/2025-04-07)",
+      "repo_rac_path": "legislation/uksi/2006/965/regulation/2/1/b.rac",
+      "repo_test_path": "legislation/uksi/2006/965/regulation/2/1/b.rac.test",
+      "source_path": "sources/official/uksi/2006/965/regulation/2/2025-04-07",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.01747,
+      "duration_ms": 14960,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 30,
+            "raw": "17.25",
+            "value": 17.25,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 3,
+      "name": "pension-credit-couple-rate",
+      "kind": "uk_legislation",
+      "citation": "pension-credit-couple-rate (uksi/2002/1792/regulation/6/2025-03-31)",
+      "repo_rac_path": "legislation/uksi/2002/1792/regulation/6/1/a.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/regulation/6/1/a.rac.test",
+      "source_path": "sources/official/uksi/2002/1792/regulation/6/2025-03-31",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.014165,
+      "duration_ms": 11738,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 27,
+            "raw": "332.95",
+            "value": 332.95,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [
+          "PolicyEngine unavailable for 'alternate_branch_claimant_does_not_have_partner': RAC test negates the pension-credit couple-rate branch using partner facts that PolicyEngine UK only exposes through the parent standard minimum guarantee"
+        ],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 4,
+      "name": "pension-credit-single-rate",
+      "kind": "uk_legislation",
+      "citation": "pension-credit-single-rate (uksi/2002/1792/regulation/6/2025-03-31)",
+      "repo_rac_path": "legislation/uksi/2002/1792/regulation/6/1/b.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/regulation/6/1/b.rac.test",
+      "source_path": "sources/official/uksi/2002/1792/regulation/6/2025-03-31",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.013535499999999999,
+      "duration_ms": 12811,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 27,
+            "raw": "218.15",
+            "value": 218.15,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [
+          "PolicyEngine unavailable for 'alternate_branch_claimant_has_partner': RAC test negates the pension-credit single-rate branch using partner facts that PolicyEngine UK only exposes through the parent standard minimum guarantee"
+        ],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 5,
+      "name": "scottish-child-payment-rate",
+      "kind": "uk_legislation",
+      "citation": "scottish-child-payment-rate (ssi/2020/351/regulation/20/2025-04-01)",
+      "repo_rac_path": "legislation/ssi/2020/351/regulation/20/1.rac",
+      "repo_test_path": "legislation/ssi/2020/351/regulation/20/1.rac.test",
+      "source_path": "sources/official/ssi/2020/351/regulation/20/2025-04-01",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.019375,
+      "duration_ms": 16653,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 23,
+            "raw": "27.15",
+            "value": 27.15,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 6,
+      "name": "benefit-cap-single-london",
+      "kind": "uk_legislation",
+      "citation": "benefit-cap-single-london (uksi/2013/376/regulation/80A/2025-04-01)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/80A/2/a.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/80A/2/a.rac.test",
+      "source_path": "sources/official/uksi/2013/376/regulation/80A/2025-04-01",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.0226325,
+      "duration_ms": 18273,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 38,
+            "raw": "16967",
+            "value": 16967.0,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 7,
+      "name": "benefit-cap-joint-london",
+      "kind": "uk_legislation",
+      "citation": "benefit-cap-joint-london (uksi/2013/376/regulation/80A/2025-04-01)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/80A/2/b/i.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/80A/2/b/i.rac.test",
+      "source_path": "sources/official/uksi/2013/376/regulation/80A/2025-04-01",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.020827500000000002,
+      "duration_ms": 16377,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 36,
+            "raw": "25323",
+            "value": 25323.0,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 8,
+      "name": "benefit-cap-single-london-with-child",
+      "kind": "uk_legislation",
+      "citation": "benefit-cap-single-london-with-child (uksi/2013/376/regulation/80A/2025-04-01)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/80A/2/b/ii.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/80A/2/b/ii.rac.test",
+      "source_path": "sources/official/uksi/2013/376/regulation/80A/2025-04-01",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.016522500000000002,
+      "duration_ms": 12249,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 43,
+            "raw": "25323",
+            "value": 25323.0,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 9,
+      "name": "benefit-cap-family-london",
+      "kind": "uk_legislation",
+      "citation": "benefit-cap-family-london (uksi/2013/376/regulation/80A/2025-04-01)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/80A/2/c.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/80A/2/c.rac.test",
+      "source_path": "sources/official/uksi/2013/376/regulation/80A/2025-04-01",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.017070000000000002,
+      "duration_ms": 13594,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 41,
+            "raw": "14753",
+            "value": 14753.0,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 10,
+      "name": "benefit-cap-joint-outside-london",
+      "kind": "uk_legislation",
+      "citation": "benefit-cap-joint-outside-london (uksi/2013/376/regulation/80A/2025-04-01)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/80A/2/d/i.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/80A/2/d/i.rac.test",
+      "source_path": "sources/official/uksi/2013/376/regulation/80A/2025-04-01",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.0173225,
+      "duration_ms": 12795,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 37,
+            "raw": "22020",
+            "value": 22020.0,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 11,
+      "name": "benefit-cap-single-outside-london-with-child",
+      "kind": "uk_legislation",
+      "citation": "benefit-cap-single-outside-london-with-child (uksi/2013/376/regulation/80A/2025-04-01)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/80A/2/d/ii.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/80A/2/d/ii.rac.test",
+      "source_path": "sources/official/uksi/2013/376/regulation/80A/2025-04-01",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.016165,
+      "duration_ms": 13574,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 42,
+            "raw": "22020",
+            "value": 22020.0,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 12,
+      "name": "uc-standard-allowance-single-under-25",
+      "kind": "source",
+      "citation": "uc-standard-allowance-single-under-25 (uksi-2013-376-regulation-36-3-single-under-25)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/single-under-25.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/single-under-25.rac.test",
+      "source_path": "sources/slices/uk/uc_standard_allowance_single_under_25_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.014275,
+      "duration_ms": 14790,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 33,
+            "raw": "316.98",
+            "value": 316.98,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 13,
+      "name": "uc-standard-allowance-single-25-or-over",
+      "kind": "source",
+      "citation": "uc-standard-allowance-single-25-or-over (uksi-2013-376-regulation-36-3-single-25-or-over)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/single-25-or-over.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/single-25-or-over.rac.test",
+      "source_path": "sources/slices/uk/uc_standard_allowance_single_25_or_over_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.01266,
+      "duration_ms": 15236,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 22,
+            "raw": "400.14",
+            "value": 400.14,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 14,
+      "name": "uc-standard-allowance-joint-under-25",
+      "kind": "source",
+      "citation": "uc-standard-allowance-joint-under-25 (uksi-2013-376-regulation-36-3-joint-under-25)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/joint-under-25.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/joint-under-25.rac.test",
+      "source_path": "sources/slices/uk/uc_standard_allowance_joint_under_25_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.01421,
+      "duration_ms": 10482,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 22,
+            "raw": "497.55",
+            "value": 497.55,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 15,
+      "name": "uc-standard-allowance-joint-25-or-over",
+      "kind": "source",
+      "citation": "uc-standard-allowance-joint-25-or-over (uksi-2013-376-regulation-36-3-joint-25-or-over)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/joint-25-or-over.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/joint-25-or-over.rac.test",
+      "source_path": "sources/slices/uk/uc_standard_allowance_joint_25_or_over_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.0229475,
+      "duration_ms": 22007,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 27,
+            "raw": "628.10",
+            "value": 628.1,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 16,
+      "name": "uc-carer-element",
+      "kind": "source",
+      "citation": "uc-carer-element (uksi-2013-376-regulation-36-3-carer-element)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/carer-element.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/carer-element.rac.test",
+      "source_path": "sources/slices/uk/uc_carer_element_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.02157,
+      "duration_ms": 26188,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 22,
+            "raw": "201.68",
+            "value": 201.68,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 17,
+      "name": "uc-lcwra-element",
+      "kind": "source",
+      "citation": "uc-lcwra-element (uksi-2013-376-regulation-36-3-lcwra-element)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/lcwra-element.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/lcwra-element.rac.test",
+      "source_path": "sources/slices/uk/uc_lcwra_element_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.0101175,
+      "duration_ms": 12543,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 24,
+            "raw": "423.27",
+            "value": 423.27,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 18,
+      "name": "uc-child-element-first-child",
+      "kind": "source",
+      "citation": "uc-child-element-first-child (uksi-2013-376-regulation-36-3-first-child)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/first-child.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/first-child.rac.test",
+      "source_path": "sources/slices/uk/uc_child_element_first_child_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.013319999999999999,
+      "duration_ms": 11656,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 33,
+            "raw": "339.00",
+            "value": 339.0,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 19,
+      "name": "uc-child-element-subsequent-child",
+      "kind": "source",
+      "citation": "uc-child-element-subsequent-child (uksi-2013-376-regulation-36-3-subsequent-child)",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/subsequent-child.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/subsequent-child.rac.test",
+      "source_path": "sources/slices/uk/uc_child_element_subsequent_child_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.0296225,
+      "duration_ms": 29745,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 37,
+            "raw": "292.81",
+            "value": 292.81,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 20,
+      "name": "wtc-basic-element",
+      "kind": "source",
+      "citation": "wtc-basic-element (uksi-2002-2005-schedule-2-basic-element)",
+      "repo_rac_path": "legislation/uksi/2002/2005/schedule/2/basic-element.rac",
+      "repo_test_path": "legislation/uksi/2002/2005/schedule/2/basic-element.rac.test",
+      "source_path": "sources/slices/uk/wtc_basic_element_2024.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.0129475,
+      "duration_ms": 15445,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 16,
+            "raw": "2435",
+            "value": 2435.0,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 21,
+      "name": "wtc-second-adult-element",
+      "kind": "source",
+      "citation": "wtc-second-adult-element (uksi-2002-2005-schedule-2-second-adult-element)",
+      "repo_rac_path": "legislation/uksi/2002/2005/schedule/2/second-adult-element.rac",
+      "repo_test_path": "legislation/uksi/2002/2005/schedule/2/second-adult-element.rac.test",
+      "source_path": "sources/slices/uk/wtc_second_adult_element_2024.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.016615,
+      "duration_ms": 15360,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 16,
+            "raw": "2500",
+            "value": 2500.0,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    },
+    {
+      "index": 22,
+      "name": "wtc-lone-parent-element",
+      "kind": "source",
+      "citation": "wtc-lone-parent-element (uksi-2002-2005-schedule-2-lone-parent-element)",
+      "repo_rac_path": "legislation/uksi/2002/2005/schedule/2/lone-parent-element.rac",
+      "repo_test_path": "legislation/uksi/2002/2005/schedule/2/lone-parent-element.rac.test",
+      "source_path": "sources/slices/uk/wtc_lone_parent_element_2024.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.016465,
+      "duration_ms": 15932,
+      "metrics": {
+        "compile_pass": true,
+        "compile_issues": [],
+        "ci_pass": true,
+        "ci_issues": [],
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "grounding": [
+          {
+            "line": 16,
+            "raw": "2500",
+            "value": 2500.0,
+            "grounded": true
+          }
+        ],
+        "policyengine_pass": true,
+        "policyengine_score": 1.0,
+        "policyengine_issues": [],
+        "taxsim_pass": null,
+        "taxsim_score": null,
+        "taxsim_issues": []
+      }
+    }
+  ]
+}

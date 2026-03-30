@@ -1,0 +1,14 @@
+- name: base_case_first_child
+  input:
+    is_first_child: true
+    is_qualifying_young_person: false
+  period: 2025-04
+  output:
+    uc_child_element_first_child_higher_amount: 339.0
+- name: boundary_case_effective_date
+  input:
+    is_first_child: true
+    is_qualifying_young_person: false
+  period: 2025-04-07
+  output:
+    uc_child_element_first_child_higher_amount: 339.0

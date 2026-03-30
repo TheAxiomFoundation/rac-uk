@@ -1,0 +1,27 @@
+"""
+PART II Entitlement and amount
+
+6. Amount of the guarantee credit
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+Except as provided in the following provisions of these Regulations, the standard minimum guarantee is—
+
+(a)
+
+£332.95 per week in the case of a claimant who has a partner;
+"""
+
+claimant_has_partner:
+    entity: Family
+    period: Week
+    dtype: Boolean
+
+standard_minimum_guarantee_couple_weekly_rate:
+    entity: Family
+    period: Week
+    dtype: Money
+    from 2025-03-21:
+        if claimant_has_partner: 332.95 else: 0

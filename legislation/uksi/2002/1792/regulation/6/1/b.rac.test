@@ -1,0 +1,20 @@
+- name: base_case_single_claimant_after_effective_date
+  period: 2025-03-31
+  input:
+    claimant_has_partner: false
+  output:
+    standard_minimum_guarantee_single_weekly_rate: 218.15
+
+- name: boundary_case_on_effective_date_single_claimant
+  period: 2025-03-21
+  input:
+    claimant_has_partner: false
+  output:
+    standard_minimum_guarantee_single_weekly_rate: 218.15
+
+- name: alternate_branch_claimant_has_partner
+  period: 2025-03-31
+  input:
+    claimant_has_partner: true
+  output:
+    standard_minimum_guarantee_single_weekly_rate: 0

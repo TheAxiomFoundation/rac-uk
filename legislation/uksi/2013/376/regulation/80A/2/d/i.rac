@@ -1,0 +1,37 @@
+"""
+PART 7 THE BENEFIT CAP
+
+80A. Relevant amount
+
+(2)
+
+(d)
+
+Editorial note: current text valid from 2025-03-21.
+
+The applicable annual limit is—
+
+£22,020 for—
+
+(i)
+
+joint claimants not resident in Greater London;
+"""
+
+is_joint_claimant:
+    entity: TaxUnit
+    period: Year
+    dtype: Boolean
+
+resident_in_greater_london:
+    entity: TaxUnit
+    period: Year
+    dtype: Boolean
+
+regulation_80A_2_d_i_applicable_annual_limit:
+    entity: TaxUnit
+    period: Year
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        if is_joint_claimant and not resident_in_greater_london: 22020 else: 0

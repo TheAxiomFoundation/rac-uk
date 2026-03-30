@@ -1,0 +1,26 @@
+- name: base_case_single_claimant_in_greater_london_with_child
+  period: 2025
+  input:
+    is_single_claimant: true
+    resident_in_greater_london: true
+    responsible_for_child_or_qualifying_young_person: true
+  output:
+    regulation_80A_2_b_ii_applicable_annual_limit: 25323
+
+- name: boundary_case_effective_date_year
+  period: 2025
+  input:
+    is_single_claimant: true
+    resident_in_greater_london: true
+    responsible_for_child_or_qualifying_young_person: true
+  output:
+    regulation_80A_2_b_ii_applicable_annual_limit: 25323
+
+- name: alternate_branch_not_resident_in_greater_london
+  period: 2025
+  input:
+    is_single_claimant: true
+    resident_in_greater_london: false
+    responsible_for_child_or_qualifying_young_person: true
+  output:
+    regulation_80A_2_b_ii_applicable_annual_limit: 0

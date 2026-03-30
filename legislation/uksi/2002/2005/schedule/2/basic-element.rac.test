@@ -1,0 +1,12 @@
+- name: base_case
+  period: 2024
+  output:
+    wtc_basic_element_amount: 2435
+- name: effective_date_boundary
+  period: 2024-04-06
+  output:
+    wtc_basic_element_amount: 2435
+- name: later_same_amount_case
+  period: 2025
+  output:
+    wtc_basic_element_amount: 2435

@@ -1,0 +1,16 @@
+"""
+Editorial note: current text valid from 2024-04-06.
+
+SCHEDULE 2Regulation 20(1) MAXIMUM RATES OF THE ELEMENTS OF A WORKING TAX CREDIT
+
+Structured table:
+Relevant element of working tax credit | Maximum annual rate
+5. Lone parent element | £2500
+"""
+
+wtc_lone_parent_element_amount:
+    entity: TaxUnit
+    period: Year
+    dtype: Money
+    unit: GBP
+    from 2024-04-06: 2500

@@ -1,0 +1,10 @@
+base_case:
+  period: 2025-04-06
+  input: {}
+  output:
+    wtc_lone_parent_element_amount: 2500
+boundary_case:
+  period: 2024-04-06
+  input: {}
+  output:
+    wtc_lone_parent_element_amount: 2500
