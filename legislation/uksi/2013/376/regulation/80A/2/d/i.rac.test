@@ -1,0 +1,31 @@
+- name: base_case_joint_claimants_not_in_greater_london
+  period: 2025
+  input:
+    is_joint_claimant: true
+    resident_in_greater_london: false
+  output:
+    regulation_80A_2_d_i_applicable_annual_limit: 22020
+
+- name: boundary_case_effective_year_joint_claimants_not_in_greater_london
+  period: 2026
+  input:
+    is_joint_claimant: true
+    resident_in_greater_london: false
+  output:
+    regulation_80A_2_d_i_applicable_annual_limit: 22020
+
+- name: alternate_branch_joint_claimants_in_greater_london
+  period: 2025
+  input:
+    is_joint_claimant: true
+    resident_in_greater_london: true
+  output:
+    regulation_80A_2_d_i_applicable_annual_limit: 0
+
+- name: alternate_branch_not_joint_claimants_not_in_greater_london
+  period: 2025
+  input:
+    is_joint_claimant: false
+    resident_in_greater_london: false
+  output:
+    regulation_80A_2_d_i_applicable_annual_limit: 0

@@ -1,0 +1,23 @@
+"""
+PART 3 Eligibility and assistance to be given
+
+20. Value and form of a Scottish child payment
+
+Editorial note: current text valid from 2025-04-01.
+
+(1)
+
+The value of a Scottish child payment in respect of a child is £27.15 per week.
+"""
+
+person_is_child:
+    entity: Person
+    period: Week
+    dtype: Boolean
+
+scottish_child_payment_weekly_amount:
+    entity: Person
+    period: Week
+    dtype: Money
+    from 2025-04-01:
+        if person_is_child: 27.15 else: 0

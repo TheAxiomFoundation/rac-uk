@@ -1,0 +1,31 @@
+- name: base_case_joint_claimants_greater_london
+  period: 2025-03-21
+  input:
+    is_joint_claimant: true
+    either_joint_claimant_resident_in_greater_london: true
+  output:
+    regulation_80A_2_b_i_applicable_annual_limit: 25323
+
+- name: boundary_case_effective_date
+  period: 2025-03-21
+  input:
+    is_joint_claimant: true
+    either_joint_claimant_resident_in_greater_london: true
+  output:
+    regulation_80A_2_b_i_applicable_annual_limit: 25323
+
+- name: alternate_branch_not_resident_in_greater_london
+  period: 2025-03-21
+  input:
+    is_joint_claimant: true
+    either_joint_claimant_resident_in_greater_london: false
+  output:
+    regulation_80A_2_b_i_applicable_annual_limit: 0
+
+- name: alternate_branch_not_joint_claimants
+  period: 2025-03-21
+  input:
+    is_joint_claimant: false
+    either_joint_claimant_resident_in_greater_london: true
+  output:
+    regulation_80A_2_b_i_applicable_annual_limit: 0

@@ -1,0 +1,23 @@
+- name: base_case_child_any_other_case
+  period: 2025-04-07
+  input:
+    responsible_for_child_or_qualifying_young_person: true
+    child_benefit_is_any_other_case_person: true
+  output:
+    child_benefit_other_child_weekly_rate: 17.25
+
+- name: boundary_case_qualifying_young_person_on_effective_date
+  period: 2025-04-07
+  input:
+    responsible_for_child_or_qualifying_young_person: true
+    child_benefit_is_any_other_case_person: true
+  output:
+    child_benefit_other_child_weekly_rate: 17.25
+
+- name: alternate_branch_not_any_other_case
+  period: 2025-04-07
+  input:
+    responsible_for_child_or_qualifying_young_person: true
+    child_benefit_is_any_other_case_person: false
+  output:
+    child_benefit_other_child_weekly_rate: 0
