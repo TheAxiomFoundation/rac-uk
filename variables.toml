@@ -1,0 +1,43 @@
+[[variable]]
+name = "claimant_has_partner"
+entity = "Family"
+period = "Week"
+dtype = "Boolean"
+paths = [
+  "legislation/uksi/2002/1792/regulation/6/**",
+  "legislation/uksi/2002/1792/regulation/7/**",
+  "legislation/uksi/2002/1792/schedule/VI/paragraph/5/**",
+]
+description = "Pension Credit claimant partnership-status helper."
+
+[[variable]]
+name = "is_single_claimant"
+entity = "Family"
+period = "Year"
+dtype = "Boolean"
+paths = ["legislation/uksi/2013/376/regulation/80A/**"]
+description = "Benefit Cap single-claimant status helper."
+
+[[variable]]
+name = "is_joint_claimant"
+entity = "Family"
+period = "Year"
+dtype = "Boolean"
+paths = ["legislation/uksi/2013/376/regulation/80A/**"]
+description = "Benefit Cap joint-claimant status helper."
+
+[[variable]]
+name = "resident_in_greater_london"
+entity = "Family"
+period = "Year"
+dtype = "Boolean"
+paths = ["legislation/uksi/2013/376/regulation/80A/**"]
+description = "Benefit Cap Greater London residence helper."
+
+[[variable]]
+name = "responsible_for_child_or_qualifying_young_person"
+entity = "Family"
+period = "Year"
+dtype = "Boolean"
+paths = ["legislation/uksi/2013/376/regulation/80A/**"]
+description = "Benefit Cap child-or-qualifying-young-person responsibility helper."

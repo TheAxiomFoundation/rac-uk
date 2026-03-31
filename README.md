@@ -73,6 +73,7 @@ The repo includes a lightweight validation workflow that:
 
 - runs `rac.validate` across `legislation/`
 - verifies that every `.rac` file has a companion `.rac.test`
+- checks the first scoped canonical variable registry in [variables.toml](/Users/maxghenis/TheAxiomFoundation/rac-uk/variables.toml)
 
 ## Variable inventory
 
@@ -83,5 +84,19 @@ python3 scripts/report_variables.py
 ```
 
 Use `--json` for machine-readable output or `--all` to include singleton declarations.
+
+To enforce the current scoped canonical set:
+
+```bash
+python3 scripts/check_variable_registry.py
+```
+
+The registry is intentionally narrow and path-scoped. It currently covers:
+
+- Pension Credit `claimant_has_partner` declarations
+- Benefit Cap claimant-status helpers under `80A`
+
+Variables with the same name but different semantics across programs should stay out of
+the registry until they are renamed or explicitly scoped.
 
 This is still an early UK corpus, not a complete encoding set.
