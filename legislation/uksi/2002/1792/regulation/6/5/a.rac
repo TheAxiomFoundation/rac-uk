@@ -1,0 +1,31 @@
+"""
+PART II Entitlement and amount
+
+6. Amount of the guarantee credit
+
+Editorial note: current text valid from 2025-03-31.
+
+(5) The additional amount applicable is—
+(a) except where paragraph (b) applies, £81.50 per week if paragraph 1(1)(a), (b) or (c) of Part I of Schedule I is satisfied.
+"""
+
+pc_schedule_i_part_i_paragraph_1_1_a_b_or_c_satisfied:
+    entity: TaxUnit
+    period: Week
+    dtype: Boolean
+
+pc_regulation_6_5_b_applies:
+    entity: TaxUnit
+    period: Week
+    dtype: Boolean
+
+pc_severe_disability_addition_one_eligible_adult_weekly_rate:
+    entity: TaxUnit
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        if pc_regulation_6_5_b_applies: 0
+        else:
+            if pc_schedule_i_part_i_paragraph_1_1_a_b_or_c_satisfied: 81.50
+            else: 0

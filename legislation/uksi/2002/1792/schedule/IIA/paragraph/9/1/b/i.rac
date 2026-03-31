@@ -1,0 +1,22 @@
+"""
+SCHEDULE IIA Additional amount for child or qualifying young person
+
+Editorial note: current text valid from 2025-03-31.
+
+9. (1) The additional amount applicable to a claimant to whom this Schedule applies is—
+(b) a further amount of—
+(i) £35.93 where sub-paragraph (2) applies.
+"""
+
+pc_disabled_child_addition_subparagraph_2_applies:
+    entity: Person
+    period: Week
+    dtype: Boolean
+
+pc_disabled_child_addition_weekly_rate:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        if pc_disabled_child_addition_subparagraph_2_applies: 35.93 else: 0

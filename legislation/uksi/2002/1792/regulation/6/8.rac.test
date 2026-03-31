@@ -1,0 +1,13 @@
+- name: qualifying_person
+  period: 2025-03-31
+  input:
+    schedule_i_part_ii_paragraph_4_satisfied: true
+  output:
+    pc_carer_addition_weekly_rate: 45.60
+
+- name: non_qualifying_person
+  period: 2025-03-31
+  input:
+    schedule_i_part_ii_paragraph_4_satisfied: false
+  output:
+    pc_carer_addition_weekly_rate: 0
