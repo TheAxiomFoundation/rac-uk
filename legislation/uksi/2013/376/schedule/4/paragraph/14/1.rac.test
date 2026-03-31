@@ -1,0 +1,5 @@
+- name: base_case
+  period: 2025-04
+  input: {}
+  output:
+    uc_individual_non_dep_deduction_amount: 93.02

@@ -1,0 +1,22 @@
+"""
+PART 4 ELEMENTS OF AN AWARD
+
+General
+
+36. Table showing amounts of elements
+
+Editorial note: current text valid from 2025-04-01.
+
+(3)
+
+Structured table:
+Element | Amount for each assessment period
+Childcare costs element -- maximum amount for one child | GBP 1,031.88
+"""
+
+uc_maximum_childcare_element_one_child_amount:
+    entity: TaxUnit
+    period: Month
+    dtype: Money
+    unit: GBP
+    from 2025-04-01: 1031.88
