@@ -74,4 +74,14 @@ The repo includes a lightweight validation workflow that:
 - runs `rac.validate` across `legislation/`
 - verifies that every `.rac` file has a companion `.rac.test`
 
+## Variable inventory
+
+To audit repeated local declarations before a larger bulk wave:
+
+```bash
+python3 scripts/report_variables.py
+```
+
+Use `--json` for machine-readable output or `--all` to include singleton declarations.
+
 This is still an early UK corpus, not a complete encoding set.
