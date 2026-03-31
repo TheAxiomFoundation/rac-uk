@@ -47,6 +47,8 @@ rac-uk/
 - The `rac-uk` sync publishes repo-managed UK nodes under `uk/legislation/...` in `arch.rules`.
 - This is separate from any broader UK legislation ingest that may use `uk/statute/...` for act/section archives.
 - The sync is replace-oriented, not append-only: it deletes the currently managed `uk/legislation/...` archive subtree and `rac-uk:*` encoding rows before reinserting the current repo state, so renames do not leave ghost nodes behind.
+- The replacement step is operationally non-atomic across `arch.rules` and `encoding_runs`. If a sync is interrupted, rerun `scripts/sync_atlas.py` to restore the full managed subset. `--append-only` is reserved for topping off a partially inserted run without another delete pass.
+- Instrument titles should come from checked-in official CLML when available. The hardcoded map in the sync script is only a fallback for slice-only instruments that do not yet have local official source files.
 
 ## Encoding policy
 
