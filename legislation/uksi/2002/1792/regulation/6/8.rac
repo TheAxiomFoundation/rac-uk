@@ -13,8 +13,15 @@ schedule_i_part_ii_paragraph_4_satisfied:
     period: Week
     dtype: Boolean
 
+pc_carer_addition_statutory_weekly_rate:
+    entity: Person
+    period: Week
+    dtype: Money
+    from 2025-03-31:
+        45.60
+
 pc_carer_addition_weekly_rate:
     entity: Person
     period: Week
     dtype: Money
-    from 2025-03-31: if schedule_i_part_ii_paragraph_4_satisfied: 45.60 else: 0
+    from 2025-03-31: if schedule_i_part_ii_paragraph_4_satisfied: pc_carer_addition_statutory_weekly_rate else: 0

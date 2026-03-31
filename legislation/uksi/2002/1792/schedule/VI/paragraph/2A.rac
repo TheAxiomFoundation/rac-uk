@@ -23,6 +23,14 @@ other_employment_earnings_weekly_amount:
     dtype: Money
     unit: GBP
 
+pc_schedule_vi_person_maximum_weekly_earnings_disregard_amount:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        20
+
 pc_person_special_employment_disregarded_weekly_amount:
     entity: Person
     period: Week
@@ -35,7 +43,7 @@ pc_special_employment_top_up_single_remaining_weekly_amount:
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if pc_person_special_employment_disregarded_weekly_amount < 20: 20 - pc_person_special_employment_disregarded_weekly_amount else: 0
+        if pc_person_special_employment_disregarded_weekly_amount < pc_schedule_vi_person_maximum_weekly_earnings_disregard_amount: pc_schedule_vi_person_maximum_weekly_earnings_disregard_amount - pc_person_special_employment_disregarded_weekly_amount else: 0
 
 pc_special_employment_top_up_single_capped_weekly_amount:
     entity: Person
@@ -51,4 +59,4 @@ pc_special_employment_top_up_single_weekly_amount:
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if pc_special_employment_disregard_applies and pc_special_employment_earnings_weekly_amount < 20: pc_special_employment_top_up_single_capped_weekly_amount else: 0
+        if pc_special_employment_disregard_applies and pc_special_employment_earnings_weekly_amount < pc_schedule_vi_person_maximum_weekly_earnings_disregard_amount: pc_special_employment_top_up_single_capped_weekly_amount else: 0

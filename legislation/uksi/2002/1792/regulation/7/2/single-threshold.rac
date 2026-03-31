@@ -13,10 +13,18 @@ claimant_has_partner:
     period: Week
     dtype: Boolean
 
+pc_savings_credit_threshold_single_statutory_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        189.80
+
 pc_savings_credit_threshold_single_weekly_amount:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if claimant_has_partner: 0 else: 189.80
+        if claimant_has_partner: 0 else: pc_savings_credit_threshold_single_statutory_weekly_amount

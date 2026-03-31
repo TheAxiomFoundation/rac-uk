@@ -29,13 +29,21 @@ other_partner_earnings_weekly_amount:
     dtype: Money
     unit: GBP
 
+pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        20
+
 pc_other_partner_shared_maximum_remaining_weekly_amount:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if first_partner_earnings_weekly_amount < 20: 20 - first_partner_earnings_weekly_amount else: 0
+        if first_partner_earnings_weekly_amount < pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount: pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount - first_partner_earnings_weekly_amount else: 0
 
 pc_other_partner_shared_maximum_capped_weekly_amount:
     entity: Family
@@ -51,4 +59,4 @@ pc_other_partner_shared_maximum_earnings_disregard_weekly_amount:
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if pc_couple_shared_maximum_disregard_case_applies and first_partner_disregarded_weekly_amount < 20: pc_other_partner_shared_maximum_capped_weekly_amount else: 0
+        if pc_couple_shared_maximum_disregard_case_applies and first_partner_disregarded_weekly_amount < pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount: pc_other_partner_shared_maximum_capped_weekly_amount else: 0

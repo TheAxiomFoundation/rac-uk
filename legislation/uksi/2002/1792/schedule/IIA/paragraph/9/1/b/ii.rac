@@ -13,10 +13,18 @@ schedule_iia_paragraph_9_3_applies:
     period: Week
     dtype: Boolean
 
+pc_severely_disabled_child_addition_statutory_weekly_rate:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        112.21
+
 pc_severely_disabled_child_addition_weekly_rate:
     entity: Person
     period: Week
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if schedule_iia_paragraph_9_3_applies: 112.21 else: 0
+        if schedule_iia_paragraph_9_3_applies: pc_severely_disabled_child_addition_statutory_weekly_rate else: 0

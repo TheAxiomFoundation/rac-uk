@@ -15,9 +15,16 @@ person_is_child:
     period: Week
     dtype: Boolean
 
+scottish_child_payment_statutory_weekly_amount:
+    entity: Person
+    period: Week
+    dtype: Money
+    from 2025-04-01:
+        27.15
+
 scottish_child_payment_weekly_amount:
     entity: Person
     period: Week
     dtype: Money
     from 2025-04-01:
-        if person_is_child: 27.15 else: 0
+        if person_is_child: scottish_child_payment_statutory_weekly_amount else: 0

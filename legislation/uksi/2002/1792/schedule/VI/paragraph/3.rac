@@ -24,13 +24,21 @@ pc_employment_earnings_weekly_amount:
     dtype: Money
     unit: GBP
 
+pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        20
+
 pc_carer_earnings_disregard_base_weekly_amount:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if pc_employment_earnings_weekly_amount < 20: pc_employment_earnings_weekly_amount else: 20
+        if pc_employment_earnings_weekly_amount < pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount: pc_employment_earnings_weekly_amount else: pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount
 
 pc_carer_earnings_disregard_weekly_amount:
     entity: Family

@@ -22,9 +22,16 @@ responsible_for_child_or_qualifying_young_person:
     period: Week
     dtype: Boolean
 
+child_benefit_other_child_statutory_weekly_rate:
+    entity: Person
+    period: Week
+    dtype: Money
+    from 2025-04-07:
+        17.25
+
 child_benefit_other_child_weekly_rate:
     entity: Person
     period: Week
     dtype: Money
     from 2025-04-07:
-        if responsible_for_child_or_qualifying_young_person and child_benefit_is_any_other_case_person: 17.25 else: 0
+        if responsible_for_child_or_qualifying_young_person and child_benefit_is_any_other_case_person: child_benefit_other_child_statutory_weekly_rate else: 0
