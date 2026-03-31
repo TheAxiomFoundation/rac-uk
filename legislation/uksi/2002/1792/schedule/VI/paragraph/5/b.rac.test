@@ -1,0 +1,17 @@
+- name: eligible_couple_claimant
+  period: 2025-03-31
+  input:
+    claimant_has_partner: true
+    claimant_has_earnings: true
+    pc_preceding_schedule_vi_20_disregard_applies: false
+  output:
+    pc_couple_claimant_earnings_disregard_weekly_amount: 10
+
+- name: preceding_disregard_exception
+  period: 2025-03-31
+  input:
+    claimant_has_partner: true
+    claimant_has_earnings: true
+    pc_preceding_schedule_vi_20_disregard_applies: true
+  output:
+    pc_couple_claimant_earnings_disregard_weekly_amount: 0

@@ -1,0 +1,34 @@
+"""
+PART II Entitlement and amount
+
+6. Amount of the guarantee credit
+
+Editorial note: current text valid from 2025-03-31.
+
+(3) In a case to which this paragraph applies—
+(b) except in the case of a person who is a remand prisoner, nil is the prescribed additional amount for the purposes of section 2(3)(b).
+"""
+
+pc_regulation_6_3_applies:
+    entity: TaxUnit
+    period: Week
+    dtype: Boolean
+
+claimant_is_remand_prisoner:
+    entity: TaxUnit
+    period: Week
+    dtype: Boolean
+
+pc_prescribed_additional_amount_otherwise_weekly_amount:
+    entity: TaxUnit
+    period: Week
+    dtype: Money
+    unit: GBP
+
+pc_prisoner_additional_amount_weekly_amount:
+    entity: TaxUnit
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        if pc_regulation_6_3_applies and not claimant_is_remand_prisoner: 0 else: pc_prescribed_additional_amount_otherwise_weekly_amount

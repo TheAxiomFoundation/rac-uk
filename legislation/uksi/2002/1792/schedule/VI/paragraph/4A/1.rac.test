@@ -1,0 +1,5 @@
+- name: base
+  period: 2025-03-31
+  input: {}
+  output:
+    pc_earnings_disregard_maximum_weekly_amount: 20
