@@ -39,6 +39,14 @@ rac-uk/
 - Prefer official `legislation.gov.uk` AKN for executable encoding work.
 - Preserve the corresponding `data.xml` CLML alongside it for provenance and fallback.
 - For table rows or derived atomic leaves that are not directly addressable as official AKN nodes, keep the normalized text slice under `sources/slices/`.
+- In Atlas syncs, `source_path` is the discriminator:
+  `sources/official/...` means an official legal node, while `sources/slices/...` means a derived row/slice leaf under the same parent provision.
+
+## Atlas sync policy
+
+- The `rac-uk` sync publishes repo-managed UK nodes under `uk/legislation/...` in `arch.rules`.
+- This is separate from any broader UK legislation ingest that may use `uk/statute/...` for act/section archives.
+- The sync is replace-oriented, not append-only: it deletes the currently managed `uk/legislation/...` archive subtree and `rac-uk:*` encoding rows before reinserting the current repo state, so renames do not leave ghost nodes behind.
 
 ## Encoding policy
 
