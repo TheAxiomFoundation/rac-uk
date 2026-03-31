@@ -19,9 +19,16 @@ claimant_has_partner:
     period: Week
     dtype: Boolean
 
+standard_minimum_guarantee_couple_statutory_weekly_rate:
+    entity: Family
+    period: Week
+    dtype: Money
+    from 2025-03-21:
+        332.95
+
 standard_minimum_guarantee_couple_weekly_rate:
     entity: Family
     period: Week
     dtype: Money
     from 2025-03-21:
-        if claimant_has_partner: 332.95 else: 0
+        if claimant_has_partner: standard_minimum_guarantee_couple_statutory_weekly_rate else: 0

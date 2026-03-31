@@ -29,11 +29,19 @@ responsible_for_child_or_qualifying_young_person:
     period: Year
     dtype: Boolean
 
+regulation_80A_2_a_statutory_annual_limit:
+    entity: Family
+    period: Year
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        16967
+
 regulation_80A_2_a_applicable_annual_limit:
     entity: Family
     period: Year
     dtype: Money
     unit: GBP
     from 2025-03-21:
-        if is_single_claimant and resident_in_greater_london and not responsible_for_child_or_qualifying_young_person: 16967
+        if is_single_claimant and resident_in_greater_london and not responsible_for_child_or_qualifying_young_person: regulation_80A_2_a_statutory_annual_limit
         else: 0

@@ -13,10 +13,18 @@ pc_disabled_child_addition_subparagraph_2_applies:
     period: Week
     dtype: Boolean
 
+pc_disabled_child_addition_statutory_weekly_rate:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        35.93
+
 pc_disabled_child_addition_weekly_rate:
     entity: Person
     period: Week
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if pc_disabled_child_addition_subparagraph_2_applies: 35.93 else: 0
+        if pc_disabled_child_addition_subparagraph_2_applies: pc_disabled_child_addition_statutory_weekly_rate else: 0

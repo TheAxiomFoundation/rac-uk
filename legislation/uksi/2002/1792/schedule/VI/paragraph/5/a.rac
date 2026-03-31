@@ -22,10 +22,18 @@ pc_preceding_schedule_vi_20_disregard_applies:
     period: Week
     dtype: Boolean
 
+pc_single_claimant_standard_earnings_disregard_statutory_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        5
+
 pc_single_claimant_earnings_disregard_weekly_amount:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if claimant_has_earnings and not claimant_has_partner and not pc_preceding_schedule_vi_20_disregard_applies: 5 else: 0
+        if claimant_has_earnings and not claimant_has_partner and not pc_preceding_schedule_vi_20_disregard_applies: pc_single_claimant_standard_earnings_disregard_statutory_weekly_amount else: 0

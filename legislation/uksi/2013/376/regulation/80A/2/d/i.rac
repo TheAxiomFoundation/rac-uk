@@ -28,10 +28,18 @@ resident_in_greater_london:
     period: Year
     dtype: Boolean
 
+regulation_80A_2_d_i_statutory_annual_limit:
+    entity: Family
+    period: Year
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        22020
+
 regulation_80A_2_d_i_applicable_annual_limit:
     entity: Family
     period: Year
     dtype: Money
     unit: GBP
     from 2025-03-21:
-        if is_joint_claimant and not resident_in_greater_london: 22020 else: 0
+        if is_joint_claimant and not resident_in_greater_london: regulation_80A_2_d_i_statutory_annual_limit else: 0

@@ -74,6 +74,7 @@ The repo includes a lightweight validation workflow that:
 - runs `rac.validate` across `legislation/`
 - verifies that every `.rac` file has a companion `.rac.test`
 - checks the first scoped canonical variable registry in [variables.toml](/Users/maxghenis/TheAxiomFoundation/rac-uk/variables.toml)
+- fails if a substantive scalar literal is embedded inside a formula or conditional branch instead of being declared as its own named variable
 
 ## Variable inventory
 
@@ -90,6 +91,16 @@ To enforce the current scoped canonical set:
 ```bash
 python3 scripts/check_variable_registry.py
 ```
+
+To report or fail on embedded scalar literals inside formulas:
+
+```bash
+python3 scripts/report_embedded_scalars.py
+python3 scripts/check_embedded_scalars.py
+```
+
+`report_embedded_scalars.py --json` emits one row per violation with the file, line,
+variable name, literal, and formula snippet.
 
 The registry is intentionally narrow and path-scoped. It currently covers:
 

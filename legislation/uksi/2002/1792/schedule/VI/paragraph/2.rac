@@ -33,10 +33,18 @@ pc_special_employment_disregard_applies:
     from 2025-03-31:
         employment_as_auxiliary_coastguard_for_coast_rescue_activities or part_time_employment_manning_or_launching_a_lifeboat or employment_as_prescribed_territorial_or_reserve_force_member
 
+pc_schedule_vi_person_maximum_weekly_earnings_disregard_amount:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        20
+
 pc_special_employment_earnings_disregard_weekly_amount:
     entity: Person
     period: Week
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if pc_special_employment_disregard_applies: 20 else: 0
+        if pc_special_employment_disregard_applies: pc_schedule_vi_person_maximum_weekly_earnings_disregard_amount else: 0
