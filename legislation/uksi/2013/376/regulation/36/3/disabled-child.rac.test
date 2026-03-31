@@ -1,0 +1,5 @@
+- name: base_case
+  period: 2025-04
+  input: {}
+  output:
+    uc_disabled_child_element_amount: 158.76

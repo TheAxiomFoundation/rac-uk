@@ -1,0 +1,115 @@
+{
+  "wave": "2026-03-30-wave3",
+  "seeded_from": {
+    "source_eval_runs": [
+      "/tmp/autorac-uk-uc-disabled-child-repoaug-0.2.49-230f104",
+      "/tmp/autorac-uk-uc-severely-disabled-child-repoaug-0.2.49-230f104",
+      "/tmp/autorac-uk-uc-work-allowance-with-housing-0.2.49-230f104",
+      "/tmp/autorac-uk-uc-work-allowance-without-housing-0.2.49-230f104"
+    ],
+    "autorac_commit": "865e77a",
+    "autorac_version": "0.2.50",
+    "runner": "openai-gpt-5.4",
+    "all_ready": true,
+    "summary": {
+      "total_cases": 4,
+      "compile_pass_rate": 1.0,
+      "ci_pass_rate": 1.0,
+      "zero_ungrounded_rate": 1.0,
+      "policyengine_case_count": 4,
+      "policyengine_pass_rate": 1.0,
+      "mean_policyengine_score": 1.0,
+      "mean_estimated_cost_usd": 0.01162375
+    }
+  },
+  "cases": [
+    {
+      "index": 1,
+      "name": "uc-disabled-child-element",
+      "kind": "source",
+      "citation": "uksi-2013-376 regulation 36(3) disabled child addition",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/disabled-child.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/disabled-child.rac.test",
+      "source_path": "sources/slices/uk/uc_child_element_disabled_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.00919,
+      "duration_ms": 5958,
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": true,
+        "policyengine_score": 1.0
+      }
+    },
+    {
+      "index": 2,
+      "name": "uc-severely-disabled-child-element",
+      "kind": "source",
+      "citation": "uksi-2013-376 regulation 36(3) severely disabled child addition",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/severely-disabled-child.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/severely-disabled-child.rac.test",
+      "source_path": "sources/slices/uk/uc_child_element_severely_disabled_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.0106675,
+      "duration_ms": 6542,
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": true,
+        "policyengine_score": 1.0
+      }
+    },
+    {
+      "index": 3,
+      "name": "uc-work-allowance-with-housing",
+      "kind": "source",
+      "citation": "uksi-2013-376 regulation 22 work allowance with housing support",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/22/work-allowance-with-housing.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/22/work-allowance-with-housing.rac.test",
+      "source_path": "sources/slices/uk/uc_work_allowance_with_housing_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.0118725,
+      "duration_ms": 13023,
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": true,
+        "policyengine_score": 1.0
+      }
+    },
+    {
+      "index": 4,
+      "name": "uc-work-allowance-without-housing",
+      "kind": "source",
+      "citation": "uksi-2013-376 regulation 22 work allowance without housing support",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/22/work-allowance-without-housing.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/22/work-allowance-without-housing.rac.test",
+      "source_path": "sources/slices/uk/uc_work_allowance_without_housing_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.014765,
+      "duration_ms": 19844,
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": true,
+        "policyengine_score": 1.0
+      }
+    }
+  ]
+}
