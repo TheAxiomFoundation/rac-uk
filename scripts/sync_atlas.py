@@ -36,6 +36,9 @@ ROOT = Path(__file__).resolve().parents[1]
 WAVES_DIR = ROOT / "waves"
 RAC_ROOT = ROOT / "legislation"
 STRUCTURAL_TOKENS = {"regulation", "schedule", "paragraph", "part", "chapter", "article"}
+OFFICIAL_PREFIX = "sources/official/"
+SLICE_PREFIX = "sources/slices/"
+SOURCE_PREFIXES = (OFFICIAL_PREFIX, SLICE_PREFIX)
 INSTRUMENT_TITLES = {
     ("uksi", "2006", "965"): "The Child Benefit (Rates) Regulations 2006",
     ("uksi", "2002", "1792"): "The State Pension Credit Regulations 2002",
@@ -87,6 +90,21 @@ def instrument_title(path_parts: list[str]) -> str:
     return INSTRUMENT_TITLES.get(key, f"{path_parts[1].upper()} {path_parts[2]}/{path_parts[3]}")
 
 
+def validate_source_path(source_path: str) -> None:
+    if not source_path.startswith(SOURCE_PREFIXES):
+        raise ValueError(
+            f"Unsupported source_path {source_path!r}; expected one of {SOURCE_PREFIXES}"
+        )
+
+
+def extract_dc_title(xml_text: str) -> str | None:
+    match = re.search(r"<dc:title>(.*?)</dc:title>", xml_text, re.DOTALL | re.IGNORECASE)
+    if not match:
+        return None
+    title = re.sub(r"\s+", " ", match.group(1)).strip()
+    return title or None
+
+
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text())
 
@@ -122,6 +140,7 @@ def load_cases() -> list[Case]:
         autorac_version = seeded.get("autorac_version", "")
         wave = data["wave"]
         for raw in data["cases"]:
+            validate_source_path(raw["source_path"])
             case = Case(
                 wave=wave,
                 repo_rac_path=raw["repo_rac_path"],
@@ -135,6 +154,8 @@ def load_cases() -> list[Case]:
                 metrics=raw.get("metrics", {}),
                 autorac_version=autorac_version,
             )
+            if not case.rac_file.exists():
+                raise FileNotFoundError(f"Missing RAC file: {case.rac_file}")
             cases_by_path[case.repo_rac_path] = case
     return sorted(cases_by_path.values(), key=lambda c: natural_key(c.repo_rac_path))
 
@@ -176,9 +197,26 @@ def leaf_source_url(case: Case) -> str | None:
     return infer_source_url(case.source_path)
 
 
+def build_instrument_title_map(cases: list[Case]) -> dict[tuple[str, str, str], str]:
+    titles = dict(INSTRUMENT_TITLES)
+    for case in cases:
+        source_parts = Path(case.source_path).parts
+        if len(source_parts) < 5 or source_parts[0] != "sources" or source_parts[1] != "official":
+            continue
+        key = (source_parts[2], source_parts[3], source_parts[4])
+        xml_path = ROOT / case.source_path / "source.xml"
+        if not xml_path.exists():
+            continue
+        title = extract_dc_title(xml_path.read_text())
+        if title:
+            titles[key] = title
+    return titles
+
+
 def build_rules(cases: list[Case]) -> list[dict[str, Any]]:
     nodes: dict[str, dict[str, Any]] = {}
     children_by_parent: dict[str | None, set[str]] = defaultdict(set)
+    titles = build_instrument_title_map(cases)
 
     for case in cases:
         boundaries = build_boundaries(case.repo_rac_path)
@@ -188,7 +226,11 @@ def build_rules(cases: list[Case]) -> list[dict[str, Any]]:
             is_leaf = i == len(boundaries) - 1
             path_key = citation_path
             parent_id = deterministic_id(parent_citation) if parent_citation else None
-            label = node_label(boundary, instrument_root_len=4)
+            label = (
+                titles.get(tuple(boundary[1:4]), instrument_title(boundary))
+                if len(boundary) == 4
+                else node_label(boundary, instrument_root_len=4)
+            )
 
             rule = nodes.get(path_key)
             if not rule:
