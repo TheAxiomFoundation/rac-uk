@@ -7,6 +7,12 @@ This script upserts:
 
 It is intentionally repo-driven. The canonical source of what should appear in
 Atlas is the rac-uk wave manifests plus the checked-in .rac files.
+
+Managed UK archive nodes mirror the repo path under ``uk/legislation/...``.
+Derived leaves remain in the same tree as official 1:1 legal nodes; callers can
+distinguish them by ``source_path``:
+- ``sources/official/...`` for official legislation.gov.uk material
+- ``sources/slices/...`` for normalized row/slice leaves
 """
 
 from __future__ import annotations
@@ -15,6 +21,7 @@ import argparse
 import json
 import os
 import re
+from urllib.parse import quote
 from collections import defaultdict
 from dataclasses import dataclass
 from datetime import UTC, datetime
@@ -304,10 +311,47 @@ def sync_encoding_runs(rows: list[dict[str, Any]], service_key: str, supabase_ur
         post_json(url, headers, batch)
 
 
+def delete_managed_rules(service_key: str, supabase_url: str) -> None:
+    url = (
+        supabase_url.rstrip("/")
+        + "/rest/v1/rules?citation_path=like."
+        + quote("uk/legislation/%", safe="")
+    )
+    headers = {
+        "apikey": service_key,
+        "Authorization": f"Bearer {service_key}",
+        "Accept-Profile": "arch",
+        "Content-Profile": "arch",
+        "Prefer": "count=exact,return=minimal",
+    }
+    response = requests.delete(url, headers=headers, timeout=180)
+    response.raise_for_status()
+
+
+def delete_managed_encoding_runs(service_key: str, supabase_url: str) -> None:
+    url = (
+        supabase_url.rstrip("/")
+        + "/rest/v1/encoding_runs?id=like."
+        + quote("rac-uk:%", safe="")
+    )
+    headers = {
+        "apikey": service_key,
+        "Authorization": f"Bearer {service_key}",
+        "Prefer": "count=exact,return=minimal",
+    }
+    response = requests.delete(url, headers=headers, timeout=180)
+    response.raise_for_status()
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--skip-rules", action="store_true", help="Do not sync arch.rules")
     parser.add_argument("--skip-encodings", action="store_true", help="Do not sync encoding_runs")
+    parser.add_argument(
+        "--append-only",
+        action="store_true",
+        help="Skip managed-subtree replacement and only upsert current rows",
+    )
     parser.add_argument("--batch-size", type=int, default=100)
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
@@ -329,9 +373,18 @@ def main() -> int:
         sample = {
             "rule": rules[0],
             "encoding": {k: encodings[0][k] for k in ["id", "citation", "file_path", "data_source", "autorac_version"]},
+            "replace_managed": not args.append_only,
         }
         print(json.dumps(sample, indent=2))
         return 0
+
+    if not args.append_only:
+        if not args.skip_rules:
+            delete_managed_rules(service_key, supabase_url)
+            print("Deleted managed uk/legislation arch.rules rows")
+        if not args.skip_encodings:
+            delete_managed_encoding_runs(service_key, supabase_url)
+            print("Deleted managed rac-uk encoding_runs rows")
 
     if not args.skip_rules:
         sync_rules(rules, service_key, supabase_url, args.batch_size)
