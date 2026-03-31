@@ -1,0 +1,29 @@
+- name: capped_by_other_employment_earnings
+  period: 2025-03-31
+  input:
+    pc_special_employment_disregard_applies: true
+    pc_special_employment_earnings_weekly_amount: 3
+    pc_special_employment_disregarded_weekly_amount: 1
+    other_employment_earnings_weekly_amount: 2
+  output:
+    pc_special_employment_top_up_single_weekly_amount: 2
+
+- name: capped_by_remaining_room
+  period: 2025-03-31
+  input:
+    pc_special_employment_disregard_applies: true
+    pc_special_employment_earnings_weekly_amount: 3
+    pc_special_employment_disregarded_weekly_amount: 18
+    other_employment_earnings_weekly_amount: 5
+  output:
+    pc_special_employment_top_up_single_weekly_amount: 2
+
+- name: special_employment_not_under_twenty
+  period: 2025-03-31
+  input:
+    pc_special_employment_disregard_applies: true
+    pc_special_employment_earnings_weekly_amount: 20
+    pc_special_employment_disregarded_weekly_amount: 1
+    other_employment_earnings_weekly_amount: 2
+  output:
+    pc_special_employment_top_up_single_weekly_amount: 0

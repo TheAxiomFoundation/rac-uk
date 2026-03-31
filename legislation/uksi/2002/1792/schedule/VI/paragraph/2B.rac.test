@@ -1,0 +1,35 @@
+- name: small_other_partner_earnings
+  period: 2025-03-31
+  input:
+    pc_only_one_partner_in_special_employment: true
+    pc_special_employment_disregarded_weekly_amount: 2
+    other_partner_earnings_weekly_amount: 3
+  output:
+    pc_special_employment_top_up_couple_weekly_amount: 3
+
+- name: full_twenty_available
+  period: 2025-03-31
+  input:
+    pc_only_one_partner_in_special_employment: true
+    pc_special_employment_disregarded_weekly_amount: 0
+    other_partner_earnings_weekly_amount: 20
+  output:
+    pc_special_employment_top_up_couple_weekly_amount: 20
+
+- name: no_room_remaining
+  period: 2025-03-31
+  input:
+    pc_only_one_partner_in_special_employment: true
+    pc_special_employment_disregarded_weekly_amount: 20
+    other_partner_earnings_weekly_amount: 20
+  output:
+    pc_special_employment_top_up_couple_weekly_amount: 0
+
+- name: special_employment_condition_not_met
+  period: 2025-03-31
+  input:
+    pc_only_one_partner_in_special_employment: false
+    pc_special_employment_disregarded_weekly_amount: 0
+    other_partner_earnings_weekly_amount: 20
+  output:
+    pc_special_employment_top_up_couple_weekly_amount: 0

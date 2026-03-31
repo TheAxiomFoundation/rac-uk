@@ -1,0 +1,39 @@
+- name: full_room_available
+  period: 2025-03-31
+  input:
+    pc_couple_shared_maximum_disregard_case_applies: true
+    first_partner_disregarded_weekly_amount: 0
+    first_partner_earnings_weekly_amount: 0
+    other_partner_earnings_weekly_amount: 20
+  output:
+    pc_other_partner_shared_maximum_earnings_disregard_weekly_amount: 20
+
+- name: capped_by_other_partner_earnings
+  period: 2025-03-31
+  input:
+    pc_couple_shared_maximum_disregard_case_applies: true
+    first_partner_disregarded_weekly_amount: 3
+    first_partner_earnings_weekly_amount: 3
+    other_partner_earnings_weekly_amount: 3
+  output:
+    pc_other_partner_shared_maximum_earnings_disregard_weekly_amount: 3
+
+- name: first_partner_not_less_than_twenty
+  period: 2025-03-31
+  input:
+    pc_couple_shared_maximum_disregard_case_applies: true
+    first_partner_disregarded_weekly_amount: 20
+    first_partner_earnings_weekly_amount: 0
+    other_partner_earnings_weekly_amount: 20
+  output:
+    pc_other_partner_shared_maximum_earnings_disregard_weekly_amount: 0
+
+- name: first_partner_earnings_already_reach_twenty
+  period: 2025-03-31
+  input:
+    pc_couple_shared_maximum_disregard_case_applies: true
+    first_partner_disregarded_weekly_amount: 3
+    first_partner_earnings_weekly_amount: 20
+    other_partner_earnings_weekly_amount: 20
+  output:
+    pc_other_partner_shared_maximum_earnings_disregard_weekly_amount: 0

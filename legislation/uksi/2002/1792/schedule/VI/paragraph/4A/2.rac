@@ -1,0 +1,54 @@
+"""
+Schedule VI
+
+Editorial note: current text valid from 2025-03-31.
+
+4A. (2) Where, in a case to which sub-paragraph (1)(b) applies, the amount to be disregarded in respect of one of the partners (“the first partner”) is less than £20, the amount to be disregarded in respect of the other partner shall be so much of that other partner’s earnings as would not, in aggregate with the first partner’s earnings, exceed £20.
+"""
+
+pc_couple_shared_maximum_disregard_case_applies:
+    entity: Family
+    period: Week
+    dtype: Boolean
+
+first_partner_disregarded_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+
+first_partner_earnings_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+
+other_partner_earnings_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+
+pc_other_partner_shared_maximum_remaining_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        if first_partner_earnings_weekly_amount < 20: 20 - first_partner_earnings_weekly_amount else: 0
+
+pc_other_partner_shared_maximum_capped_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        if other_partner_earnings_weekly_amount < pc_other_partner_shared_maximum_remaining_weekly_amount: other_partner_earnings_weekly_amount else: pc_other_partner_shared_maximum_remaining_weekly_amount
+
+pc_other_partner_shared_maximum_earnings_disregard_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        if pc_couple_shared_maximum_disregard_case_applies and first_partner_disregarded_weekly_amount < 20: pc_other_partner_shared_maximum_capped_weekly_amount else: 0

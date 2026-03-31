@@ -11,7 +11,8 @@ This repo currently contains:
 - wave 5: `6` additional Pension Credit atomic leaves promoted from the clean committed `autorac` UK expanded suite
 - wave 6: `5` additional Pension Credit savings credit leaves promoted from the clean committed `autorac` UK expanded suite
 - wave 7: `5` additional Pension Credit prisoner and earnings-disregard leaves promoted from clean committed `eval-suite` runs
-- current total: `48` `.rac` leaves with companion tests
+- wave 8: `5` additional Pension Credit special-employment and shared-maximum leaves promoted from clean committed `eval-suite` runs
+- current total: `53` `.rac` leaves with companion tests
 
 Wave provenance is recorded in:
 
@@ -22,6 +23,7 @@ Wave provenance is recorded in:
 - [waves/2026-03-31-wave5/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-31-wave5/manifest.json)
 - [waves/2026-03-31-wave6/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-31-wave6/manifest.json)
 - [waves/2026-03-31-wave7/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-31-wave7/manifest.json)
+- [waves/2026-03-31-wave8/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-31-wave8/manifest.json)
 
 ## Structure
 
