@@ -19,17 +19,17 @@ joint claimants not resident in Greater London;
 """
 
 is_joint_claimant:
-    entity: TaxUnit
+    entity: Family
     period: Year
     dtype: Boolean
 
 resident_in_greater_london:
-    entity: TaxUnit
+    entity: Family
     period: Year
     dtype: Boolean
 
 regulation_80A_2_d_i_applicable_annual_limit:
-    entity: TaxUnit
+    entity: Family
     period: Year
     dtype: Money
     unit: GBP
