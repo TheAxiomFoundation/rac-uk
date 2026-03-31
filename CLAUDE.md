@@ -43,5 +43,6 @@ The current corpus includes:
 
 - wave 1 from the clean `autorac` UK expanded suite run on March 30, 2026
 - wave 2 from clean `autorac eval-source` WTC schedule-2 row runs on March 30, 2026
+- wave 3 from clean `autorac eval-source` UC child-disability and work-allowance row runs on March 30, 2026
 
 These waves are provenance-backed and benchmark-quality, but they are still an early corpus rather than a complete UK encoding set.

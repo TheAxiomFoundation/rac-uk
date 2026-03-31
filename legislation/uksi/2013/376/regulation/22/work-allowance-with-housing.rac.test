@@ -1,0 +1,7 @@
+- name: base_case
+  input:
+    claimant_receives_housing_support:
+      2025-04: true
+  output:
+    uc_work_allowance_with_housing_amount:
+      2025-04: 411
