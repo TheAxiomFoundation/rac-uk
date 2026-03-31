@@ -1,0 +1,12 @@
+base_case:
+  period: 2025
+  input:
+    disabled_worker_element: true
+  output:
+    wtc_disabled_element_amount: 4001
+effective_date_boundary:
+  period: 2025-04-06
+  input:
+    disabled_worker_element: true
+  output:
+    wtc_disabled_element_amount: 4001

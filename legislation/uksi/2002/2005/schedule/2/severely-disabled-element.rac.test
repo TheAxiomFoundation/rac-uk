@@ -1,0 +1,10 @@
+- name: base_case
+  period: 2025
+  input: {}
+  output:
+    wtc_severely_disabled_element_amount: 1734
+- name: effective_date_boundary
+  period: 2025-04-06
+  input: {}
+  output:
+    wtc_severely_disabled_element_amount: 1734

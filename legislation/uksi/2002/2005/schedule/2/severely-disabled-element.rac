@@ -1,0 +1,16 @@
+"""
+Editorial note: current text valid from 2025-04-06.
+
+SCHEDULE 2 Regulation 20(1) MAXIMUM RATES OF THE ELEMENTS OF A WORKING TAX CREDIT
+
+Structured table:
+Relevant element of working tax credit | Maximum annual rate
+Severe disability element | £1734
+"""
+
+wtc_severely_disabled_element_amount:
+    entity: TaxUnit
+    period: Year
+    dtype: Money
+    unit: GBP
+    from 2025-04-06: 1734

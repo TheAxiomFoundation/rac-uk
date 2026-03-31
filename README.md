@@ -2,16 +2,16 @@
 
 UK tax-benefit policy encodings in RAC.
 
-This repo currently starts with a wave-1 seed of 22 atomic UK leaves that passed the `autorac` expanded UK benchmark on March 30, 2026:
+This repo currently contains:
 
-- `22/22` successful model runs
-- `100%` compile pass rate
-- `100%` CI pass rate
-- `100%` zero-ungrounded-literal rate
-- `100%` PolicyEngine UK pass rate
-- mean estimated cost per successful leaf: `$0.017123`
+- wave 1: `22` atomic UK leaves from the clean `autorac` expanded UK suite
+- wave 2: `3` additional WTC schedule-2 atomic leaves promoted from clean `eval-source` runs
+- current total: `25` `.rac` leaves with companion tests
 
-The wave provenance is recorded in [waves/2026-03-30-wave1/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-30-wave1/manifest.json).
+Wave provenance is recorded in:
+
+- [waves/2026-03-30-wave1/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-30-wave1/manifest.json)
+- [waves/2026-03-30-wave2/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-30-wave2/manifest.json)
 
 ## Structure
 
@@ -49,4 +49,4 @@ The repo includes a lightweight validation workflow that:
 - runs `rac.validate` across `legislation/`
 - verifies that every `.rac` file has a companion `.rac.test`
 
-This is only the initial UK seed, not a complete corpus.
+This is still an early UK corpus, not a complete encoding set.
