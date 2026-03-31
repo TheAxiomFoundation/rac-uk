@@ -1,0 +1,6 @@
+- name: subparagraph_2_applies
+  period: 2025-03-31
+  input:
+    pc_disabled_child_addition_subparagraph_2_applies: true
+  output:
+    pc_disabled_child_addition_weekly_rate: 35.93

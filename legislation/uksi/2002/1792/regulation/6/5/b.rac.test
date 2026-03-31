@@ -1,0 +1,15 @@
+- name: eligible_additional_amount_applies
+  period: 2025-03-31
+  input:
+    pc_schedule1_part1_paragraph1_1_b_satisfied_other_than_by_paragraph1_2_b: true
+    pc_no_one_gets_carer_allowance_carer_support_payment_or_uc_carer_element_for_either_partner: true
+  output:
+    pc_severe_disability_addition_two_eligible_adults_weekly_rate: 163.00
+
+- name: carer_related_exclusion_blocks_amount
+  period: 2025-03-31
+  input:
+    pc_schedule1_part1_paragraph1_1_b_satisfied_other_than_by_paragraph1_2_b: true
+    pc_no_one_gets_carer_allowance_carer_support_payment_or_uc_carer_element_for_either_partner: false
+  output:
+    pc_severe_disability_addition_two_eligible_adults_weekly_rate: 0

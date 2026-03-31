@@ -1,0 +1,7 @@
+- name: base_rate_applies
+  period: 2025-03-31
+  input:
+    schedule_iia_applies: true
+    paragraph_10_applies: false
+  output:
+    pc_child_addition_weekly_rate: 66.29
