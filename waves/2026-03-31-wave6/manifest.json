@@ -1,0 +1,122 @@
+{
+  "wave": "2026-03-31-wave6",
+  "seeded_from": {
+    "source_eval_runs": [
+      "/tmp/autorac-uk-pension-credit-wave6-0.2.56-122d763-20260331",
+      "/tmp/autorac-uk-expanded-0.2.56-122d763-20260331"
+    ],
+    "autorac_commit": "122d763",
+    "autorac_version": "0.2.56",
+    "runner": "openai-gpt-5.4",
+    "all_ready": true,
+    "summary": {
+      "total_cases": 5,
+      "compile_pass_rate": 1.0,
+      "ci_pass_rate": 1.0,
+      "zero_ungrounded_rate": 1.0,
+      "mean_estimated_cost_usd": 0.012198
+    }
+  },
+  "cases": [
+    {
+      "index": 1,
+      "name": "pension-credit-savings-credit-maximum-rate",
+      "kind": "source",
+      "citation": "uksi-2002-1792 regulation 7(1)(a) maximum savings credit rate",
+      "repo_rac_path": "legislation/uksi/2002/1792/regulation/7/1/a.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/regulation/7/1/a.rac.test",
+      "source_path": "sources/slices/uk/pc_savings_credit_maximum_rate_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": null,
+        "policyengine_score": null
+      }
+    },
+    {
+      "index": 2,
+      "name": "pension-credit-savings-credit-amount-a-rate",
+      "kind": "source",
+      "citation": "uksi-2002-1792 regulation 7(1)(b) amount A rate",
+      "repo_rac_path": "legislation/uksi/2002/1792/regulation/7/1/b.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/regulation/7/1/b.rac.test",
+      "source_path": "sources/slices/uk/pc_savings_credit_amount_a_rate_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": null,
+        "policyengine_score": null
+      }
+    },
+    {
+      "index": 3,
+      "name": "pension-credit-savings-credit-amount-b-rate",
+      "kind": "source",
+      "citation": "uksi-2002-1792 regulation 7(1)(c) amount B rate",
+      "repo_rac_path": "legislation/uksi/2002/1792/regulation/7/1/c.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/regulation/7/1/c.rac.test",
+      "source_path": "sources/slices/uk/pc_savings_credit_amount_b_rate_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": null,
+        "policyengine_score": null
+      }
+    },
+    {
+      "index": 4,
+      "name": "pension-credit-savings-credit-threshold-single",
+      "kind": "source",
+      "citation": "uksi-2002-1792 regulation 7(2) savings credit threshold for a claimant with no partner",
+      "repo_rac_path": "legislation/uksi/2002/1792/regulation/7/2/single-threshold.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/regulation/7/2/single-threshold.rac.test",
+      "source_path": "sources/slices/uk/pc_savings_credit_threshold_single_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": null,
+        "policyengine_score": null
+      }
+    },
+    {
+      "index": 5,
+      "name": "pension-credit-savings-credit-threshold-couple",
+      "kind": "source",
+      "citation": "uksi-2002-1792 regulation 7(2) savings credit threshold for a claimant with a partner",
+      "repo_rac_path": "legislation/uksi/2002/1792/regulation/7/2/couple-threshold.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/regulation/7/2/couple-threshold.rac.test",
+      "source_path": "sources/slices/uk/pc_savings_credit_threshold_couple_2025.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": null,
+        "policyengine_score": null
+      }
+    }
+  ]
+}

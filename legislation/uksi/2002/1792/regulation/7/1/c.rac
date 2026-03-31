@@ -1,0 +1,16 @@
+"""
+PART II Entitlement and amount
+
+7. Savings Credit
+
+Editorial note: current text valid from 2025-03-31.
+
+(1) The percentage prescribed for the purposes of determining—
+(c) "amount B" in section 3(4) is 40 per cent.
+"""
+
+pc_savings_credit_amount_b_rate:
+    entity: Family
+    period: Week
+    dtype: Rate
+    from 2025-03-31: 0.40
