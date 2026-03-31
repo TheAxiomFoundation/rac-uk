@@ -7,13 +7,15 @@ This repo currently contains:
 - wave 1: `22` atomic UK leaves from the clean `autorac` expanded UK suite
 - wave 2: `3` additional WTC schedule-2 atomic leaves promoted from clean `eval-source` runs
 - wave 3: `4` additional UC child-disability and work-allowance leaves promoted from clean `eval-source` runs
-- current total: `29` `.rac` leaves with companion tests
+- wave 4: `3` additional UC childcare-cap and housing non-dependant-deduction leaves promoted from clean `eval-source` runs
+- current total: `32` `.rac` leaves with companion tests
 
 Wave provenance is recorded in:
 
 - [waves/2026-03-30-wave1/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-30-wave1/manifest.json)
 - [waves/2026-03-30-wave2/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-30-wave2/manifest.json)
 - [waves/2026-03-30-wave3/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-30-wave3/manifest.json)
+- [waves/2026-03-30-wave4/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-30-wave4/manifest.json)
 
 ## Structure
 
