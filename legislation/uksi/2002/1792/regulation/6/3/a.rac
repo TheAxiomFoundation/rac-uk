@@ -9,7 +9,7 @@ Editorial note: current text valid from 2025-03-31.
 (a) section 2(3) has effect with the substitution for the reference to the standard minimum guarantee in section 2(3)(a) of a reference to a nil amount.
 """
 
-pc_regulation_6_3_applies:
+pc_regulation_6_3_a_applies:
     entity: Family
     period: Week
     dtype: Boolean
@@ -26,4 +26,4 @@ pc_prisoner_standard_minimum_guarantee_weekly_amount:
     dtype: Money
     unit: GBP
     from 2025-03-31:
-        if pc_regulation_6_3_applies: 0 else: pc_standard_minimum_guarantee_otherwise_weekly_amount
+        if pc_regulation_6_3_a_applies: 0 else: pc_standard_minimum_guarantee_otherwise_weekly_amount

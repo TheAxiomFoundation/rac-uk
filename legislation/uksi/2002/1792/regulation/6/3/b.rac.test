@@ -1,7 +1,7 @@
 - name: non_remand_prisoner_nil
   period: 2025-03-31
   input:
-    pc_regulation_6_3_applies: true
+    pc_regulation_6_3_b_applies: true
     claimant_is_remand_prisoner: false
     pc_prescribed_additional_amount_otherwise_weekly_amount: 3
   output:
@@ -10,7 +10,7 @@
 - name: remand_prisoner_exception
   period: 2025-03-31
   input:
-    pc_regulation_6_3_applies: true
+    pc_regulation_6_3_b_applies: true
     claimant_is_remand_prisoner: true
     pc_prescribed_additional_amount_otherwise_weekly_amount: 2
   output:
