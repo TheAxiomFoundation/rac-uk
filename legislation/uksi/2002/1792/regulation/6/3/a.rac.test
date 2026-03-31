@@ -1,0 +1,15 @@
+- name: nil_when_paragraph_applies
+  period: 2025-03-31
+  input:
+    pc_regulation_6_3_applies: true
+    pc_standard_minimum_guarantee_otherwise_weekly_amount: 1
+  output:
+    pc_prisoner_standard_minimum_guarantee_weekly_amount: 0
+
+- name: fallback_when_paragraph_not_applies
+  period: 2025-03-31
+  input:
+    pc_regulation_6_3_applies: false
+    pc_standard_minimum_guarantee_otherwise_weekly_amount: 2
+  output:
+    pc_prisoner_standard_minimum_guarantee_weekly_amount: 2

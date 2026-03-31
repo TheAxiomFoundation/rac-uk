@@ -1,0 +1,29 @@
+"""
+PART II Entitlement and amount
+
+6. Amount of the guarantee credit
+
+Editorial note: current text valid from 2025-03-31.
+
+(3) In a case to which this paragraph applies—
+(a) section 2(3) has effect with the substitution for the reference to the standard minimum guarantee in section 2(3)(a) of a reference to a nil amount.
+"""
+
+pc_regulation_6_3_applies:
+    entity: Family
+    period: Week
+    dtype: Boolean
+
+pc_standard_minimum_guarantee_otherwise_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+
+pc_prisoner_standard_minimum_guarantee_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        if pc_regulation_6_3_applies: 0 else: pc_standard_minimum_guarantee_otherwise_weekly_amount

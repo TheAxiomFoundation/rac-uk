@@ -1,0 +1,31 @@
+"""
+Schedule VI
+
+Editorial note: current text valid from 2025-03-31.
+
+5. Except where the claimant or his partner qualifies for a £20 disregard under the preceding provisions of this Schedule—
+(b) £10 shall be disregarded if a claimant who has a partner has earnings.
+"""
+
+claimant_has_partner:
+    entity: Family
+    period: Week
+    dtype: Boolean
+
+claimant_has_earnings:
+    entity: Family
+    period: Week
+    dtype: Boolean
+
+pc_preceding_schedule_vi_20_disregard_applies:
+    entity: Family
+    period: Week
+    dtype: Boolean
+
+pc_couple_claimant_earnings_disregard_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        if claimant_has_partner and claimant_has_earnings and not pc_preceding_schedule_vi_20_disregard_applies: 10 else: 0
