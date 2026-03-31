@@ -1,0 +1,121 @@
+{
+  "wave": "2026-03-31-wave8",
+  "seeded_from": {
+    "source_eval_runs": [
+      "/tmp/autorac-uk-pension-credit-wave8-0.2.58-2e1ae3f-codex-20260331"
+    ],
+    "autorac_commit": "2e1ae3f",
+    "autorac_version": "0.2.58",
+    "runner": "codex-gpt-5.4",
+    "all_ready": true,
+    "summary": {
+      "total_cases": 5,
+      "compile_pass_rate": 1.0,
+      "ci_pass_rate": 1.0,
+      "zero_ungrounded_rate": 1.0,
+      "mean_estimated_cost_usd": 0.28049
+    }
+  },
+  "cases": [
+    {
+      "index": 1,
+      "name": "pension-credit-special-employment-disregard",
+      "kind": "source",
+      "citation": "uksi-2002-1792 Schedule VI paragraph 2 special employment disregard",
+      "repo_rac_path": "legislation/uksi/2002/1792/schedule/VI/paragraph/2.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/schedule/VI/paragraph/2.rac.test",
+      "source_path": "sources/slices/uk/pc_special_employment_disregard_2025.txt",
+      "backend": "codex",
+      "model": "gpt-5.4",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": null,
+        "policyengine_score": null
+      }
+    },
+    {
+      "index": 2,
+      "name": "pension-credit-special-employment-top-up-single",
+      "kind": "source",
+      "citation": "uksi-2002-1792 Schedule VI paragraph 2A special employment top-up single",
+      "repo_rac_path": "legislation/uksi/2002/1792/schedule/VI/paragraph/2A.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/schedule/VI/paragraph/2A.rac.test",
+      "source_path": "sources/slices/uk/pc_special_employment_top_up_single_2025.txt",
+      "backend": "codex",
+      "model": "gpt-5.4",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 2,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": null,
+        "policyengine_score": null
+      }
+    },
+    {
+      "index": 3,
+      "name": "pension-credit-special-employment-top-up-couple",
+      "kind": "source",
+      "citation": "uksi-2002-1792 Schedule VI paragraph 2B special employment top-up couple",
+      "repo_rac_path": "legislation/uksi/2002/1792/schedule/VI/paragraph/2B.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/schedule/VI/paragraph/2B.rac.test",
+      "source_path": "sources/slices/uk/pc_special_employment_top_up_couple_2025.txt",
+      "backend": "codex",
+      "model": "gpt-5.4",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 2,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": null,
+        "policyengine_score": null
+      }
+    },
+    {
+      "index": 4,
+      "name": "pension-credit-carer-earnings-disregard",
+      "kind": "source",
+      "citation": "uksi-2002-1792 Schedule VI paragraph 3 carer earnings disregard",
+      "repo_rac_path": "legislation/uksi/2002/1792/schedule/VI/paragraph/3.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/schedule/VI/paragraph/3.rac.test",
+      "source_path": "sources/slices/uk/pc_carer_earnings_disregard_2025.txt",
+      "backend": "codex",
+      "model": "gpt-5.4",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": null,
+        "policyengine_score": null
+      }
+    },
+    {
+      "index": 5,
+      "name": "pension-credit-couple-shared-maximum-disregard",
+      "kind": "source",
+      "citation": "uksi-2002-1792 Schedule VI paragraph 4A(2) couple shared maximum disregard",
+      "repo_rac_path": "legislation/uksi/2002/1792/schedule/VI/paragraph/4A/2.rac",
+      "repo_test_path": "legislation/uksi/2002/1792/schedule/VI/paragraph/4A/2.rac.test",
+      "source_path": "sources/slices/uk/pc_couple_shared_maximum_disregard_2025.txt",
+      "backend": "codex",
+      "model": "gpt-5.4",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 3,
+        "ungrounded_numeric_count": 0,
+        "policyengine_pass": null,
+        "policyengine_score": null
+      }
+    }
+  ]
+}

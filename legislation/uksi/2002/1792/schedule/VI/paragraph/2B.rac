@@ -1,0 +1,40 @@
+"""
+Schedule VI
+
+Editorial note: current text valid from 2025-03-31.
+
+2B. Where only one member of a couple is in employment specified in paragraph 2(2), so much of the earnings of the other member of the couple as would not, in aggregate with the earnings disregarded under paragraph 2, exceed £20.
+"""
+
+pc_only_one_partner_in_special_employment:
+    entity: Family
+    period: Week
+    dtype: Boolean
+
+pc_special_employment_disregarded_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+
+other_partner_earnings_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+
+pc_special_employment_top_up_couple_remaining_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        if pc_special_employment_disregarded_weekly_amount < 20: 20 - pc_special_employment_disregarded_weekly_amount else: 0
+
+pc_special_employment_top_up_couple_weekly_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-31:
+        if pc_only_one_partner_in_special_employment: if other_partner_earnings_weekly_amount < pc_special_employment_top_up_couple_remaining_weekly_amount: other_partner_earnings_weekly_amount else: pc_special_employment_top_up_couple_remaining_weekly_amount else: 0

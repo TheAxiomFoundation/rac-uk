@@ -1,0 +1,26 @@
+- name: claimant_is_carer
+  period: 2025-03-31
+  input:
+    claimant_is_pc_carer: true
+    partner_is_pc_carer: false
+    pc_employment_earnings_weekly_amount: 20
+  output:
+    pc_carer_earnings_disregard_weekly_amount: 20
+
+- name: no_carer
+  period: 2025-03-31
+  input:
+    claimant_is_pc_carer: false
+    partner_is_pc_carer: false
+    pc_employment_earnings_weekly_amount: 20
+  output:
+    pc_carer_earnings_disregard_weekly_amount: 0
+
+- name: capped_by_actual_earnings
+  period: 2025-03-31
+  input:
+    claimant_is_pc_carer: true
+    partner_is_pc_carer: true
+    pc_employment_earnings_weekly_amount: 3
+  output:
+    pc_carer_earnings_disregard_weekly_amount: 3
