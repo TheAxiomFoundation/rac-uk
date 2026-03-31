@@ -1,0 +1,16 @@
+"""
+Editorial note: text valid from 2021-04-06.
+
+SCHEDULE 2 Regulation 20(1) MAXIMUM RATES OF THE ELEMENTS OF A WORKING TAX CREDIT
+
+Structured table:
+Relevant element of working tax credit | Maximum annual rate
+30 hour element | £830
+"""
+
+wtc_worker_element_amount:
+    entity: TaxUnit
+    period: Year
+    dtype: Money
+    unit: GBP
+    from 2021-04-06: 830

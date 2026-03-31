@@ -37,6 +37,11 @@ For derived atomic leaves from tables or schedules that are not directly address
 - If a helper is only a leaf-local conjunction, keep it local.
 - Do not invent parent-level abstractions when a leaf-specific branch variable is what the law states.
 
-## Current seed
+## Current waves
 
-The initial seed comes from the clean `autorac` UK expanded suite run on March 30, 2026. That seed is benchmark-quality and provenance-backed, but it is still an early corpus wave rather than a complete UK encoding set.
+The current corpus includes:
+
+- wave 1 from the clean `autorac` UK expanded suite run on March 30, 2026
+- wave 2 from clean `autorac eval-source` WTC schedule-2 row runs on March 30, 2026
+
+These waves are provenance-backed and benchmark-quality, but they are still an early corpus rather than a complete UK encoding set.
