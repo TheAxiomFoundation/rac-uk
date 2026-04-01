@@ -1,0 +1,28 @@
+"""
+PART II Entitlement and amount
+
+9. Qualifying income for the purposes of savings credit
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 3 (savings credit), all income is to be treated as qualifying income except the following which is not to be treated as qualifying income—
+
+(g)
+
+contributory employment and support allowance.
+"""
+
+income_under_consideration_is_contributory_employment_and_support_allowance_9_g:
+    entity: Person
+    period: Month
+    dtype: Boolean
+
+qualifying_income_9_g:
+    entity: Person
+    period: Month
+    dtype: Boolean
+    from 2025-03-21:
+        if income_under_consideration_is_contributory_employment_and_support_allowance_9_g:
+            false
+        else:
+            true

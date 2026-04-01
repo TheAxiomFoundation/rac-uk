@@ -1,0 +1,28 @@
+"""
+PART II Entitlement and amount
+
+9. Qualifying income for the purposes of savings credit
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 3 (savings credit), all income is to be treated as qualifying income except the following which is not to be treated as qualifying income—
+
+(c)
+
+a contribution-based jobseeker’s allowance...;
+"""
+
+person_income_is_contribution_based_jobseekers_allowance_9_c:
+    entity: Person
+    period: Week
+    dtype: Boolean
+
+income_is_qualifying_income_9_c:
+    entity: Person
+    period: Week
+    dtype: Boolean
+    from 2025-03-21:
+        if person_income_is_contribution_based_jobseekers_allowance_9_c:
+            false
+        else:
+            true
