@@ -1,0 +1,19 @@
+- name: qualifying_young_person_branch_iii_met
+  period: 2025-03-21
+  input:
+    person_age_years: 18
+    person_is_enrolled_on_or_accepted_for_approved_training_or_course_of_education: true
+    period_is_up_to_but_not_including_1st_september_following_persons_19th_birthday: true
+    average_term_time_hours_in_tuition_practical_work_supervised_study_or_examinations_per_week: 13
+  output:
+    qualifying_young_person_4A_1_b_iii: true
+
+- name: qualifying_young_person_branch_iii_fails_hours_threshold
+  period: 2025-03-21
+  input:
+    person_age_years: 18
+    person_is_enrolled_on_or_accepted_for_approved_training_or_course_of_education: true
+    period_is_up_to_but_not_including_1st_september_following_persons_19th_birthday: true
+    average_term_time_hours_in_tuition_practical_work_supervised_study_or_examinations_per_week: 12
+  output:
+    qualifying_young_person_4A_1_b_iii: false

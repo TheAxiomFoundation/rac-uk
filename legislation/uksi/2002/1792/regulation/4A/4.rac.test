@@ -1,0 +1,27 @@
+- name: approved_training_true_when_both_legal_facts_hold
+  period: 2025-03
+  input:
+    secretary_of_state_approves_training_for_universal_credit_regulation_5:
+      - entity: Person
+        value: true
+    training_in_pursuance_of_employment_and_training_act_1973_section_2_1_arrangements_or_enterprise_and_new_towns_scotland_act_1990_section_2_3_arrangements:
+      - entity: Person
+        value: true
+  output:
+    approved_training_4A_4:
+      - entity: Person
+        value: true
+
+- name: approved_training_false_when_secretary_of_state_has_not_approved
+  period: 2025-03
+  input:
+    secretary_of_state_approves_training_for_universal_credit_regulation_5:
+      - entity: Person
+        value: false
+    training_in_pursuance_of_employment_and_training_act_1973_section_2_1_arrangements_or_enterprise_and_new_towns_scotland_act_1990_section_2_3_arrangements:
+      - entity: Person
+        value: true
+  output:
+    approved_training_4A_4:
+      - entity: Person
+        value: false
