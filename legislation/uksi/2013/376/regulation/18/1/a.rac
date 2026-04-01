@@ -1,0 +1,24 @@
+"""
+PART 2 ENTITLEMENT
+
+Financial conditions
+
+18. Capital limit
+
+(1)
+
+Editorial note: current text valid from 2025-04-07.
+
+For the purposes of section 5(1)(a) and (2)(a) of the Act (financial conditions: capital limit)—
+
+(a)
+
+the prescribed amount for a single claimant is £16,000; and
+"""
+
+uc_capital_limit_single_claimant_amount:
+    entity: TaxUnit
+    period: Month
+    dtype: Money
+    unit: GBP
+    from 2025-04-07: 16000

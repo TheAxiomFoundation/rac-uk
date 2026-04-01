@@ -1,0 +1,7 @@
+- name: base_case
+  period: 2025-04-01
+  input:
+    non_dependant_in_remunerative_work: true
+    non_dependant_gross_weekly_income: 500
+  output:
+    pc_housing_non_dependant_deduction_income_band_445_to_554_weekly_amount: 113.5

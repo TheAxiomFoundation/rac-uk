@@ -1,0 +1,7 @@
+- name: base_case
+  period: 2025-04-01
+  input:
+    non_dependant_aged_18_or_over: true
+    paragraph_a_does_not_apply: true
+  output:
+    pc_housing_non_dependant_deduction_other_weekly_amount: 19.3

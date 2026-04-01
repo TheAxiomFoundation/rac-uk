@@ -1,0 +1,20 @@
+"""
+SCHEDULE IIA
+Regulation 6(6)(d)
+Additional amount applicable for claimants responsible for a child or qualifying young person
+
+Amount for the eldest child or qualifying young person born before 6th April 2017
+
+10.
+
+Editorial note: current text valid from 2025-03-21.
+
+In a case where the eldest child or qualifying young person for whom the claimant is responsible was born before 6th April 2017, the amount prescribed in paragraph 9(1)(a) in respect of that child or qualifying young person is £76.79.
+"""
+
+pc_child_addition_eldest_pre_2017_weekly_rate:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21: 76.79

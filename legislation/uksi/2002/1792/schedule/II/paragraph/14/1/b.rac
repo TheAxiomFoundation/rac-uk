@@ -1,0 +1,26 @@
+"""
+SCHEDULE II
+Regulation 6(6)(c)
+HOUSING COSTS
+
+Persons residing with the claimant
+
+14.
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+Subject to the following provisions of this paragraph, the following deductions from the amount to be met under the preceding paragraphs of this Schedule in respect of housing costs shall be made—
+
+(b)
+
+in respect of a non-dependant aged 18 or over to whom paragraph (a) does not apply, £19.30.
+"""
+
+pc_housing_non_dependant_deduction_other_weekly_amount:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21: 19.3
