@@ -1,62 +1,75 @@
 """
-Schedule VI
+SCHEDULE VIRegulation 17(9) SUMS DISREGARDED FROM CLAIMANT’S EARNINGS
 
-Editorial note: current text valid from 2025-03-31.
+4A.
 
-4A. (2) Where, in a case to which sub-paragraph (1)(b) applies, the amount to be disregarded in respect of one of the partners (“the first partner”) is less than £20, the amount to be disregarded in respect of the other partner shall be so much of that other partner’s earnings as would not, in aggregate with the first partner’s earnings, exceed £20.
+Editorial note: current text valid from 2025-03-21.
+
+(2)
+
+Where, in a case to which sub-paragraph (1)(b) applies, the amount to be disregarded in respect of one of the partners (“the first partner”) is less than £20, the amount to be disregarded in respect of the other partner shall be so much of that other partner’s earnings as would not, in aggregate with the first partner’s earnings, exceed £20.
 """
 
-pc_couple_shared_maximum_disregard_case_applies:
+schedule_vi_4A_1_b_case_applies:
     entity: Family
     period: Week
     dtype: Boolean
+    from 2025-03-21:
+        false
 
-first_partner_disregarded_weekly_amount:
+schedule_vi_4A_2_first_partner_disregard_amount:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
+    from 2025-03-21:
+        0
 
-first_partner_earnings_weekly_amount:
+schedule_vi_4A_2_first_partner_earnings:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
+    from 2025-03-21:
+        0
 
-other_partner_earnings_weekly_amount:
+schedule_vi_4A_2_other_partner_earnings:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
+    from 2025-03-21:
+        0
 
-pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount:
+schedule_vi_4A_2_first_partner_disregard_threshold:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
-    from 2025-03-31:
+    from 2025-03-21:
         20
 
-pc_other_partner_shared_maximum_remaining_weekly_amount:
+schedule_vi_4A_2_aggregate_earnings_cap:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
-    from 2025-03-31:
-        if first_partner_earnings_weekly_amount < pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount: pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount - first_partner_earnings_weekly_amount else: 0
+    from 2025-03-21:
+        20
 
-pc_other_partner_shared_maximum_capped_weekly_amount:
+schedule_vi_4A_2_other_partner_disregarded_earnings:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
-    from 2025-03-31:
-        if other_partner_earnings_weekly_amount < pc_other_partner_shared_maximum_remaining_weekly_amount: other_partner_earnings_weekly_amount else: pc_other_partner_shared_maximum_remaining_weekly_amount
-
-pc_other_partner_shared_maximum_earnings_disregard_weekly_amount:
-    entity: Family
-    period: Week
-    dtype: Money
-    unit: GBP
-    from 2025-03-31:
-        if pc_couple_shared_maximum_disregard_case_applies and first_partner_disregarded_weekly_amount < pc_schedule_vi_family_maximum_weekly_earnings_disregard_amount: pc_other_partner_shared_maximum_capped_weekly_amount else: 0
+    from 2025-03-21:
+        if schedule_vi_4A_1_b_case_applies and schedule_vi_4A_2_first_partner_disregard_amount < schedule_vi_4A_2_first_partner_disregard_threshold:
+            if schedule_vi_4A_2_other_partner_earnings + schedule_vi_4A_2_first_partner_earnings <= schedule_vi_4A_2_aggregate_earnings_cap:
+                schedule_vi_4A_2_other_partner_earnings
+            else:
+                if schedule_vi_4A_2_first_partner_earnings < schedule_vi_4A_2_aggregate_earnings_cap:
+                    schedule_vi_4A_2_aggregate_earnings_cap - schedule_vi_4A_2_first_partner_earnings
+                else:
+                    0
+        else:
+            0

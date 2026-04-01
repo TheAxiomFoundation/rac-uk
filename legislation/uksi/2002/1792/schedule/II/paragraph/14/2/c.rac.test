@@ -1,15 +1,21 @@
-- name: base_case
-  period: 2025-04-01
-  input:
-    non_dependant_in_remunerative_work: true
-    non_dependant_gross_weekly_income: 290
-  output:
-    pc_housing_non_dependant_deduction_income_band_256_to_334_weekly_amount: 60.95
-
-- name: effective_date_boundary
+- name: qualifying_lower_bound_case
   period: 2025-03-21
   input:
+    non_dependant_resides_with_claimant: true
+    non_dependant_age: 18
     non_dependant_in_remunerative_work: true
-    non_dependant_gross_weekly_income: 256
+    claimant_satisfies_secretary_of_state_about_non_dependant_gross_weekly_income: true
+    non_dependant_gross_weekly_income: 256.00
   output:
-    pc_housing_non_dependant_deduction_income_band_256_to_334_weekly_amount: 60.95
+    housing_costs_non_dependant_deduction_paragraph_14_2_c: 60.95
+
+- name: excluded_at_upper_bound
+  period: 2025-03-21
+  input:
+    non_dependant_resides_with_claimant: true
+    non_dependant_age: 18
+    non_dependant_in_remunerative_work: true
+    claimant_satisfies_secretary_of_state_about_non_dependant_gross_weekly_income: true
+    non_dependant_gross_weekly_income: 334.00
+  output:
+    housing_costs_non_dependant_deduction_paragraph_14_2_c: 0

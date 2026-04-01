@@ -1,5 +1,5 @@
-- name: base_case
-  period: 2025-03-31
+- name: prescribed_percentage_base_case
+  period: 2025-03
   input: {}
   output:
-    pc_savings_credit_amount_b_rate: 0.40
+    savings_credit_section_7_1_c_amount_b_prescribed_percentage_rate: 0.40

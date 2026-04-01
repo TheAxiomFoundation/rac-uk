@@ -1,39 +1,52 @@
 """
-Schedule VI
+SCHEDULE VIRegulation 17(9) SUMS DISREGARDED FROM CLAIMANT’S EARNINGS
 
-Editorial note: current text valid from 2025-03-31.
+5.
 
-5. Except where the claimant or his partner qualifies for a £20 disregard under the preceding provisions of this Schedule—
-(a) £5 shall be disregarded if a claimant who has no partner has earnings.
+Editorial note: current text valid from 2025-03-21.
+
+Except where the claimant or his partner qualifies for a £20 disregard under the preceding provisions of this Schedule—
+
+(a)
+
+£5 shall be disregarded if a claimant who has no partner has earnings;
 """
 
-claimant_has_partner:
-    entity: Family
+schedule_vi_paragraph_5_preceding_provisions_disregard_amount:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        20
+
+schedule_vi_paragraph_5_a_disregard_amount:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        5
+
+claimant_has_no_partner:
+    entity: Person
     period: Week
     dtype: Boolean
 
 claimant_has_earnings:
-    entity: Family
+    entity: Person
     period: Week
     dtype: Boolean
 
-pc_preceding_schedule_vi_20_disregard_applies:
-    entity: Family
+claimant_or_partner_qualifies_for_preceding_provisions_20_disregard:
+    entity: Person
     period: Week
     dtype: Boolean
 
-pc_single_claimant_standard_earnings_disregard_statutory_weekly_amount:
-    entity: Family
+schedule_vi_paragraph_5_a_claimant_earnings_disregard:
+    entity: Person
     period: Week
     dtype: Money
     unit: GBP
-    from 2025-03-31:
-        5
-
-pc_single_claimant_earnings_disregard_weekly_amount:
-    entity: Family
-    period: Week
-    dtype: Money
-    unit: GBP
-    from 2025-03-31:
-        if claimant_has_earnings and not claimant_has_partner and not pc_preceding_schedule_vi_20_disregard_applies: pc_single_claimant_standard_earnings_disregard_statutory_weekly_amount else: 0
+    from 2025-03-21:
+        if claimant_has_no_partner and claimant_has_earnings and not claimant_or_partner_qualifies_for_preceding_provisions_20_disregard: schedule_vi_paragraph_5_a_disregard_amount else: 0

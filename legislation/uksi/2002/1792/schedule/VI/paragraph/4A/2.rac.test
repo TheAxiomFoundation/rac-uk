@@ -1,39 +1,19 @@
-- name: full_room_available
-  period: 2025-03-31
+- name: other_partner_gets_remaining_amount_up_to_aggregate_cap
+  period: 2025-03-21
   input:
-    pc_couple_shared_maximum_disregard_case_applies: true
-    first_partner_disregarded_weekly_amount: 0
-    first_partner_earnings_weekly_amount: 0
-    other_partner_earnings_weekly_amount: 20
+    schedule_vi_4A_1_b_case_applies: true
+    schedule_vi_4A_2_first_partner_disregard_amount: 3
+    schedule_vi_4A_2_first_partner_earnings: 3
+    schedule_vi_4A_2_other_partner_earnings: 20
   output:
-    pc_other_partner_shared_maximum_earnings_disregard_weekly_amount: 20
+    schedule_vi_4A_2_other_partner_disregarded_earnings: 17
 
-- name: capped_by_other_partner_earnings
-  period: 2025-03-31
+- name: no_disregard_when_first_partner_amount_is_not_less_than_threshold
+  period: 2025-03-21
   input:
-    pc_couple_shared_maximum_disregard_case_applies: true
-    first_partner_disregarded_weekly_amount: 3
-    first_partner_earnings_weekly_amount: 3
-    other_partner_earnings_weekly_amount: 3
+    schedule_vi_4A_1_b_case_applies: true
+    schedule_vi_4A_2_first_partner_disregard_amount: 20
+    schedule_vi_4A_2_first_partner_earnings: 1
+    schedule_vi_4A_2_other_partner_earnings: 20
   output:
-    pc_other_partner_shared_maximum_earnings_disregard_weekly_amount: 3
-
-- name: first_partner_not_less_than_twenty
-  period: 2025-03-31
-  input:
-    pc_couple_shared_maximum_disregard_case_applies: true
-    first_partner_disregarded_weekly_amount: 20
-    first_partner_earnings_weekly_amount: 0
-    other_partner_earnings_weekly_amount: 20
-  output:
-    pc_other_partner_shared_maximum_earnings_disregard_weekly_amount: 0
-
-- name: first_partner_earnings_already_reach_twenty
-  period: 2025-03-31
-  input:
-    pc_couple_shared_maximum_disregard_case_applies: true
-    first_partner_disregarded_weekly_amount: 3
-    first_partner_earnings_weekly_amount: 20
-    other_partner_earnings_weekly_amount: 20
-  output:
-    pc_other_partner_shared_maximum_earnings_disregard_weekly_amount: 0
+    schedule_vi_4A_2_other_partner_disregarded_earnings: 0

@@ -1,0 +1,7 @@
+- name: couples_both_partners_satisfy_requirements_base_case
+  period: 2025-03-21
+  input:
+    claimant_is_member_of_a_couple: true
+    both_partners_satisfy_one_or_more_requirements_of_paragraphs_2_3_or_4: true
+  output:
+    claimant_earnings_disregard_paragraph_4A_1_b_couples_maximum_amount: 20

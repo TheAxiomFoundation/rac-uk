@@ -1,7 +1,5 @@
 """
-SCHEDULE II
-Regulation 6(6)(c)
-HOUSING COSTS
+SCHEDULE IIRegulation 6(6)(c) HOUSING COSTS
 
 Persons residing with the claimant
 
@@ -11,16 +9,81 @@ Persons residing with the claimant
 
 Editorial note: current text valid from 2025-03-21.
 
-In the case of a non-dependant aged 18 or over to whom sub-paragraph (1)(a) applies because he is in remunerative work, where the claimant satisfies the Secretary of State that the non-dependant's gross weekly income is—
+In the case of a non-dependant aged 18 or over to whom sub-paragraph (1)(a) applies because he is in remunerative work, where the claimant satisfies the Secretary of State that the non-dependant’s gross weekly income is—
 
 (c)
 
 not less than £256.00 but less than £334.00, the deduction to be made under this paragraph shall be £60.95;
 """
 
-pc_housing_non_dependant_deduction_income_band_256_to_334_weekly_amount:
+non_dependant_resides_with_claimant:
+    entity: Person
+    period: Week
+    dtype: Boolean
+
+non_dependant_age:
+    entity: Person
+    period: Week
+    dtype: Integer
+
+non_dependant_in_remunerative_work:
+    entity: Person
+    period: Week
+    dtype: Boolean
+
+claimant_satisfies_secretary_of_state_about_non_dependant_gross_weekly_income:
+    entity: Person
+    period: Week
+    dtype: Boolean
+
+non_dependant_gross_weekly_income:
     entity: Person
     period: Week
     dtype: Money
     unit: GBP
-    from 2025-03-21: 60.95
+
+housing_costs_non_dependant_age_threshold_paragraph_14_2_c:
+    entity: Person
+    period: Week
+    dtype: Integer
+    from 2025-03-21:
+        18
+
+housing_costs_non_dependant_gross_weekly_income_lower_threshold_paragraph_14_2_c:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        256.00
+
+housing_costs_non_dependant_gross_weekly_income_upper_threshold_paragraph_14_2_c:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        334.00
+
+housing_costs_non_dependant_deduction_amount_paragraph_14_2_c:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        60.95
+
+housing_costs_non_dependant_deduction_paragraph_14_2_c_conditions_met:
+    entity: Person
+    period: Week
+    dtype: Boolean
+    from 2025-03-21:
+        non_dependant_resides_with_claimant and non_dependant_age >= housing_costs_non_dependant_age_threshold_paragraph_14_2_c and non_dependant_in_remunerative_work and claimant_satisfies_secretary_of_state_about_non_dependant_gross_weekly_income and non_dependant_gross_weekly_income >= housing_costs_non_dependant_gross_weekly_income_lower_threshold_paragraph_14_2_c and non_dependant_gross_weekly_income < housing_costs_non_dependant_gross_weekly_income_upper_threshold_paragraph_14_2_c
+
+housing_costs_non_dependant_deduction_paragraph_14_2_c:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        if housing_costs_non_dependant_deduction_paragraph_14_2_c_conditions_met: housing_costs_non_dependant_deduction_amount_paragraph_14_2_c else: 0
