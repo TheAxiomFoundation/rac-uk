@@ -1,0 +1,26 @@
+- name: rounds_up_when_fraction_is_to_claimants_advantage
+  period: 2025-03-21
+  input:
+    savings_credit_paragraph_1_b_or_c_amount_disregarding_fractional_penny: 123
+    savings_credit_paragraph_4_results_in_fraction_of_a_penny: true
+    savings_credit_paragraph_4_treating_fraction_as_a_penny_would_be_to_claimants_advantage: true
+  output:
+    savings_credit_paragraph_4_adjusted_amount: 124
+
+- name: disregards_fraction_when_not_to_claimants_advantage
+  period: 2025-03-21
+  input:
+    savings_credit_paragraph_1_b_or_c_amount_disregarding_fractional_penny: 123
+    savings_credit_paragraph_4_results_in_fraction_of_a_penny: true
+    savings_credit_paragraph_4_treating_fraction_as_a_penny_would_be_to_claimants_advantage: false
+  output:
+    savings_credit_paragraph_4_adjusted_amount: 123
+
+- name: leaves_amount_unchanged_when_no_fraction_of_a_penny
+  period: 2025-03-21
+  input:
+    savings_credit_paragraph_1_b_or_c_amount_disregarding_fractional_penny: 123
+    savings_credit_paragraph_4_results_in_fraction_of_a_penny: false
+    savings_credit_paragraph_4_treating_fraction_as_a_penny_would_be_to_claimants_advantage: true
+  output:
+    savings_credit_paragraph_4_adjusted_amount: 123

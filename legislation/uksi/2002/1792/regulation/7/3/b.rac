@@ -1,0 +1,48 @@
+"""
+PART II Entitlement and amount
+
+7. Savings Credit
+
+(3)
+
+Editorial note: current text valid from 2025-03-21.
+
+The maximum savings credit shall be taken to be Nil in the case of—
+
+(b)
+
+members of religious orders who are fully maintained by their order.
+"""
+
+person_is_member_of_religious_order:
+    entity: Person
+    period: Week
+    dtype: Boolean
+
+person_is_fully_maintained_by_religious_order:
+    entity: Person
+    period: Week
+    dtype: Boolean
+
+savings_credit_branch_b_applies:
+    entity: Person
+    period: Week
+    dtype: Boolean
+    from 2025-03-21:
+        person_is_member_of_religious_order and person_is_fully_maintained_by_religious_order
+
+savings_credit_maximum_branch_b_nil_amount:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        0
+
+savings_credit_maximum_branch_b:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        savings_credit_maximum_branch_b_nil_amount

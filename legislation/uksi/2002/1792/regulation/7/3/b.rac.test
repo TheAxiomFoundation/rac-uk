@@ -1,0 +1,17 @@
+- name: branch_b_applies_member_fully_maintained
+  period: 2025-03-21
+  input:
+    person_is_member_of_religious_order: true
+    person_is_fully_maintained_by_religious_order: true
+  output:
+    savings_credit_branch_b_applies: true
+    savings_credit_maximum_branch_b: 0
+
+- name: branch_b_does_not_apply_not_fully_maintained
+  period: 2025-03-21
+  input:
+    person_is_member_of_religious_order: true
+    person_is_fully_maintained_by_religious_order: false
+  output:
+    savings_credit_branch_b_applies: false
+    savings_credit_maximum_branch_b: 0
