@@ -76,6 +76,12 @@ The repo includes a lightweight validation workflow that:
 - checks the first scoped canonical variable registry in [variables.toml](/Users/maxghenis/TheAxiomFoundation/rac-uk/variables.toml)
 - fails if a substantive scalar literal is embedded inside a formula or conditional branch instead of being declared as its own named variable
 
+Run the full local repo validation with:
+
+```bash
+python3 scripts/validate_repo.py
+```
+
 ## Variable inventory
 
 To audit repeated local declarations before a larger bulk wave:

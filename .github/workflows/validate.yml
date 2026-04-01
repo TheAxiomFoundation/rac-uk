@@ -22,8 +22,5 @@ jobs:
       - name: Install rac
         run: pip install git+https://github.com/RulesFoundation/rac.git@main
 
-      - name: Validate .rac schema and imports
-        run: python -m rac.validate all legislation/
-
-      - name: Check for companion .rac.test files
-        run: python scripts/check_companion_tests.py
+      - name: Validate rac-uk repo
+        run: python scripts/validate_repo.py
