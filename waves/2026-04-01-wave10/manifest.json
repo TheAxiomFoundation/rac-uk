@@ -1,0 +1,57 @@
+{
+  "wave": "2026-04-01-wave10",
+  "seeded_from": {
+    "source_eval_runs": [
+      "/tmp/autorac-uk-uc-taper-split-0.2.63-2996e08-claude-20260401"
+    ],
+    "autorac_commit": "2996e08",
+    "autorac_version": "0.2.63",
+    "runner": "claude-opus",
+    "all_ready": true,
+    "summary": {
+      "total_cases": 2,
+      "compile_pass_rate": 1.0,
+      "ci_pass_rate": 1.0,
+      "zero_ungrounded_rate": 1.0,
+      "mean_estimated_cost_usd": 0.235705
+    }
+  },
+  "cases": [
+    {
+      "index": 1,
+      "name": "uc-earned-income-taper-rate-no-work-allowance",
+      "kind": "uk_legislation",
+      "citation": "uksi-2013-376 regulation 22(1)(b)(i) earned income taper rate where no work allowance applies",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/22/1/b/i.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/22/1/b/i.rac.test",
+      "source_path": "sources/official/uksi/2013/376/2025-04-07/source.akn",
+      "backend": "claude",
+      "model": "opus",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0
+      }
+    },
+    {
+      "index": 2,
+      "name": "uc-earned-income-taper-rate-with-work-allowance",
+      "kind": "uk_legislation",
+      "citation": "uksi-2013-376 regulation 22(1)(b)(ii) earned income taper rate where work allowance applies",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/22/1/b/ii.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/22/1/b/ii.rac.test",
+      "source_path": "sources/official/uksi/2013/376/2025-04-07/source.akn",
+      "backend": "claude",
+      "model": "opus",
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "embedded_source_present": true,
+        "grounded_numeric_count": 1,
+        "ungrounded_numeric_count": 0
+      }
+    }
+  ]
+}
