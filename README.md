@@ -18,7 +18,8 @@ This repo currently contains:
 - wave 12: `5` repaired derived UC and WTC leaves promoted from the clean committed numeric-coverage repair suite, bringing the tracked numeric-occurrence backlog to `0`
 - wave 13: `4` additional Pension Credit official leaves promoted from the clean committed savings-credit and housing-band seed suite
 - wave 14: `2` additional Pension Credit official leaves promoted from the clean committed Schedule VI earnings-disregard seed suite
-- current total: `73` `.rac` leaves with companion tests
+- wave 15: `2` additional Pension Credit official leaves promoted from the clean committed mixed-age-couple savings-credit seed suite
+- current total: `75` `.rac` leaves with companion tests
 
 Wave provenance is recorded in:
 
@@ -36,6 +37,7 @@ Wave provenance is recorded in:
 - [waves/2026-04-01-wave12/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-01-wave12/manifest.json)
 - [waves/2026-04-01-wave13/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-01-wave13/manifest.json)
 - [waves/2026-04-01-wave14/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-01-wave14/manifest.json)
+- [waves/2026-04-01-wave15/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-01-wave15/manifest.json)
 
 ## Structure
 

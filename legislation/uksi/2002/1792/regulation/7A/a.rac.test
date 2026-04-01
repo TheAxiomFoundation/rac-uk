@@ -1,0 +1,19 @@
+- name: paragraph_a_condition_allows_savings_credit_for_mixed_age_couple_member
+  period: 2025-03-21
+  input:
+    is_member_of_mixed_age_couple: true
+    one_member_of_the_couple_has_been_awarded_a_savings_credit_with_effect_from_a_day_before_6th_april_2016: true
+    one_member_of_the_couple_was_entitled_to_a_savings_credit_immediately_before_6th_april_2016: true
+  output:
+    section_7A_paragraph_a_condition_met: true
+    savings_credit_not_barred_by_section_7A_paragraph_a_for_mixed_age_couple_member: true
+
+- name: paragraph_a_condition_not_met_when_immediate_pre_2016_entitlement_missing
+  period: 2025-03-21
+  input:
+    is_member_of_mixed_age_couple: true
+    one_member_of_the_couple_has_been_awarded_a_savings_credit_with_effect_from_a_day_before_6th_april_2016: true
+    one_member_of_the_couple_was_entitled_to_a_savings_credit_immediately_before_6th_april_2016: false
+  output:
+    section_7A_paragraph_a_condition_met: false
+    savings_credit_not_barred_by_section_7A_paragraph_a_for_mixed_age_couple_member: false
