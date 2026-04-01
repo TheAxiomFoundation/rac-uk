@@ -1,0 +1,28 @@
+"""
+PART II Entitlement and amount
+
+9. Qualifying income for the purposes of savings credit
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 3 (savings credit), all income is to be treated as qualifying income except the following which is not to be treated as qualifying income—
+
+(a)
+
+working tax credit;
+"""
+
+income_under_consideration_is_working_tax_credit_9_a:
+    entity: Person
+    period: Year
+    dtype: Boolean
+
+income_treated_as_qualifying_income_for_savings_credit_9_a:
+    entity: Person
+    period: Year
+    dtype: Boolean
+    from 2025-03-21:
+        if income_under_consideration_is_working_tax_credit_9_a:
+            false
+        else:
+            true

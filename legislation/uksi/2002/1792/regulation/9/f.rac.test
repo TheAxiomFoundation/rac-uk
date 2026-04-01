@@ -1,0 +1,12 @@
+- name: maintenance_payments_are_not_qualifying_income
+  period: '2025-03-21'
+  input:
+    income_is_payment_referred_to_in_regulation_15_5_d_maintenance_payments: true
+  output:
+    qualifying_income_for_savings_credit_9_f: false
+- name: other_income_is_qualifying_income
+  period: '2025-03-21'
+  input:
+    income_is_payment_referred_to_in_regulation_15_5_d_maintenance_payments: false
+  output:
+    qualifying_income_for_savings_credit_9_f: true

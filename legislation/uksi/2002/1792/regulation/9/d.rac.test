@@ -1,0 +1,12 @@
+- name: excludes_severe_disablement_allowance_amount
+  period: '2025-03-21'
+  input:
+    severe_disablement_allowance_amount: 2
+  output:
+    qualifying_income_excluded_9_d: 2
+- name: no_excluded_amount_when_no_severe_disablement_allowance
+  period: '2025-03-21'
+  input:
+    severe_disablement_allowance_amount: 0
+  output:
+    qualifying_income_excluded_9_d: 0

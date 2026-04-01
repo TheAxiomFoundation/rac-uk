@@ -1,0 +1,12 @@
+- name: incapacity_benefit_is_excluded_from_qualifying_income
+  period: 2025-03-21
+  input:
+    incapacity_benefit: 2
+  output:
+    income_not_treated_as_qualifying_income_9_b: 2
+- name: no_incapacity_benefit_means_no_excluded_amount
+  period: 2025-03-21
+  input:
+    incapacity_benefit: 0
+  output:
+    income_not_treated_as_qualifying_income_9_b: 0
