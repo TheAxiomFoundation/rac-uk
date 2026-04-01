@@ -75,6 +75,7 @@ The repo includes a lightweight validation workflow that:
 - verifies that every `.rac` file has a companion `.rac.test`
 - checks the first scoped canonical variable registry in [variables.toml](/Users/maxghenis/TheAxiomFoundation/rac-uk/variables.toml)
 - fails if a substantive scalar literal is embedded inside a formula or conditional branch instead of being declared as its own named variable
+- enforces a tracked baseline for source-number coverage, so new or worsened gaps fail even though the existing UK corpus still has a small backlog of known misses
 
 Run the full local repo validation with:
 
@@ -107,6 +108,23 @@ python3 scripts/check_embedded_scalars.py
 
 `report_embedded_scalars.py --json` emits one row per violation with the file, line,
 variable name, literal, and formula snippet.
+
+To audit or check whether substantive source numbers are represented by named RAC
+scalar definitions:
+
+```bash
+python3 scripts/report_numeric_occurrence_coverage.py
+python3 scripts/check_numeric_occurrence_coverage.py
+```
+
+`report_numeric_occurrence_coverage.py --json` emits one row per missing source-number
+occurrence with the file, numeric value, source occurrence count, named scalar count,
+and remaining missing count.
+
+`check_numeric_occurrence_coverage.py` is baseline-aware. It does not require the whole
+existing corpus to be fixed at once; it only fails when a coverage gap is new or worse
+than the tracked baseline in
+[validation_baselines/numeric_occurrence_coverage.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/validation_baselines/numeric_occurrence_coverage.json).
 
 The registry is intentionally narrow and path-scoped. It currently covers:
 

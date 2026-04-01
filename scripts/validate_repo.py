@@ -48,6 +48,10 @@ def main() -> int:
         "Check for embedded scalar literals in formulas",
         [sys.executable, str(ROOT / "scripts" / "check_embedded_scalars.py")],
     )
+    run_step(
+        "Check source-number coverage against the tracked baseline",
+        [sys.executable, str(ROOT / "scripts" / "check_numeric_occurrence_coverage.py")],
+    )
     print("All rac-uk validation checks passed.")
     return 0
 
