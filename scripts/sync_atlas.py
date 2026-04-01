@@ -85,8 +85,6 @@ def iter_text_filtered(elem: ET.Element) -> list[str]:
 
     def visit(node: ET.Element) -> None:
         if local_name(node.tag) == "noteRef":
-            if node.tail:
-                pieces.append(node.tail)
             return
         if node.text:
             pieces.append(node.text)
