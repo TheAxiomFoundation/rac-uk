@@ -1,11 +1,21 @@
 """
-Schedule VI
+SCHEDULE VIRegulation 17(9) SUMS DISREGARDED FROM CLAIMANT’S EARNINGS
 
-Editorial note: current text valid from 2025-03-31.
+5.
 
-5. Except where the claimant or his partner qualifies for a £20 disregard under the preceding provisions of this Schedule—
-(b) £10 shall be disregarded if a claimant who has a partner has earnings.
+Editorial note: current text valid from 2025-03-21.
+
+Except where the claimant or his partner qualifies for a £20 disregard under the preceding provisions of this Schedule—
+
+(b)
+
+£10 shall be disregarded if a claimant who has a partner has earnings.
 """
+
+claimant_or_partner_qualifies_for_preceding_provisions_20_disregard:
+    entity: Family
+    period: Week
+    dtype: Boolean
 
 claimant_has_partner:
     entity: Family
@@ -17,23 +27,26 @@ claimant_has_earnings:
     period: Week
     dtype: Boolean
 
-pc_preceding_schedule_vi_20_disregard_applies:
-    entity: Family
-    period: Week
-    dtype: Boolean
-
-pc_couple_claimant_standard_earnings_disregard_statutory_weekly_amount:
+schedule_vi_paragraph_5_preceding_provisions_20_disregard_amount:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
-    from 2025-03-31:
+    from 2025-03-21:
+        20
+
+schedule_vi_paragraph_5_b_disregard_amount:
+    entity: Family
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
         10
 
-pc_couple_claimant_earnings_disregard_weekly_amount:
+schedule_vi_paragraph_5_b_sum_disregarded_from_claimant_earnings:
     entity: Family
     period: Week
     dtype: Money
     unit: GBP
-    from 2025-03-31:
-        if claimant_has_partner and claimant_has_earnings and not pc_preceding_schedule_vi_20_disregard_applies: pc_couple_claimant_standard_earnings_disregard_statutory_weekly_amount else: 0
+    from 2025-03-21:
+        if claimant_or_partner_qualifies_for_preceding_provisions_20_disregard: 0 else: if claimant_has_partner and claimant_has_earnings: schedule_vi_paragraph_5_b_disregard_amount else: 0

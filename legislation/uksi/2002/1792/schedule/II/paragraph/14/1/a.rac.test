@@ -1,7 +1,12 @@
 - name: base_case
-  period: 2025-04-01
+  period: 2025-03
   input:
-    non_dependant_aged_18_or_over: true
-    non_dependant_in_remunerative_work: true
+    non_dependant_aged_18_or_over:
+    - true
+    engaged_in_any_remunerative_work:
+    - true
   output:
-    pc_housing_non_dependant_deduction_working_weekly_amount: 124.55
+    housing_costs_non_dependant_deduction_a_age_threshold:
+    - 18
+    housing_costs_non_dependant_deduction_a_amount:
+    - 124.55

@@ -1,7 +1,5 @@
 """
-SCHEDULE II
-Regulation 6(6)(c)
-HOUSING COSTS
+SCHEDULE IIRegulation 6(6)(c) HOUSING COSTS
 
 Persons residing with the claimant
 
@@ -18,9 +16,14 @@ Subject to the following provisions of this paragraph, the following deductions 
 in respect of a non-dependant aged 18 or over who is engaged in any remunerative work, £124.55;
 """
 
-pc_housing_non_dependant_deduction_working_weekly_amount:
+housing_costs_non_dependant_deduction_a_age_threshold:
+    entity: Person
+    period: Week
+    dtype: Integer
+    from 2025-03-21: 18
+
+housing_costs_non_dependant_deduction_a_amount:
     entity: Person
     period: Week
     dtype: Money
-    unit: GBP
     from 2025-03-21: 124.55

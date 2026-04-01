@@ -1,26 +1,35 @@
-- name: eligible_single_claimant
-  period: 2025-03-31
+- name: branch_a_applies
+  period: 2025-03-21
   input:
+    claimant_has_no_partner: true
     claimant_has_earnings: true
-    claimant_has_partner: false
-    pc_preceding_schedule_vi_20_disregard_applies: false
+    claimant_or_partner_qualifies_for_preceding_provisions_20_disregard: false
   output:
-    pc_single_claimant_earnings_disregard_weekly_amount: 5
+    schedule_vi_paragraph_5_a_claimant_earnings_disregard: 5
 
-- name: preceding_disregard_exception
-  period: 2025-03-31
+- name: excluded_by_preceding_20_disregard
+  period: 2025-03-21
   input:
+    claimant_has_no_partner: true
     claimant_has_earnings: true
-    claimant_has_partner: false
-    pc_preceding_schedule_vi_20_disregard_applies: true
+    claimant_or_partner_qualifies_for_preceding_provisions_20_disregard: true
   output:
-    pc_single_claimant_earnings_disregard_weekly_amount: 0
+    schedule_vi_paragraph_5_a_claimant_earnings_disregard: 0
 
-- name: partnered_claimant
-  period: 2025-03-31
+- name: does_not_apply_if_claimant_has_partner
+  period: 2025-03-21
   input:
+    claimant_has_no_partner: false
     claimant_has_earnings: true
-    claimant_has_partner: true
-    pc_preceding_schedule_vi_20_disregard_applies: false
+    claimant_or_partner_qualifies_for_preceding_provisions_20_disregard: false
   output:
-    pc_single_claimant_earnings_disregard_weekly_amount: 0
+    schedule_vi_paragraph_5_a_claimant_earnings_disregard: 0
+
+- name: does_not_apply_without_earnings
+  period: 2025-03-21
+  input:
+    claimant_has_no_partner: true
+    claimant_has_earnings: false
+    claimant_or_partner_qualifies_for_preceding_provisions_20_disregard: false
+  output:
+    schedule_vi_paragraph_5_a_claimant_earnings_disregard: 0

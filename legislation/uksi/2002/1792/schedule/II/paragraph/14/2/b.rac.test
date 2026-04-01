@@ -1,15 +1,19 @@
-- name: base_case
-  period: 2025-04-07
+- name: branch_b_applies_at_lower_income_threshold
+  period: 2025-03-31
   input:
-    non_dependant_in_remunerative_work: true
-    non_dependant_gross_weekly_income: 200
+    person_age: 18
+    housing_costs_non_dependant_subparagraph_1_a_applies_because_in_remunerative_work: true
+    housing_costs_claimant_satisfies_secretary_of_state_as_to_non_dependant_gross_weekly_income: true
+    non_dependant_gross_weekly_income: 176.00
   output:
-    pc_housing_non_dependant_deduction_income_band_176_to_256_weekly_amount: 44.4
+    housing_costs_non_dependant_deduction_paragraph_14_2_b: 44.40
 
-- name: lower_boundary
-  period: 2025-03-21
+- name: branch_b_does_not_apply_at_upper_income_threshold
+  period: 2025-03-31
   input:
-    non_dependant_in_remunerative_work: true
-    non_dependant_gross_weekly_income: 176
+    person_age: 18
+    housing_costs_non_dependant_subparagraph_1_a_applies_because_in_remunerative_work: true
+    housing_costs_claimant_satisfies_secretary_of_state_as_to_non_dependant_gross_weekly_income: true
+    non_dependant_gross_weekly_income: 256.00
   output:
-    pc_housing_non_dependant_deduction_income_band_176_to_256_weekly_amount: 44.4
+    housing_costs_non_dependant_deduction_paragraph_14_2_b: 0

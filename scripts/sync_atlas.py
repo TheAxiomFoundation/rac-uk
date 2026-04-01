@@ -202,7 +202,8 @@ def load_cases() -> list[Case]:
                 autorac_version=autorac_version,
             )
             if not case.rac_file.exists():
-                raise FileNotFoundError(f"Missing RAC file: {case.rac_file}")
+                print(f"Skipping missing historical RAC file: {case.rac_file}")
+                continue
             cases_by_path[case.repo_rac_path] = case
     return sorted(cases_by_path.values(), key=lambda c: natural_key(c.repo_rac_path))
 

@@ -1,0 +1,4 @@
+- name: base_case
+  period: 2025-03-31
+  output:
+    earnings_disregard_combined_paragraphs_1_2_3_or_4_maximum_amount: 20
