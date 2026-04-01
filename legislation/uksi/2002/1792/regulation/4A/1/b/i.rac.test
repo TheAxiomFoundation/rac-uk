@@ -1,0 +1,19 @@
+- name: qualifies_under_4A_1_b_i
+  period: 2025-03-21
+  input:
+    person_age: 16
+    day_is_before_1st_september_following_person_19th_birthday: true
+    person_is_enrolled_on_or_accepted_for_approved_training_or_course_of_education: true
+    course_is_not_advanced_education_within_meaning_of_regulation_12_3_of_the_universal_credit_regulations_2013: true
+  output:
+    qualifying_young_person_4A_1_b_i: true
+
+- name: does_not_qualify_if_advanced_education
+  period: 2025-03-21
+  input:
+    person_age: 16
+    day_is_before_1st_september_following_person_19th_birthday: true
+    person_is_enrolled_on_or_accepted_for_approved_training_or_course_of_education: true
+    course_is_not_advanced_education_within_meaning_of_regulation_12_3_of_the_universal_credit_regulations_2013: false
+  output:
+    qualifying_young_person_4A_1_b_i: false

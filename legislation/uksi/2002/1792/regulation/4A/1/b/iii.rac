@@ -1,0 +1,74 @@
+"""
+PART II Entitlement and amount
+
+4A. Meaning of “qualifying young person”
+
+(1)
+
+(b)
+
+Editorial note: current text valid from 2025-03-21.
+
+A person who has reached the age of 16 but not the age of 20 is a qualifying young person for the purposes of these Regulations—
+
+up to, but not including, the 1st September following the person's 19th birthday, if the person is enrolled on, or accepted for, approved training or a course of education—
+
+(iii)
+
+where the average time spent during term time in receiving tuition, engaging in practical work or supervised study or taking examinations exceeds 12 hours per week.
+"""
+
+qualifying_young_person_minimum_age_16:
+    entity: Person
+    period: Day
+    dtype: Integer
+    from 2025-03-21:
+        16
+
+qualifying_young_person_maximum_age_20:
+    entity: Person
+    period: Day
+    dtype: Integer
+    from 2025-03-21:
+        20
+
+qualifying_young_person_september_following_birthday_age_19:
+    entity: Person
+    period: Day
+    dtype: Integer
+    from 2025-03-21:
+        19
+
+qualifying_young_person_term_time_hours_threshold_12:
+    entity: Person
+    period: Day
+    dtype: Integer
+    from 2025-03-21:
+        12
+
+person_age_years:
+    entity: Person
+    period: Day
+    dtype: Integer
+
+person_is_enrolled_on_or_accepted_for_approved_training_or_course_of_education:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+period_is_up_to_but_not_including_1st_september_following_persons_19th_birthday:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+average_term_time_hours_in_tuition_practical_work_supervised_study_or_examinations_per_week:
+    entity: Person
+    period: Day
+    dtype: Float
+
+qualifying_young_person_4A_1_b_iii:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        person_age_years >= qualifying_young_person_minimum_age_16 and person_age_years < qualifying_young_person_maximum_age_20 and period_is_up_to_but_not_including_1st_september_following_persons_19th_birthday and person_is_enrolled_on_or_accepted_for_approved_training_or_course_of_education and average_term_time_hours_in_tuition_practical_work_supervised_study_or_examinations_per_week > qualifying_young_person_term_time_hours_threshold_12

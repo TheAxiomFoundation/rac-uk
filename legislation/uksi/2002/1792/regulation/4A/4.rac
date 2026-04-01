@@ -1,0 +1,32 @@
+"""
+PART II Entitlement and amount
+
+4A. Meaning of “qualifying young person”
+
+Editorial note: current text valid from 2025-03-21.
+
+(4)
+
+“Approved training” means training in pursuance of arrangements made under section 2(1) of the Employment and Training Act 1973 or section 2(3) of the Enterprise and New Towns (Scotland) Act 1990 which is approved by the Secretary of State for the purposes of regulation 5 of the Universal Credit Regulations 2013.
+"""
+
+approved_training_4A_4:
+    entity: Person
+    period: Month
+    dtype: Boolean
+    from 2025-03-21:
+        if secretary_of_state_approves_training_for_universal_credit_regulation_5
+           and training_in_pursuance_of_employment_and_training_act_1973_section_2_1_arrangements_or_enterprise_and_new_towns_scotland_act_1990_section_2_3_arrangements:
+            true
+        else:
+            false
+
+secretary_of_state_approves_training_for_universal_credit_regulation_5:
+    entity: Person
+    period: Month
+    dtype: Boolean
+
+training_in_pursuance_of_employment_and_training_act_1973_section_2_1_arrangements_or_enterprise_and_new_towns_scotland_act_1990_section_2_3_arrangements:
+    entity: Person
+    period: Month
+    dtype: Boolean

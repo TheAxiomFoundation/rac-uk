@@ -1,0 +1,59 @@
+- name: qualifying_young_person_branch_ii_true
+  period: 2025-03-21
+  input:
+    person_age:
+      - entity: Person
+        value: 16
+    person_is_before_1st_september_following_19th_birthday:
+      - entity: Person
+        value: true
+    person_is_enrolled_on_or_accepted_for_approved_training_or_course_of_education:
+      - entity: Person
+        value: true
+    person_course_or_training_is_provided_at_school_or_college_or_approved_elsewhere:
+      - entity: Person
+        value: true
+  output:
+    qualifying_young_person_4A_1_b_ii:
+      - entity: Person
+        value: true
+
+- name: qualifying_young_person_branch_ii_false_at_age_20
+  period: 2025-03-21
+  input:
+    person_age:
+      - entity: Person
+        value: 20
+    person_is_before_1st_september_following_19th_birthday:
+      - entity: Person
+        value: true
+    person_is_enrolled_on_or_accepted_for_approved_training_or_course_of_education:
+      - entity: Person
+        value: true
+    person_course_or_training_is_provided_at_school_or_college_or_approved_elsewhere:
+      - entity: Person
+        value: true
+  output:
+    qualifying_young_person_4A_1_b_ii:
+      - entity: Person
+        value: false
+
+- name: qualifying_young_person_branch_ii_false_after_1st_september_following_19th_birthday
+  period: 2025-03-21
+  input:
+    person_age:
+      - entity: Person
+        value: 19
+    person_is_before_1st_september_following_19th_birthday:
+      - entity: Person
+        value: false
+    person_is_enrolled_on_or_accepted_for_approved_training_or_course_of_education:
+      - entity: Person
+        value: true
+    person_course_or_training_is_provided_at_school_or_college_or_approved_elsewhere:
+      - entity: Person
+        value: true
+  output:
+    qualifying_young_person_4A_1_b_ii:
+      - entity: Person
+        value: false

@@ -1,0 +1,61 @@
+"""
+PART II Entitlement and amount
+
+4A. Meaning of “qualifying young person”
+
+Editorial note: current text valid from 2025-03-21.
+
+(2)
+
+Where the young person is aged 19, he or she must have started the education or training or been enrolled on or accepted for it before reaching that age.
+"""
+
+qualifying_young_person_4A_2_age_19_trigger:
+    entity: Person
+    period: Year
+    dtype: Integer
+    from 2025-03-21:
+        19
+
+qualifying_young_person_4A_2_age_19_prior_start_limit:
+    entity: Person
+    period: Year
+    dtype: Integer
+    from 2025-03-21:
+        19
+
+qualifying_young_person_age:
+    entity: Person
+    period: Year
+    dtype: Integer
+    status: input
+
+started_education_or_training_before_reaching_age_19:
+    entity: Person
+    period: Year
+    dtype: Boolean
+    status: input
+
+enrolled_on_education_or_training_before_reaching_age_19:
+    entity: Person
+    period: Year
+    dtype: Boolean
+    status: input
+
+accepted_for_education_or_training_before_reaching_age_19:
+    entity: Person
+    period: Year
+    dtype: Boolean
+    status: input
+
+qualifying_young_person_4A_2:
+    entity: Person
+    period: Year
+    dtype: Boolean
+    from 2025-03-21:
+        if qualifying_young_person_age == qualifying_young_person_4A_2_age_19_trigger:
+            started_education_or_training_before_reaching_age_19
+            or enrolled_on_education_or_training_before_reaching_age_19
+            or accepted_for_education_or_training_before_reaching_age_19
+        else:
+            true

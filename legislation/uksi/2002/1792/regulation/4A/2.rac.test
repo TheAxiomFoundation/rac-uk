@@ -1,0 +1,29 @@
+- name: age_19_and_started_before_reaching_that_age
+  period: 2025
+  input:
+    qualifying_young_person_age: 19
+    started_education_or_training_before_reaching_age_19: true
+    enrolled_on_education_or_training_before_reaching_age_19: false
+    accepted_for_education_or_training_before_reaching_age_19: false
+  output:
+    qualifying_young_person_4A_2: true
+
+- name: age_19_and_no_prior_start_enrolment_or_acceptance
+  period: 2025
+  input:
+    qualifying_young_person_age: 19
+    started_education_or_training_before_reaching_age_19: false
+    enrolled_on_education_or_training_before_reaching_age_19: false
+    accepted_for_education_or_training_before_reaching_age_19: false
+  output:
+    qualifying_young_person_4A_2: false
+
+- name: not_age_19_requirement_inapplicable
+  period: 2025
+  input:
+    qualifying_young_person_age: 18
+    started_education_or_training_before_reaching_age_19: false
+    enrolled_on_education_or_training_before_reaching_age_19: false
+    accepted_for_education_or_training_before_reaching_age_19: false
+  output:
+    qualifying_young_person_4A_2: true
