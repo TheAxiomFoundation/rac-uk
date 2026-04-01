@@ -1,0 +1,7 @@
+- name: prisoner_branch_a_applies
+  period: 2025-03-21
+  input:
+    is_prisoner: true
+  output:
+    savings_credit_maximum_applies_branch_a_prisoners: true
+    savings_credit_maximum_amount_branch_a_prisoners: 0
