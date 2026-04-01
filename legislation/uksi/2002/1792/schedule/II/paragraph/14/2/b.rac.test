@@ -1,0 +1,15 @@
+- name: base_case
+  period: 2025-04-07
+  input:
+    non_dependant_in_remunerative_work: true
+    non_dependant_gross_weekly_income: 200
+  output:
+    pc_housing_non_dependant_deduction_income_band_176_to_256_weekly_amount: 44.4
+
+- name: lower_boundary
+  period: 2025-03-21
+  input:
+    non_dependant_in_remunerative_work: true
+    non_dependant_gross_weekly_income: 176
+  output:
+    pc_housing_non_dependant_deduction_income_band_176_to_256_weekly_amount: 44.4

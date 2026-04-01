@@ -1,0 +1,7 @@
+- name: base_case
+  period: 2025-04-01
+  input:
+    non_dependant_aged_18_or_over: true
+    non_dependant_in_remunerative_work: true
+  output:
+    pc_housing_non_dependant_deduction_working_weekly_amount: 124.55

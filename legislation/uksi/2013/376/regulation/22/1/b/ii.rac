@@ -1,0 +1,25 @@
+"""
+PART 3 AWARDS
+
+22. Deduction of income and work allowance
+
+(1)
+
+(b)
+
+Editorial note: current text valid from 2025-04-07.
+
+The amounts to be deducted from the maximum amount in accordance with section 8(3) of the Act to determine the amount of an award of universal credit are—
+
+the following amount of the claimant's earned income (or, in the case of joint claimants, their combined earned income) in respect of the assessment period—
+
+(ii)
+
+in any other case, 55% of the amount by which that earned income exceeds the work allowance specified in the table.
+"""
+
+uc_earned_income_taper_rate:
+    entity: TaxUnit
+    period: Month
+    dtype: Rate
+    from 2025-04-07: 0.55

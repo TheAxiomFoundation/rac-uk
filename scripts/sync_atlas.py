@@ -125,8 +125,11 @@ def infer_source_url(source_path: str) -> str | None:
     if len(parts) < 5 or parts[0] != "sources" or parts[1] != "official":
         return None
     law_type, year, number = parts[2], parts[3], parts[4]
-    if len(parts) > 6:
-        provision = "/".join(parts[5:-1])
+    remainder = list(parts[5:-1])
+    if remainder and re.fullmatch(r"\d{4}-\d{2}-\d{2}", remainder[0]):
+        remainder = remainder[1:]
+    if remainder:
+        provision = "/".join(remainder)
         return f"https://www.legislation.gov.uk/{law_type}/{year}/{number}/{provision}"
     return f"https://www.legislation.gov.uk/{law_type}/{year}/{number}"
 
