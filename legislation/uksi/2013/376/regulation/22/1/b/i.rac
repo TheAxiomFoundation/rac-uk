@@ -13,12 +13,12 @@ The amounts to be deducted from the maximum amount in accordance with section 8(
 
 the following amount of the claimant's earned income (or, in the case of joint claimants, their combined earned income) in respect of the assessment period—
 
-(ii)
+(i)
 
-in any other case, 55% of the amount by which that earned income exceeds the work allowance specified in the table.
+in a case where no work allowance is specified in the table below (that is where a single claimant does not have, or neither of joint claimants has, responsibility for a child or qualifying young person or limited capability for work), 55% of that earned income; or
 """
 
-uc_earned_income_taper_rate_with_work_allowance:
+uc_earned_income_taper_rate_without_work_allowance:
     entity: TaxUnit
     period: Month
     dtype: Rate
