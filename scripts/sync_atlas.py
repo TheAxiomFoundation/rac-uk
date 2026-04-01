@@ -42,6 +42,7 @@ TYPE_LABELS = {
     "legislation": "Legislation",
     "uksi": "UK Statutory Instruments",
     "ssi": "Scottish Statutory Instruments",
+    "ukpga": "UK Public General Acts",
 }
 OFFICIAL_PREFIX = "sources/official/"
 SLICE_PREFIX = "sources/slices/"
@@ -57,6 +58,7 @@ INSTRUMENT_TITLES = {
     ("ssi", "2020", "351"): "The Scottish Child Payment Regulations 2020",
     ("uksi", "2013", "376"): "The Universal Credit Regulations 2013",
     ("uksi", "2002", "2005"): "The Working Tax Credit (Entitlement and Maximum Rate) Regulations 2002",
+    ("ukpga", "2002", "16"): "State Pension Credit Act 2002",
 }
 
 
@@ -249,6 +251,25 @@ def build_boundaries(repo_rac_path: str) -> list[list[str]]:
     instrument_root = list(parts[:4])  # legislation/type/year/number
     tail = list(parts[4:])
     return build_citation_boundaries(instrument_root, tail)
+
+
+def all_repo_rac_paths() -> list[str]:
+    paths: list[str] = []
+    for rac_file in sorted(RAC_ROOT.rglob("*.rac")):
+        if rac_file.name.endswith(".rac.test"):
+            continue
+        paths.append(str(rac_file.relative_to(ROOT)))
+    return paths
+
+
+def repo_leaf_source_url(repo_rac_path: str) -> str | None:
+    parts = Path(repo_rac_path).with_suffix("").parts
+    if len(parts) < 4 or parts[0] != "legislation":
+        return None
+    base = "https://www.legislation.gov.uk/" + "/".join(parts[1:4])
+    if len(parts) == 4:
+        return base
+    return base + "/" + "/".join(parts[4:])
 
 
 def leaf_body(case: Case) -> str:
@@ -447,9 +468,12 @@ def build_repo_rules(cases: list[Case]) -> list[dict[str, Any]]:
     nodes: dict[str, dict[str, Any]] = {}
     children_by_parent: dict[str | None, set[str]] = defaultdict(set)
     titles = build_instrument_title_map(cases)
+    cases_by_path = {case.repo_rac_path: case for case in cases}
 
-    for case in cases:
-        boundaries = build_boundaries(case.repo_rac_path)
+    for repo_rac_path in all_repo_rac_paths():
+        case = cases_by_path.get(repo_rac_path)
+        rac_file = ROOT / repo_rac_path
+        boundaries = build_boundaries(repo_rac_path)
         parent_citation: str | None = None
         for i, boundary in enumerate(boundaries):
             citation_path = "uk/" + "/".join(boundary)
@@ -485,12 +509,12 @@ def build_repo_rules(cases: list[Case]) -> list[dict[str, Any]]:
                 nodes[path_key] = rule
 
             if is_leaf:
-                body = leaf_body(case)
+                body = extract_embedded_source(rac_file.read_text())
                 rule["body"] = body
                 rule["effective_date"] = extract_effective_date(body)
-                rule["source_url"] = leaf_source_url(case)
-                rule["source_path"] = case.source_path
-                rule["rac_path"] = case.repo_rac_path
+                rule["source_url"] = leaf_source_url(case) if case else repo_leaf_source_url(repo_rac_path)
+                rule["source_path"] = case.source_path if case else None
+                rule["rac_path"] = repo_rac_path
                 rule["has_rac"] = True
                 rule["line_count"] = len(body.splitlines()) if body else 0
             else:
