@@ -13,6 +13,7 @@ FORMULA_HEADER = re.compile(r"^(\s*)formula:\s*\|\s*$")
 NUMBER_PATTERN = re.compile(r"-?\d+(?:\.\d+)?")
 DIRECT_SCALAR_PATTERN = re.compile(r"-?[\d,]+(?:\.\d+)?")
 ALLOWED_EMBEDDED_SCALARS = {"-1", "0", "1", "2", "3"}
+QUOTED_STRING_PATTERN = re.compile(r"'[^']*'|\"[^\"]*\"")
 
 
 @dataclass
@@ -26,10 +27,11 @@ class EmbeddedScalarViolation:
 
 def _extract_embedded_literals(expression: str) -> list[str]:
     literals: list[str] = []
-    for match in NUMBER_PATTERN.finditer(expression):
+    scrubbed_expression = QUOTED_STRING_PATTERN.sub(" ", expression)
+    for match in NUMBER_PATTERN.finditer(scrubbed_expression):
         start, end = match.span()
-        prev = expression[start - 1] if start > 0 else ""
-        nxt = expression[end] if end < len(expression) else ""
+        prev = scrubbed_expression[start - 1] if start > 0 else ""
+        nxt = scrubbed_expression[end] if end < len(scrubbed_expression) else ""
         if (prev.isalnum() or prev in {"_", ".", "/"}) or (
             nxt.isalnum() or nxt in {"_", ".", "/"}
         ):

@@ -14,9 +14,23 @@ Element | Amount for each assessment period
 joint claimants both aged under 25 | £497.55
 """
 
-uc_standard_allowance_joint_claimants_both_aged_under_25:
+joint_claimant_under_25_age_threshold:
+    entity: TaxUnit
+    period: Month
+    dtype: Integer
+    from 2025-04-07: 25
+
+uc_standard_allowance_joint_claimants_both_aged_under_25_amount:
     entity: TaxUnit
     period: Month
     dtype: Money
     unit: GBP
     from 2025-04-07: 497.55
+
+uc_standard_allowance_joint_claimants_both_aged_under_25:
+    entity: TaxUnit
+    period: Month
+    dtype: Money
+    unit: GBP
+    from 2025-04-07:
+        uc_standard_allowance_joint_claimants_both_aged_under_25_amount

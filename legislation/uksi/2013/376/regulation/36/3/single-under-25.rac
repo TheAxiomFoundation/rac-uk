@@ -15,7 +15,7 @@ Standard allowance
 single claimant aged under 25 | £316.98
 """
 
-claimant_is_single:
+single_claimant:
     entity: TaxUnit
     period: Month
     dtype: Boolean
@@ -24,6 +24,12 @@ claimant_aged_under_25:
     entity: TaxUnit
     period: Month
     dtype: Boolean
+
+claimant_under_25_age_limit:
+    entity: TaxUnit
+    period: Month
+    dtype: Integer
+    from 2025-04-07: 25
 
 uc_standard_allowance_single_claimant_aged_under_25:
     entity: TaxUnit
