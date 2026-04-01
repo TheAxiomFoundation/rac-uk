@@ -1,0 +1,138 @@
+{
+  "wave": "2026-04-01-wave12",
+  "seeded_from": {
+    "source_eval_runs": [
+      "/tmp/autorac-uk-numeric-coverage-repair-derived-20260401"
+    ],
+    "autorac_commit": "6cd9e71",
+    "autorac_version": "0.2.64",
+    "runner": "openai-gpt-5.4",
+    "all_ready": true,
+    "summary": {
+      "total_cases": 5,
+      "compile_pass_rate": 1.0,
+      "ci_pass_rate": 1.0,
+      "zero_ungrounded_rate": 1.0,
+      "policyengine_pass_rate": 1.0,
+      "mean_policyengine_score": 1.0,
+      "mean_estimated_cost_usd": 0.0205095
+    }
+  },
+  "cases": [
+    {
+      "index": 1,
+      "name": "uc-standard-allowance-single-under-25",
+      "kind": "source",
+      "citation": "uksi-2013-376 regulation 36(3) single claimant aged under 25",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/single-under-25.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/single-under-25.rac.test",
+      "source_path": "sources/slices/uksi/2013/376/regulation-36-3-single-under-25.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.024665,
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "grounded_numeric_count": 2,
+        "ungrounded_numeric_count": 0,
+        "source_numeric_occurrence_count": 2,
+        "covered_source_numeric_occurrence_count": 2,
+        "missing_source_numeric_occurrence_count": 0,
+        "policyengine_pass": true,
+        "policyengine_score": 1.0
+      }
+    },
+    {
+      "index": 2,
+      "name": "uc-standard-allowance-single-25-or-over",
+      "kind": "source",
+      "citation": "uksi-2013-376 regulation 36(3) single claimant aged 25 or over",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/single-25-or-over.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/single-25-or-over.rac.test",
+      "source_path": "sources/slices/uksi/2013/376/regulation-36-3-single-25-or-over.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.026095,
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "grounded_numeric_count": 2,
+        "ungrounded_numeric_count": 0,
+        "source_numeric_occurrence_count": 2,
+        "covered_source_numeric_occurrence_count": 2,
+        "missing_source_numeric_occurrence_count": 0,
+        "policyengine_pass": true,
+        "policyengine_score": 1.0
+      }
+    },
+    {
+      "index": 3,
+      "name": "uc-standard-allowance-joint-under-25",
+      "kind": "source",
+      "citation": "uksi-2013-376 regulation 36(3) joint claimants both under 25",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/joint-under-25.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/joint-under-25.rac.test",
+      "source_path": "sources/slices/uksi/2013/376/regulation-36-3-joint-under-25.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.016245,
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "grounded_numeric_count": 2,
+        "ungrounded_numeric_count": 0,
+        "source_numeric_occurrence_count": 2,
+        "covered_source_numeric_occurrence_count": 2,
+        "missing_source_numeric_occurrence_count": 0,
+        "policyengine_pass": true,
+        "policyengine_score": 1.0
+      }
+    },
+    {
+      "index": 4,
+      "name": "uc-standard-allowance-joint-25-or-over",
+      "kind": "source",
+      "citation": "uksi-2013-376 regulation 36(3) joint claimants one or both aged 25 or over",
+      "repo_rac_path": "legislation/uksi/2013/376/regulation/36/3/joint-25-or-over.rac",
+      "repo_test_path": "legislation/uksi/2013/376/regulation/36/3/joint-25-or-over.rac.test",
+      "source_path": "sources/slices/uksi/2013/376/regulation-36-3-joint-25-or-over.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.0207225,
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "grounded_numeric_count": 2,
+        "ungrounded_numeric_count": 0,
+        "source_numeric_occurrence_count": 2,
+        "covered_source_numeric_occurrence_count": 2,
+        "missing_source_numeric_occurrence_count": 0,
+        "policyengine_pass": true,
+        "policyengine_score": 1.0
+      }
+    },
+    {
+      "index": 5,
+      "name": "wtc-worker-element",
+      "kind": "source",
+      "citation": "uksi-2002-2005 schedule 2 worker element",
+      "repo_rac_path": "legislation/uksi/2002/2005/schedule/2/worker-element.rac",
+      "repo_test_path": "legislation/uksi/2002/2005/schedule/2/worker-element.rac.test",
+      "source_path": "sources/slices/uksi/2002/2005/schedule-2-worker-element.txt",
+      "backend": "openai",
+      "model": "gpt-5.4",
+      "estimated_cost_usd": 0.01482,
+      "metrics": {
+        "compile_pass": true,
+        "ci_pass": true,
+        "grounded_numeric_count": 2,
+        "ungrounded_numeric_count": 0,
+        "source_numeric_occurrence_count": 2,
+        "covered_source_numeric_occurrence_count": 2,
+        "missing_source_numeric_occurrence_count": 0,
+        "policyengine_pass": true,
+        "policyengine_score": 1.0
+      }
+    }
+  ]
+}

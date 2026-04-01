@@ -8,9 +8,23 @@ Relevant element of working tax credit | Maximum annual rate
 30 hour element | £830
 """
 
-wtc_worker_element_amount:
+thirty_hour_element_required_hours:
+    entity: TaxUnit
+    period: Year
+    dtype: Integer
+    from 2021-04-06: 30
+
+wtc_worker_element_maximum_annual_rate:
     entity: TaxUnit
     period: Year
     dtype: Money
     unit: GBP
     from 2021-04-06: 830
+
+wtc_worker_element_amount:
+    entity: TaxUnit
+    period: Year
+    dtype: Money
+    unit: GBP
+    from 2021-04-06:
+        wtc_worker_element_maximum_annual_rate

@@ -15,6 +15,7 @@ This repo currently contains:
 - wave 9: `12` additional official UK leaves promoted from the clean committed `wave9` seed suite
 - wave 10: `2` additional UC taper-rate sibling leaves promoted from the clean committed split-clause suite
 - wave 11: `14` repaired Pension Credit official leaves promoted from the clean committed numeric-coverage repair suite, including a split of `4A(1)` into atomic child leaves
+- wave 12: `5` repaired derived UC and WTC leaves promoted from the clean committed numeric-coverage repair suite, bringing the tracked numeric-occurrence backlog to `0`
 - current total: `67` `.rac` leaves with companion tests
 
 Wave provenance is recorded in:
@@ -30,6 +31,7 @@ Wave provenance is recorded in:
 - [waves/2026-03-31-wave9/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-03-31-wave9/manifest.json)
 - [waves/2026-04-01-wave10/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-01-wave10/manifest.json)
 - [waves/2026-04-01-wave11/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-01-wave11/manifest.json)
+- [waves/2026-04-01-wave12/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-01-wave12/manifest.json)
 
 ## Structure
 
