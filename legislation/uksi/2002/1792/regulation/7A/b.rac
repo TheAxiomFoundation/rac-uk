@@ -1,0 +1,33 @@
+"""
+PART II Entitlement and amount
+
+7A. Limitation of savings credit for certain mixed-age couples
+
+Editorial note: current text valid from 2025-03-21.
+
+A person who is a member of a mixed-age couple, is not entitled to a savings credit unless one of the members of the couple—
+
+(b)
+
+remained entitled to a savings credit at all times since the beginning of 6th April 2016.
+"""
+
+savings_credit_section_7A_b_applies_person_is_member_of_mixed_age_couple:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+savings_credit_section_7A_b_one_member_remained_entitled_at_all_times_since_beginning_of_6th_april_2016:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+savings_credit_entitled_under_section_7A_b:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        if savings_credit_section_7A_b_applies_person_is_member_of_mixed_age_couple:
+            savings_credit_section_7A_b_one_member_remained_entitled_at_all_times_since_beginning_of_6th_april_2016
+        else:
+            true
