@@ -1,0 +1,15 @@
+- name: disregard_applies_when_earnings_are_paid_in_non_sterling_currency
+  period: 2025-03-31
+  input:
+    earnings_payment_made_in_currency_other_than_sterling: true
+    banking_charges_or_commission_payable_in_converting_earnings_to_sterling: 3
+  output:
+    schedule_vi_paragraph_7_sum_disregarded_from_claimants_earnings: 3
+
+- name: disregard_does_not_apply_when_earnings_are_paid_in_sterling
+  period: 2025-03-31
+  input:
+    earnings_payment_made_in_currency_other_than_sterling: false
+    banking_charges_or_commission_payable_in_converting_earnings_to_sterling: 3
+  output:
+    schedule_vi_paragraph_7_sum_disregarded_from_claimants_earnings: 0
