@@ -652,17 +652,35 @@ def sync_encoding_runs(rows: list[dict[str, Any]], service_key: str, supabase_ur
         post_json(url, headers, batch)
 
 
-def delete_managed_rules(service_key: str, supabase_url: str) -> None:
-    descendants_url = (
+def fetch_rule_refs(
+    service_key: str, supabase_url: str, query: str, page_size: int
+) -> list[dict[str, Any]]:
+    headers = {
+        "apikey": service_key,
+        "Authorization": f"Bearer {service_key}",
+        "Accept-Profile": "arch",
+        "Content-Profile": "arch",
+    }
+    base_url = (
         supabase_url.rstrip("/")
-        + "/rest/v1/rules?citation_path=like."
-        + quote("uk/legislation/%", safe="")
+        + "/rest/v1/rules?select=citation_path,level&order=level.desc,citation_path&"
+        + query
     )
-    root_url = (
-        supabase_url.rstrip("/")
-        + "/rest/v1/rules?citation_path=eq."
-        + quote("uk/legislation", safe="")
-    )
+    rows_out: list[dict[str, Any]] = []
+    offset = 0
+    while True:
+        url = f"{base_url}&limit={page_size}&offset={offset}"
+        response = requests.get(url, headers=headers, timeout=180)
+        response.raise_for_status()
+        rows = response.json()
+        rows_out.extend(rows)
+        if len(rows) < page_size:
+            break
+        offset += len(rows)
+    return rows_out
+
+
+def delete_rules_where(service_key: str, supabase_url: str, query: str) -> None:
     headers = {
         "apikey": service_key,
         "Authorization": f"Bearer {service_key}",
@@ -670,11 +688,48 @@ def delete_managed_rules(service_key: str, supabase_url: str) -> None:
         "Content-Profile": "arch",
         "Prefer": "count=exact,return=minimal",
     }
-    descendants = requests.delete(descendants_url, headers=headers, timeout=180)
-    descendants.raise_for_status()
-    root = requests.delete(root_url, headers=headers, timeout=180)
-    if root.status_code not in {200, 204, 404}:
-        root.raise_for_status()
+    url = supabase_url.rstrip("/") + "/rest/v1/rules?" + query
+    response = requests.delete(url, headers=headers, timeout=180)
+    if response.status_code not in {200, 204, 404}:
+        response.raise_for_status()
+
+
+def delete_managed_rules(service_key: str, supabase_url: str, batch_size: int) -> None:
+    instrument_refs = fetch_rule_refs(
+        service_key,
+        supabase_url,
+        "level=eq.3&citation_path=like." + quote("uk/legislation/%", safe=""),
+        page_size=batch_size,
+    )
+    for row in instrument_refs:
+        citation_path = row["citation_path"]
+        delete_rules_where(
+            service_key,
+            supabase_url,
+            "citation_path=like." + quote(citation_path + "/%", safe=""),
+        )
+        delete_rules_where(
+            service_key,
+            supabase_url,
+            "citation_path=eq." + quote(citation_path, safe=""),
+        )
+
+    scaffold_refs = fetch_rule_refs(
+        service_key,
+        supabase_url,
+        "level=lt.3&citation_path=like." + quote("uk/legislation%", safe=""),
+        page_size=batch_size,
+    )
+    grouped_paths: dict[int, list[str]] = defaultdict(list)
+    for row in scaffold_refs:
+        grouped_paths[int(row["level"])].append(row["citation_path"])
+    for level in sorted(grouped_paths, reverse=True):
+        for citation_path in grouped_paths[level]:
+            delete_rules_where(
+                service_key,
+                supabase_url,
+                "citation_path=eq." + quote(citation_path, safe=""),
+            )
 
 
 def delete_managed_encoding_runs(service_key: str, supabase_url: str) -> None:
@@ -729,7 +784,7 @@ def main() -> int:
 
     if not args.append_only:
         if not args.skip_rules:
-            delete_managed_rules(service_key, supabase_url)
+            delete_managed_rules(service_key, supabase_url, args.batch_size)
             print("Deleted managed uk/legislation arch.rules rows")
         if not args.skip_encodings:
             delete_managed_encoding_runs(service_key, supabase_url)
