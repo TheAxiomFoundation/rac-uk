@@ -1,0 +1,32 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(4)
+
+Editorial note: current text valid from 2025-03-21.
+
+The adjustments specified in this paragraph are those made in accordance with—
+
+(f)
+
+section 45B or 55B of the Social Security Contributions and Benefits Act 1992 (reduction of additional pension in Category A retirement pension and shared additional pension: pension sharing).
+"""
+
+adjustment_made_in_accordance_with_section_45b_of_the_social_security_contributions_and_benefits_act_1992:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+adjustment_made_in_accordance_with_section_55b_of_the_social_security_contributions_and_benefits_act_1992:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+adjustment_is_specified_in_this_paragraph_15_4_f:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        adjustment_made_in_accordance_with_section_45b_of_the_social_security_contributions_and_benefits_act_1992 or adjustment_made_in_accordance_with_section_55b_of_the_social_security_contributions_and_benefits_act_1992

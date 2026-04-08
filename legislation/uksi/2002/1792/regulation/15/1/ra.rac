@@ -1,0 +1,32 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(ra)
+
+carer’s allowance supplement payable under section 81 of the Social Security (Scotland) Act 2018;
+"""
+
+benefit_is_social_security_benefit:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+benefit_is_carers_allowance_supplement_payable_under_section_81_social_security_scotland_act_2018:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+benefit_is_prescribed_as_income_except_carers_allowance_supplement_15_1_ra:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        if benefit_is_carers_allowance_supplement_payable_under_section_81_social_security_scotland_act_2018: false else: benefit_is_social_security_benefit

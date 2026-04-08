@@ -1,0 +1,21 @@
+- name: prescribed_income_when_payment_is_made_and_article_applies
+  period: 2025-03-21
+  input:
+    payment_made_under_article_21_1_c_of_armed_forces_and_reserve_forces_compensation_scheme_order_2005: true
+    article_23_2_c_applies: true
+  output:
+    payment_under_article_21_1_c_where_article_23_2_c_applies_prescribed_as_income_15_5_ab: true
+- name: not_prescribed_when_article_does_not_apply
+  period: 2025-03-21
+  input:
+    payment_made_under_article_21_1_c_of_armed_forces_and_reserve_forces_compensation_scheme_order_2005: true
+    article_23_2_c_applies: false
+  output:
+    payment_under_article_21_1_c_where_article_23_2_c_applies_prescribed_as_income_15_5_ab: false
+- name: not_prescribed_when_no_article_21_1_c_payment_is_made
+  period: 2025-03-21
+  input:
+    payment_made_under_article_21_1_c_of_armed_forces_and_reserve_forces_compensation_scheme_order_2005: false
+    article_23_2_c_applies: true
+  output:
+    payment_under_article_21_1_c_where_article_23_2_c_applies_prescribed_as_income_15_5_ab: false

@@ -1,0 +1,27 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(rc)
+
+funeral expense assistance given in accordance with section 34 of the Social Security (Scotland) Act 2018.
+"""
+
+receives_funeral_expense_assistance_given_in_accordance_with_section_34_of_the_social_security_scotland_act_2018:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+funeral_expense_assistance_not_prescribed_as_income_15_1_rc:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        receives_funeral_expense_assistance_given_in_accordance_with_section_34_of_the_social_security_scotland_act_2018

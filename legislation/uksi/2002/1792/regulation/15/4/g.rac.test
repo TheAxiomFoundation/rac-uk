@@ -1,0 +1,16 @@
+- name: specified adjustment when referenced regulation adjustment exists
+  period: 2025-03-21
+  input:
+    ? adjustment_made_in_accordance_with_regulation_16_2_of_carers_assistance_carer_support_payment_scotland_regulations_2023_fact
+    : true
+  output:
+    ? adjustment_made_in_accordance_with_regulation_16_2_of_carers_assistance_carer_support_payment_scotland_regulations_2023_is_specified_15_4_g
+    : true
+- name: not specified adjustment when referenced regulation adjustment does not exist
+  period: 2025-03-21
+  input:
+    ? adjustment_made_in_accordance_with_regulation_16_2_of_carers_assistance_carer_support_payment_scotland_regulations_2023_fact
+    : false
+  output:
+    ? adjustment_made_in_accordance_with_regulation_16_2_of_carers_assistance_carer_support_payment_scotland_regulations_2023_is_specified_15_4_g
+    : false

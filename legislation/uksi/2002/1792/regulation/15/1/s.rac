@@ -1,0 +1,37 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(s)
+
+any benefit similar to those mentioned in the preceding provisions of this paragraph payable under legislation having effect in Northern Ireland.
+"""
+
+benefit_is_social_security_benefit_15_1:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+benefit_is_similar_to_those_mentioned_in_preceding_provisions_of_this_paragraph_15_1:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+benefit_is_payable_under_legislation_having_effect_in_northern_ireland_15_1_s:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+benefit_is_excepted_from_prescribed_social_security_benefits_15_1_s:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        benefit_is_social_security_benefit_15_1 and benefit_is_similar_to_those_mentioned_in_preceding_provisions_of_this_paragraph_15_1 and benefit_is_payable_under_legislation_having_effect_in_northern_ireland_15_1_s

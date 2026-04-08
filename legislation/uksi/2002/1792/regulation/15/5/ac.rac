@@ -1,0 +1,90 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(5)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(j) (income to include income of prescribed descriptions), income of the following descriptions is prescribed—
+
+(ac)
+
+any retired pay, pension or allowance granted in respect of disablement or any pension or allowance granted to a widow, widower or surviving civil partner in respect of a death due to service or war injury under an instrument specified in section 639(2) of the Income Tax (Earnings and Pensions) Act 2003, where such payment does not fall within paragraph (a) of the definition of “war disablement pension” in section 17(1) of the State Pension Credit Act 2002 or, in respect of any retired pay or pension granted in respect of disablement, where such payment does not fall within paragraph (b) of that definition;
+"""
+
+payment_is_retired_pay_granted_in_respect_of_disablement:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_is_pension_granted_in_respect_of_disablement:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_is_allowance_granted_in_respect_of_disablement:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_is_pension_granted_to_widow_widower_or_surviving_civil_partner_in_respect_of_death_due_to_service_or_war_injury:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_is_allowance_granted_to_widow_widower_or_surviving_civil_partner_in_respect_of_death_due_to_service_or_war_injury:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_is_granted_under_instrument_specified_in_section_639_2_of_the_income_tax_earnings_and_pensions_act_2003:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_does_not_fall_within_paragraph_a_of_the_definition_of_war_disablement_pension_in_section_17_1_of_the_state_pension_credit_act_2002:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_does_not_fall_within_paragraph_b_of_the_definition_of_war_disablement_pension_in_section_17_1_of_the_state_pension_credit_act_2002:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_is_within_first_category_15_5_ac:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        payment_is_retired_pay_granted_in_respect_of_disablement or payment_is_pension_granted_in_respect_of_disablement or payment_is_allowance_granted_in_respect_of_disablement or payment_is_pension_granted_to_widow_widower_or_surviving_civil_partner_in_respect_of_death_due_to_service_or_war_injury or payment_is_allowance_granted_to_widow_widower_or_surviving_civil_partner_in_respect_of_death_due_to_service_or_war_injury
+
+payment_is_within_second_category_15_5_ac:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        payment_is_retired_pay_granted_in_respect_of_disablement or payment_is_pension_granted_in_respect_of_disablement
+
+payment_satisfies_paragraph_a_path_15_5_ac:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        payment_is_within_first_category_15_5_ac and payment_does_not_fall_within_paragraph_a_of_the_definition_of_war_disablement_pension_in_section_17_1_of_the_state_pension_credit_act_2002
+
+payment_satisfies_paragraph_b_path_15_5_ac:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        payment_is_within_second_category_15_5_ac and payment_does_not_fall_within_paragraph_b_of_the_definition_of_war_disablement_pension_in_section_17_1_of_the_state_pension_credit_act_2002
+
+payment_is_income_of_prescribed_description_15_5_ac:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        payment_is_granted_under_instrument_specified_in_section_639_2_of_the_income_tax_earnings_and_pensions_act_2003 and (payment_satisfies_paragraph_a_path_15_5_ac or payment_satisfies_paragraph_b_path_15_5_ac)

@@ -1,0 +1,18 @@
+- name: disability living allowance is excepted income
+  period: 2025-03-21
+  input:
+    disability_living_allowance_amount_15_1_a: 1
+  output:
+    disability_living_allowance_excepted_amount_15_1_a: 1
+- name: no disability living allowance gives no excepted amount
+  period: 2025-03-21
+  input:
+    disability_living_allowance_amount_15_1_a: 0
+  output:
+    disability_living_allowance_excepted_amount_15_1_a: 0
+- name: the full disability living allowance amount remains excepted
+  period: 2025-03-21
+  input:
+    disability_living_allowance_amount_15_1_a: 2
+  output:
+    disability_living_allowance_excepted_amount_15_1_a: 2

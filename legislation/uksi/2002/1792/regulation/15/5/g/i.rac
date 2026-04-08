@@ -1,0 +1,42 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(5)
+
+(g)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(j) (income to include income of prescribed descriptions), income of the following descriptions is prescribed—
+
+any payment in respect of any—
+
+(i)
+
+book registered under the Public Lending Right Scheme 1982; or
+"""
+
+public_lending_right_scheme_year_15_5_g_i:
+    entity: Person
+    period: Day
+    dtype: Integer
+    from 2025-03-21: 1982
+
+person_has_payment_in_respect_of_book_15_5_g_i_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+book_is_registered_under_public_lending_right_scheme_1982_15_5_g_i_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_in_respect_of_book_registered_under_public_lending_right_scheme_1982_is_prescribed_income_15_5_g_i:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        person_has_payment_in_respect_of_book_15_5_g_i_fact and book_is_registered_under_public_lending_right_scheme_1982_15_5_g_i_fact

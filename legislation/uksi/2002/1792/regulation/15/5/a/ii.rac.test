@@ -1,0 +1,21 @@
+- name: prescribed_income_when_article_12_8_payment_and_sub_paragraph_b_apply
+  period: 2025-03-21
+  input:
+    payment_made_under_article_12_8_of_that_order_15_5_a_ii_fact: true
+    sub_paragraph_b_of_that_article_applies_15_5_a_ii_fact: true
+  output:
+    payment_made_under_article_12_8_of_that_order_where_sub_paragraph_b_of_that_article_applies_is_prescribed_income_15_5_a_ii: true
+- name: not_prescribed_income_when_sub_paragraph_b_does_not_apply
+  period: 2025-03-21
+  input:
+    payment_made_under_article_12_8_of_that_order_15_5_a_ii_fact: true
+    sub_paragraph_b_of_that_article_applies_15_5_a_ii_fact: false
+  output:
+    payment_made_under_article_12_8_of_that_order_where_sub_paragraph_b_of_that_article_applies_is_prescribed_income_15_5_a_ii: false
+- name: not_prescribed_income_when_no_article_12_8_payment_is_made
+  period: 2025-03-21
+  input:
+    payment_made_under_article_12_8_of_that_order_15_5_a_ii_fact: false
+    sub_paragraph_b_of_that_article_applies_15_5_a_ii_fact: true
+  output:
+    payment_made_under_article_12_8_of_that_order_where_sub_paragraph_b_of_that_article_applies_is_prescribed_income_15_5_a_ii: false

@@ -1,0 +1,21 @@
+- name: non_universal_credit_social_security_benefit_is_prescribed
+  period: 2025-03-21
+  input:
+    benefit_under_consideration_is_social_security_benefit: true
+    benefit_under_consideration_is_universal_credit: false
+  output:
+    social_security_benefit_under_consideration_is_prescribed_for_income_15_1_za: true
+- name: universal_credit_is_not_prescribed
+  period: 2025-03-21
+  input:
+    benefit_under_consideration_is_social_security_benefit: true
+    benefit_under_consideration_is_universal_credit: true
+  output:
+    social_security_benefit_under_consideration_is_prescribed_for_income_15_1_za: false
+- name: non_social_security_benefit_is_not_prescribed_by_this_rule
+  period: 2025-03-21
+  input:
+    benefit_under_consideration_is_social_security_benefit: false
+    benefit_under_consideration_is_universal_credit: false
+  output:
+    social_security_benefit_under_consideration_is_prescribed_for_income_15_1_za: false

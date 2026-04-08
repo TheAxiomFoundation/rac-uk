@@ -1,0 +1,21 @@
+- name: section_30dd_adjustment_is_specified
+  period: 2025-03-21
+  input:
+    adjustment_made_in_accordance_with_section_30dd_of_1992_act: true
+    adjustment_made_in_accordance_with_section_30e_of_1992_act: false
+  output:
+    adjustment_made_in_accordance_with_section_30dd_or_section_30e_15_4_c: true
+- name: section_30e_adjustment_is_specified
+  period: 2025-03-21
+  input:
+    adjustment_made_in_accordance_with_section_30dd_of_1992_act: false
+    adjustment_made_in_accordance_with_section_30e_of_1992_act: true
+  output:
+    adjustment_made_in_accordance_with_section_30dd_or_section_30e_15_4_c: true
+- name: neither_section_adjustment_is_specified
+  period: 2025-03-21
+  input:
+    adjustment_made_in_accordance_with_section_30dd_of_1992_act: false
+    adjustment_made_in_accordance_with_section_30e_of_1992_act: false
+  output:
+    adjustment_made_in_accordance_with_section_30dd_or_section_30e_15_4_c: false

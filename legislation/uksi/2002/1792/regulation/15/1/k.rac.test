@@ -1,0 +1,21 @@
+- name: christmas bonus under part x is not prescribed income
+  period: '2025-03-21'
+  input:
+    relevant_benefit_is_social_security_benefit_15_1_fact: true
+    relevant_benefit_is_christmas_bonus_payable_under_part_x_of_1992_act_15_1_k_fact: true
+  output:
+    christmas_bonus_payable_under_part_x_of_1992_act_is_not_prescribed_income_15_1_k: true
+- name: other social security benefit is not within paragraph k
+  period: '2025-03-21'
+  input:
+    relevant_benefit_is_social_security_benefit_15_1_fact: true
+    relevant_benefit_is_christmas_bonus_payable_under_part_x_of_1992_act_15_1_k_fact: false
+  output:
+    christmas_bonus_payable_under_part_x_of_1992_act_is_not_prescribed_income_15_1_k: false
+- name: non social security benefit does not trigger paragraph k
+  period: '2025-03-21'
+  input:
+    relevant_benefit_is_social_security_benefit_15_1_fact: false
+    relevant_benefit_is_christmas_bonus_payable_under_part_x_of_1992_act_15_1_k_fact: false
+  output:
+    christmas_bonus_payable_under_part_x_of_1992_act_is_not_prescribed_income_15_1_k: false

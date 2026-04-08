@@ -1,0 +1,24 @@
+- name: qualifying_short_term_assistance_is_excepted
+  period: 2025-03-21
+  input:
+    receives_short_term_assistance: true
+    ? short_term_assistance_is_given_in_accordance_with_regulations_made_under_section_36_of_the_social_security_scotland_act_2018
+    : true
+  output:
+    short_term_assistance_excepted_from_prescribed_social_security_benefits_15_1_rf: true
+- name: short_term_assistance_outside_section_36_regulations_is_not_this_exception
+  period: 2025-03-21
+  input:
+    receives_short_term_assistance: true
+    ? short_term_assistance_is_given_in_accordance_with_regulations_made_under_section_36_of_the_social_security_scotland_act_2018
+    : false
+  output:
+    short_term_assistance_excepted_from_prescribed_social_security_benefits_15_1_rf: false
+- name: no_short_term_assistance_means_exception_does_not_apply
+  period: 2025-03-21
+  input:
+    receives_short_term_assistance: false
+    ? short_term_assistance_is_given_in_accordance_with_regulations_made_under_section_36_of_the_social_security_scotland_act_2018
+    : true
+  output:
+    short_term_assistance_excepted_from_prescribed_social_security_benefits_15_1_rf: false

@@ -1,0 +1,21 @@
+- name: guardians allowance exception applies
+  period: 2025-03-21
+  input:
+    benefit_is_social_security_benefit_15_1_g_fact: true
+    benefit_is_guardians_allowance_payable_under_section_77_1992_act_15_1_g_fact: true
+  output:
+    benefit_is_guardians_allowance_payable_under_section_77_1992_act_excepted_from_prescribed_social_security_benefits_15_1_g: true
+- name: other social security benefit is not this exception
+  period: 2025-03-21
+  input:
+    benefit_is_social_security_benefit_15_1_g_fact: true
+    benefit_is_guardians_allowance_payable_under_section_77_1992_act_15_1_g_fact: false
+  output:
+    benefit_is_guardians_allowance_payable_under_section_77_1992_act_excepted_from_prescribed_social_security_benefits_15_1_g: false
+- name: no social security benefit makes the exception inapplicable
+  period: 2025-03-21
+  input:
+    benefit_is_social_security_benefit_15_1_g_fact: false
+    benefit_is_guardians_allowance_payable_under_section_77_1992_act_15_1_g_fact: false
+  output:
+    benefit_is_guardians_allowance_payable_under_section_77_1992_act_excepted_from_prescribed_social_security_benefits_15_1_g: false

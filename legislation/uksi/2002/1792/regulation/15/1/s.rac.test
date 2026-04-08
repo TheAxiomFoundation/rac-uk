@@ -1,0 +1,32 @@
+- name: excepted_when_social_security_benefit_is_similar_and_payable_under_northern_ireland_legislation
+  period: 2025-03-21
+  input:
+    benefit_is_social_security_benefit_15_1: true
+    benefit_is_similar_to_those_mentioned_in_preceding_provisions_of_this_paragraph_15_1: true
+    benefit_is_payable_under_legislation_having_effect_in_northern_ireland_15_1_s: true
+  output:
+    benefit_is_excepted_from_prescribed_social_security_benefits_15_1_s: true
+- name: not_excepted_when_benefit_is_not_social_security_benefit
+  period: 2025-03-21
+  input:
+    benefit_is_social_security_benefit_15_1: false
+    benefit_is_similar_to_those_mentioned_in_preceding_provisions_of_this_paragraph_15_1: true
+    benefit_is_payable_under_legislation_having_effect_in_northern_ireland_15_1_s: true
+  output:
+    benefit_is_excepted_from_prescribed_social_security_benefits_15_1_s: false
+- name: not_excepted_when_benefit_is_not_similar_to_preceding_provisions
+  period: 2025-03-21
+  input:
+    benefit_is_social_security_benefit_15_1: true
+    benefit_is_similar_to_those_mentioned_in_preceding_provisions_of_this_paragraph_15_1: false
+    benefit_is_payable_under_legislation_having_effect_in_northern_ireland_15_1_s: true
+  output:
+    benefit_is_excepted_from_prescribed_social_security_benefits_15_1_s: false
+- name: not_excepted_when_benefit_is_not_payable_under_northern_ireland_legislation
+  period: 2025-03-21
+  input:
+    benefit_is_social_security_benefit_15_1: true
+    benefit_is_similar_to_those_mentioned_in_preceding_provisions_of_this_paragraph_15_1: true
+    benefit_is_payable_under_legislation_having_effect_in_northern_ireland_15_1_s: false
+  output:
+    benefit_is_excepted_from_prescribed_social_security_benefits_15_1_s: false

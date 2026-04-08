@@ -1,0 +1,32 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(ab)
+
+armed forces independence payment;
+"""
+
+payment_is_social_security_benefit_15_1:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_is_armed_forces_independence_payment_15_1_ab:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+social_security_benefit_prescribed_as_income_15_1_ab:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        payment_is_social_security_benefit_15_1 and not payment_is_armed_forces_independence_payment_15_1_ab

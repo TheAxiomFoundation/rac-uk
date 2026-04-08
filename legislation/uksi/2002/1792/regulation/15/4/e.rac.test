@@ -1,0 +1,18 @@
+- name: section_14_adjustment_is_specified
+  period: 2025-03-21
+  input:
+    adjustment_is_made_in_accordance_with_section_14_of_the_pensions_act_2014_fact: true
+  output:
+    adjustment_made_in_accordance_with_section_14_of_the_pensions_act_2014_15_4_e: true
+- name: non_section_14_adjustment_is_not_specified_under_branch_e
+  period: 2025-03-21
+  input:
+    adjustment_is_made_in_accordance_with_section_14_of_the_pensions_act_2014_fact: false
+  output:
+    adjustment_made_in_accordance_with_section_14_of_the_pensions_act_2014_15_4_e: false
+- name: section_14_reduction_in_the_sharers_section_4_pension_is_specified
+  period: 2025-03-21
+  input:
+    adjustment_is_made_in_accordance_with_section_14_of_the_pensions_act_2014_fact: true
+  output:
+    adjustment_made_in_accordance_with_section_14_of_the_pensions_act_2014_15_4_e: true

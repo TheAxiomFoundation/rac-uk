@@ -1,0 +1,78 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(6)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(2) (deemed income from capital) and subject to regulation 17(8) (capital to be disregarded), a claimant’s capital shall be deemed to yield a weekly income of—
+
+(a)
+
+£1 for each £500 in excess of £10,000; and
+"""
+
+deemed_weekly_income_per_capital_band_15_6_a:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21: 1
+
+capital_band_size_15_6_a:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21: 500
+
+claimant_capital_threshold_15_6_a:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21: 10000
+
+claimant_capital_in_excess_of_threshold_15_6_a:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+
+claimant_capital_is_to_be_disregarded_under_regulation_17_8_15_6_a:
+    entity: Person
+    period: Week
+    dtype: Boolean
+
+claimant_capital_for_section_15_2_15_6_a:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        claimant_capital_threshold_15_6_a + claimant_capital_in_excess_of_threshold_15_6_a
+
+claimant_capital_excess_over_threshold_15_6_a:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        if claimant_capital_for_section_15_2_15_6_a > claimant_capital_threshold_15_6_a: claimant_capital_for_section_15_2_15_6_a - claimant_capital_threshold_15_6_a else: 0
+
+claimant_capital_complete_bands_over_threshold_15_6_a:
+    entity: Person
+    period: Week
+    dtype: Count
+    from 2025-03-21:
+        floor(claimant_capital_excess_over_threshold_15_6_a / capital_band_size_15_6_a)
+
+claimant_capital_deemed_weekly_income_15_6_a:
+    entity: Person
+    period: Week
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        if claimant_capital_is_to_be_disregarded_under_regulation_17_8_15_6_a: 0 else: claimant_capital_complete_bands_over_threshold_15_6_a * deemed_weekly_income_per_capital_band_15_6_a

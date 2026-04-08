@@ -21,7 +21,8 @@ This repo currently contains:
 - wave 15: `2` additional Pension Credit official leaves promoted from the clean committed mixed-age-couple savings-credit seed suite
 - wave 16: `8` additional Pension Credit official `regulation 4A` leaves promoted from the clean committed atomic qualifying-young-person seed suite
 - wave 17: `7` additional Pension Credit official `regulation 9` qualifying-income exclusion leaves promoted from the clean committed seed suite
-- current total: `91` `.rac` files with companion tests
+- wave 18: `55` additional Pension Credit official `regulation 15` leaves promoted from the clean committed bulk seed suite, with `15(1)(b)` and `15(1)(c)` confirmed by a clean reviewer-transport rerun
+- current total: `146` `.rac` files with companion tests
 
 Wave provenance is recorded in:
 
@@ -42,6 +43,7 @@ Wave provenance is recorded in:
 - [waves/2026-04-01-wave15/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-01-wave15/manifest.json)
 - [waves/2026-04-01-wave16/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-01-wave16/manifest.json)
 - [waves/2026-04-01-wave17/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-01-wave17/manifest.json)
+- [waves/2026-04-08-wave18/manifest.json](/Users/maxghenis/TheAxiomFoundation/rac-uk/waves/2026-04-08-wave18/manifest.json)
 
 ## Structure
 

@@ -1,0 +1,32 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(4)
+
+Editorial note: current text valid from 2025-03-21.
+
+The adjustments specified in this paragraph are those made in accordance with—
+
+(c)
+
+section 30DD or section 30E of the 1992 Act (reductions in incapacity benefit in respect of pensions and councillor’s allowances).
+"""
+
+adjustment_made_in_accordance_with_section_30dd_of_1992_act:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+adjustment_made_in_accordance_with_section_30e_of_1992_act:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+adjustment_made_in_accordance_with_section_30dd_or_section_30e_15_4_c:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        adjustment_made_in_accordance_with_section_30dd_of_1992_act or adjustment_made_in_accordance_with_section_30e_of_1992_act

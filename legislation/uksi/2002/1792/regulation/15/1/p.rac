@@ -1,0 +1,29 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(p)
+
+statutory maternity pay;
+"""
+
+statutory_maternity_pay_amount_15_1_p:
+    entity: Person
+    period: Day
+    dtype: Money
+    unit: GBP
+
+statutory_maternity_pay_excepted_from_prescribed_income_15_1_p:
+    entity: Person
+    period: Day
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        statutory_maternity_pay_amount_15_1_p

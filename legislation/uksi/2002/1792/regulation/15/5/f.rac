@@ -1,0 +1,83 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(5)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(j) (income to include income of prescribed descriptions), income of the following descriptions is prescribed—
+
+(f)
+
+royalties or other sums paid as a consideration for the use of, or the right to use, any copyright, design, patent or trade mark;
+"""
+
+income_is_royalties_15_5_f_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+income_is_other_sums_15_5_f_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_is_consideration_for_use_15_5_f_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_is_consideration_for_right_to_use_15_5_f_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_relates_to_copyright_15_5_f_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_relates_to_design_15_5_f_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_relates_to_patent_15_5_f_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_relates_to_trade_mark_15_5_f_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+income_is_royalties_or_other_sums_15_5_f:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        income_is_royalties_15_5_f_fact or income_is_other_sums_15_5_f_fact
+
+payment_is_consideration_for_use_or_right_to_use_15_5_f:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        payment_is_consideration_for_use_15_5_f_fact or payment_is_consideration_for_right_to_use_15_5_f_fact
+
+payment_relates_to_copyright_design_patent_or_trade_mark_15_5_f:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        payment_relates_to_copyright_15_5_f_fact or payment_relates_to_design_15_5_f_fact or payment_relates_to_patent_15_5_f_fact or payment_relates_to_trade_mark_15_5_f_fact
+
+prescribed_income_description_15_5_f:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        income_is_royalties_or_other_sums_15_5_f and payment_is_consideration_for_use_or_right_to_use_15_5_f and payment_relates_to_copyright_design_patent_or_trade_mark_15_5_f

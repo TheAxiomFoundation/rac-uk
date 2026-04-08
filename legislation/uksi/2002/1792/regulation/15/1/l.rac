@@ -1,0 +1,27 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(l)
+
+housing benefit;
+"""
+
+social_security_benefit_under_consideration_is_housing_benefit:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+housing_benefit_exception_15_1_l_applies:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        social_security_benefit_under_consideration_is_housing_benefit
