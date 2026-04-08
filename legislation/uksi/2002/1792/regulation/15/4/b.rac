@@ -1,0 +1,27 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(4)
+
+Editorial note: current text valid from 2025-03-21.
+
+The adjustments specified in this paragraph are those made in accordance with—
+
+(b)
+
+regulation 2 of the Social Security (Hospital In-Patients) Regulations 2005;
+"""
+
+adjustment_made_in_accordance_with_social_security_hospital_in_patients_regulations_2005_regulation_2_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+adjustment_made_in_accordance_with_social_security_hospital_in_patients_regulations_2005_regulation_2_15_4_b:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        adjustment_made_in_accordance_with_social_security_hospital_in_patients_regulations_2005_regulation_2_fact

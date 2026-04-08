@@ -1,0 +1,18 @@
+- name: child special allowance is excepted from prescribed income
+  period: 2025-03-21
+  input:
+    child_special_allowance_payable_under_section_56_of_1992_act_15_1_f_fact: true
+  output:
+    child_special_allowance_payable_under_section_56_of_1992_act_not_prescribed_as_income_15_1_f: true
+- name: exception does not apply when no child special allowance is payable
+  period: 2025-03-21
+  input:
+    child_special_allowance_payable_under_section_56_of_1992_act_15_1_f_fact: false
+  output:
+    child_special_allowance_payable_under_section_56_of_1992_act_not_prescribed_as_income_15_1_f: false
+- name: payable child special allowance remains outside prescribed income on commencement
+  period: 2025-03-21
+  input:
+    child_special_allowance_payable_under_section_56_of_1992_act_15_1_f_fact: true
+  output:
+    child_special_allowance_payable_under_section_56_of_1992_act_not_prescribed_as_income_15_1_f: true

@@ -1,0 +1,12 @@
+- name: funeral_expense_assistance_is_excepted
+  period: 2025-03-21
+  input:
+    receives_funeral_expense_assistance_given_in_accordance_with_section_34_of_the_social_security_scotland_act_2018: true
+  output:
+    funeral_expense_assistance_not_prescribed_as_income_15_1_rc: true
+- name: no_funeral_expense_assistance_no_exception
+  period: 2025-03-21
+  input:
+    receives_funeral_expense_assistance_given_in_accordance_with_section_34_of_the_social_security_scotland_act_2018: false
+  output:
+    funeral_expense_assistance_not_prescribed_as_income_15_1_rc: false

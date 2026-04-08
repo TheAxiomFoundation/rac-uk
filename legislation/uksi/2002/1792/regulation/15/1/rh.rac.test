@@ -1,0 +1,18 @@
+- name: disability_assistance_is_excepted_on_effective_date
+  period: 2025-03-21
+  input:
+    receives_disability_assistance_given_in_accordance_with_section_31_regulations: true
+  output:
+    disability_assistance_not_prescribed_15_1_rh: true
+- name: other_cases_do_not_trigger_the_exception
+  period: 2025-03-21
+  input:
+    receives_disability_assistance_given_in_accordance_with_section_31_regulations: false
+  output:
+    disability_assistance_not_prescribed_15_1_rh: false
+- name: disability_assistance_remains_excepted_after_effective_date
+  period: 2025-03-31
+  input:
+    receives_disability_assistance_given_in_accordance_with_section_31_regulations: true
+  output:
+    disability_assistance_not_prescribed_15_1_rh: true

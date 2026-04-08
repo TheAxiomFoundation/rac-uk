@@ -1,0 +1,27 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(4)
+
+Editorial note: current text valid from 2025-03-21.
+
+The adjustments specified in this paragraph are those made in accordance with—
+
+(d)
+
+section 3 of the Welfare Reform Act (deductions from contributory allowance).
+"""
+
+deduction_from_contributory_allowance_under_welfare_reform_act_section_3:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+income_adjustment_specified_15_4_d:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        deduction_from_contributory_allowance_under_welfare_reform_act_section_3

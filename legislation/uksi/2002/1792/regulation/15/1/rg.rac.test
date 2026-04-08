@@ -1,0 +1,21 @@
+- name: winter_heating_assistance_under_section_30_regulations_is_excepted
+  period: 2025-03-21
+  input:
+    benefit_is_winter_heating_assistance: true
+    benefit_is_given_under_section_30_social_security_scotland_act_2018_regulations: true
+  output:
+    winter_heating_assistance_excepted_from_prescribed_income_15_1_rg: true
+- name: winter_heating_assistance_outside_section_30_regulations_is_not_excepted
+  period: 2025-03-21
+  input:
+    benefit_is_winter_heating_assistance: true
+    benefit_is_given_under_section_30_social_security_scotland_act_2018_regulations: false
+  output:
+    winter_heating_assistance_excepted_from_prescribed_income_15_1_rg: false
+- name: other_benefit_is_not_caught_by_branch_rg
+  period: 2025-03-21
+  input:
+    benefit_is_winter_heating_assistance: false
+    benefit_is_given_under_section_30_social_security_scotland_act_2018_regulations: true
+  output:
+    winter_heating_assistance_excepted_from_prescribed_income_15_1_rg: false

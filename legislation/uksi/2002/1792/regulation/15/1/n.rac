@@ -1,0 +1,27 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(n)
+
+bereavement support payment under section 30 of the Pensions Act 2014;
+"""
+
+receives_bereavement_support_payment_under_section_30_of_the_pensions_act_2014:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+bereavement_support_payment_under_section_30_of_the_pensions_act_2014_is_excepted_from_prescribed_social_security_benefits_15_1_n:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        receives_bereavement_support_payment_under_section_30_of_the_pensions_act_2014

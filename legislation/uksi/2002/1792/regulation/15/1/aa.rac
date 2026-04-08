@@ -1,0 +1,32 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(aa)
+
+personal independence payment;
+"""
+
+relevant_benefit_is_social_security_benefit:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+relevant_benefit_is_personal_independence_payment:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+personal_independence_payment_is_excepted_from_prescribed_social_security_benefits_15_1_aa:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        if relevant_benefit_is_social_security_benefit: relevant_benefit_is_personal_independence_payment else: false

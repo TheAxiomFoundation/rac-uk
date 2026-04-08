@@ -1,0 +1,32 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(j)
+
+child benefit payable in accordance with Part IX of the 1992 Act;
+"""
+
+benefit_is_child_benefit_15_1_j_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+benefit_is_payable_in_accordance_with_part_ix_of_the_1992_act_15_1_j_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+child_benefit_payable_in_accordance_with_part_ix_of_the_1992_act_is_not_prescribed_income_15_1_j:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        benefit_is_child_benefit_15_1_j_fact and benefit_is_payable_in_accordance_with_part_ix_of_the_1992_act_15_1_j_fact

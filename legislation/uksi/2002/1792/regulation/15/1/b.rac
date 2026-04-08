@@ -1,0 +1,32 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(b)
+
+attendance allowance payable under section 64 of the 1992 Act;
+"""
+
+benefit_is_attendance_allowance_15_1_b_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+benefit_is_payable_under_section_64_of_the_1992_act_15_1_b_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+attendance_allowance_payable_under_section_64_of_the_1992_act_exception_15_1_b_applies:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        benefit_is_attendance_allowance_15_1_b_fact and benefit_is_payable_under_section_64_of_the_1992_act_15_1_b_fact

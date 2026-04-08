@@ -1,0 +1,18 @@
+- name: no_payment_under_scheme
+  period: 2025-03-21
+  input:
+    payments_under_scheme_made_under_pneumoconiosis_etc_workers_compensation_act_1979: 0
+  output:
+    prescribed_income_from_payments_under_scheme_made_under_pneumoconiosis_etc_workers_compensation_act_1979_15_5_c: 0
+- name: scheme_payment_is_prescribed_income
+  period: 2025-03-21
+  input:
+    payments_under_scheme_made_under_pneumoconiosis_etc_workers_compensation_act_1979: 1
+  output:
+    prescribed_income_from_payments_under_scheme_made_under_pneumoconiosis_etc_workers_compensation_act_1979_15_5_c: 1
+- name: larger_scheme_payment_is_prescribed_income
+  period: 2025-03-21
+  input:
+    payments_under_scheme_made_under_pneumoconiosis_etc_workers_compensation_act_1979: 2
+  output:
+    prescribed_income_from_payments_under_scheme_made_under_pneumoconiosis_etc_workers_compensation_act_1979_15_5_c: 2

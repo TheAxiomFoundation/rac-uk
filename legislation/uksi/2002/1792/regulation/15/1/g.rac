@@ -1,0 +1,32 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(g)
+
+any guardian’s allowance payable under section 77 of the 1992 Act;
+"""
+
+benefit_is_social_security_benefit_15_1_g_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+benefit_is_guardians_allowance_payable_under_section_77_1992_act_15_1_g_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+benefit_is_guardians_allowance_payable_under_section_77_1992_act_excepted_from_prescribed_social_security_benefits_15_1_g:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        benefit_is_social_security_benefit_15_1_g_fact and benefit_is_guardians_allowance_payable_under_section_77_1992_act_15_1_g_fact

@@ -1,0 +1,24 @@
+- name: statutory shared parental pay is excepted
+  period: 2025-03-21
+  input:
+    relevant_payment_is_social_security_benefit: true
+    relevant_payment_is_statutory_shared_parental_pay_payable_under_part_12ZC_of_1992_act: true
+  output:
+    ? statutory_shared_parental_pay_payable_under_part_12ZC_of_1992_act_is_excepted_from_prescribed_social_security_benefits_15_1_qb
+    : true
+- name: other social security benefit is not this exception
+  period: 2025-03-21
+  input:
+    relevant_payment_is_social_security_benefit: true
+    relevant_payment_is_statutory_shared_parental_pay_payable_under_part_12ZC_of_1992_act: false
+  output:
+    ? statutory_shared_parental_pay_payable_under_part_12ZC_of_1992_act_is_excepted_from_prescribed_social_security_benefits_15_1_qb
+    : false
+- name: non social security payment is not this exception
+  period: 2025-03-21
+  input:
+    relevant_payment_is_social_security_benefit: false
+    relevant_payment_is_statutory_shared_parental_pay_payable_under_part_12ZC_of_1992_act: false
+  output:
+    ? statutory_shared_parental_pay_payable_under_part_12ZC_of_1992_act_is_excepted_from_prescribed_social_security_benefits_15_1_qb
+    : false

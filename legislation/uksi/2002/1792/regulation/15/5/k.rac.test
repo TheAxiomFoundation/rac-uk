@@ -1,0 +1,21 @@
+- name: ppf_periodic_payment_is_prescribed
+  period: 2025-03-21
+  input:
+    relevant_payment_is_from_ppf_fact: true
+    relevant_payment_is_periodic_payment_fact: true
+  output:
+    ppf_periodic_payments_prescribed_15_5_k: true
+- name: non_periodic_ppf_payment_is_not_prescribed
+  period: 2025-03-21
+  input:
+    relevant_payment_is_from_ppf_fact: true
+    relevant_payment_is_periodic_payment_fact: false
+  output:
+    ppf_periodic_payments_prescribed_15_5_k: false
+- name: periodic_non_ppf_payment_is_not_prescribed
+  period: 2025-03-21
+  input:
+    relevant_payment_is_from_ppf_fact: false
+    relevant_payment_is_periodic_payment_fact: true
+  output:
+    ppf_periodic_payments_prescribed_15_5_k: false

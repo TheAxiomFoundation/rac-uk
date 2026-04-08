@@ -1,0 +1,24 @@
+- name: excepted_payment_under_cited_regulations
+  period: 2025-03-21
+  input:
+    relevant_payment_is_social_security_benefit: true
+    ? relevant_payment_is_under_regulations_made_in_exercise_of_the_power_conferred_by_paragraph_7_2_b_of_part_ii_of_schedule_8_to_the_1992_act
+    : true
+  output:
+    relevant_payment_falls_within_exception_to_prescribed_social_security_benefits_for_income_15_1_d: true
+- name: other_social_security_benefit
+  period: 2025-03-21
+  input:
+    relevant_payment_is_social_security_benefit: true
+    ? relevant_payment_is_under_regulations_made_in_exercise_of_the_power_conferred_by_paragraph_7_2_b_of_part_ii_of_schedule_8_to_the_1992_act
+    : false
+  output:
+    relevant_payment_falls_within_exception_to_prescribed_social_security_benefits_for_income_15_1_d: false
+- name: non_social_security_payment
+  period: 2025-03-21
+  input:
+    relevant_payment_is_social_security_benefit: false
+    ? relevant_payment_is_under_regulations_made_in_exercise_of_the_power_conferred_by_paragraph_7_2_b_of_part_ii_of_schedule_8_to_the_1992_act
+    : false
+  output:
+    relevant_payment_falls_within_exception_to_prescribed_social_security_benefits_for_income_15_1_d: false

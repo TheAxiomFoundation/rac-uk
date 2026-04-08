@@ -1,0 +1,32 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(5)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(j) (income to include income of prescribed descriptions), income of the following descriptions is prescribed—
+
+(k)
+
+PPF periodic payments.
+"""
+
+relevant_payment_is_from_ppf_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+relevant_payment_is_periodic_payment_fact:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+ppf_periodic_payments_prescribed_15_5_k:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        relevant_payment_is_from_ppf_fact and relevant_payment_is_periodic_payment_fact

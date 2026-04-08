@@ -1,0 +1,21 @@
+- name: foreign_state_retirement_pension_is_included
+  period: '2025-03-21'
+  input:
+    receives_state_retirement_pension: true
+    state_retirement_pension_is_from_foreign_state: true
+  output:
+    foreign_state_retirement_pension_included_in_income_for_section_15_1_f_15_2_b: true
+- name: domestic_state_retirement_pension_is_not_included_by_this_branch
+  period: '2025-03-21'
+  input:
+    receives_state_retirement_pension: true
+    state_retirement_pension_is_from_foreign_state: false
+  output:
+    foreign_state_retirement_pension_included_in_income_for_section_15_1_f_15_2_b: false
+- name: no_state_retirement_pension_means_branch_not_satisfied
+  period: '2025-03-21'
+  input:
+    receives_state_retirement_pension: false
+    state_retirement_pension_is_from_foreign_state: true
+  output:
+    foreign_state_retirement_pension_included_in_income_for_section_15_1_f_15_2_b: false

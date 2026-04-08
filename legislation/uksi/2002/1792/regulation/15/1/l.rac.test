@@ -1,0 +1,12 @@
+- name: housing_benefit_exception_applies
+  period: 2025-03-21
+  input:
+    social_security_benefit_under_consideration_is_housing_benefit: true
+  output:
+    housing_benefit_exception_15_1_l_applies: true
+- name: non_housing_benefit_does_not_trigger_exception
+  period: 2025-03-21
+  input:
+    social_security_benefit_under_consideration_is_housing_benefit: false
+  output:
+    housing_benefit_exception_15_1_l_applies: false

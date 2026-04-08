@@ -1,0 +1,21 @@
+- name: effective_date_statutory_parental_bereavement_pay_is_excepted
+  period: 2025-03-21
+  input:
+    income_is_social_security_benefit: true
+    statutory_parental_bereavement_pay_payable_under_part_12ZD_of_1992_act: true
+  output:
+    statutory_parental_bereavement_pay_is_not_prescribed_as_income_15_1_qc: true
+- name: effective_date_other_social_security_benefit_is_not_this_exception
+  period: 2025-03-21
+  input:
+    income_is_social_security_benefit: true
+    statutory_parental_bereavement_pay_payable_under_part_12ZD_of_1992_act: false
+  output:
+    statutory_parental_bereavement_pay_is_not_prescribed_as_income_15_1_qc: false
+- name: effective_date_non_benefit_income_does_not_trigger_this_exception
+  period: 2025-03-21
+  input:
+    income_is_social_security_benefit: false
+    statutory_parental_bereavement_pay_payable_under_part_12ZD_of_1992_act: false
+  output:
+    statutory_parental_bereavement_pay_is_not_prescribed_as_income_15_1_qc: false

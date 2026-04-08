@@ -1,0 +1,49 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(e)
+
+an increase of an allowance payable in respect of constant attendance under paragraph 4 of Part I of Schedule 8 to the 1992 Act;
+"""
+
+payment_is_social_security_benefit:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+payment_is_increase_of_an_allowance:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+allowance_is_payable_in_respect_of_constant_attendance:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+allowance_is_under_paragraph_4_of_part_i_of_schedule_8_to_the_1992_act:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+allowance_is_payable_in_respect_of_constant_attendance_under_paragraph_4_of_part_i_of_schedule_8_to_the_1992_act:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        allowance_is_payable_in_respect_of_constant_attendance and allowance_is_under_paragraph_4_of_part_i_of_schedule_8_to_the_1992_act
+
+constant_attendance_allowance_increase_is_excepted_from_prescribed_benefits_15_1_e:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        payment_is_social_security_benefit and payment_is_increase_of_an_allowance and allowance_is_payable_in_respect_of_constant_attendance_under_paragraph_4_of_part_i_of_schedule_8_to_the_1992_act

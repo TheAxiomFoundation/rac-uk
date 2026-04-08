@@ -1,0 +1,32 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(1)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(e) (income), all social security benefits are prescribed except—
+
+(re)
+
+any assistance given in accordance with the Carer’s Assistance (Young Carer Grants) (Scotland) Regulations 2019;
+"""
+
+person_is_given_assistance:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+given_assistance_is_in_accordance_with_the_carers_assistance_young_carer_grants_scotland_regulations_2019:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+assistance_given_in_accordance_with_the_carers_assistance_young_carer_grants_scotland_regulations_2019_is_excepted_from_prescribed_social_security_benefits_15_1_re:
+    entity: Person
+    period: Day
+    dtype: Boolean
+    from 2025-03-21:
+        person_is_given_assistance and given_assistance_is_in_accordance_with_the_carers_assistance_young_carer_grants_scotland_regulations_2019

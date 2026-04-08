@@ -1,0 +1,34 @@
+"""
+PART III Income
+
+15. Income for the purposes of the Act
+
+(5)
+
+Editorial note: current text valid from 2025-03-21.
+
+For the purposes of section 15(1)(j) (income to include income of prescribed descriptions), income of the following descriptions is prescribed—
+
+(aa)
+
+a guaranteed income payment;
+"""
+
+receives_guaranteed_income_payment:
+    entity: Person
+    period: Day
+    dtype: Boolean
+
+guaranteed_income_payment_amount:
+    entity: Person
+    period: Day
+    dtype: Money
+    unit: GBP
+
+prescribed_income_from_guaranteed_income_payment_15_5_aa:
+    entity: Person
+    period: Day
+    dtype: Money
+    unit: GBP
+    from 2025-03-21:
+        if receives_guaranteed_income_payment: guaranteed_income_payment_amount else: 0

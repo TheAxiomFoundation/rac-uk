@@ -1,0 +1,18 @@
+- name: statutory maternity pay amount is excepted on the effective date
+  period: 2025-03-21
+  input:
+    statutory_maternity_pay_amount_15_1_p: 1
+  output:
+    statutory_maternity_pay_excepted_from_prescribed_income_15_1_p: 1
+- name: no statutory maternity pay gives no excepted amount
+  period: 2025-03-21
+  input:
+    statutory_maternity_pay_amount_15_1_p: 0
+  output:
+    statutory_maternity_pay_excepted_from_prescribed_income_15_1_p: 0
+- name: the excepted amount tracks the statutory maternity pay amount
+  period: 2025-03-21
+  input:
+    statutory_maternity_pay_amount_15_1_p: 2
+  output:
+    statutory_maternity_pay_excepted_from_prescribed_income_15_1_p: 2
