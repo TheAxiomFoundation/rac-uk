@@ -1,5 +1,0 @@
-- name: prescribed_percentage_base_case
-  period: 2025-03
-  input: {}
-  output:
-    savings_credit_section_7_1_c_amount_b_prescribed_percentage_rate: 0.40

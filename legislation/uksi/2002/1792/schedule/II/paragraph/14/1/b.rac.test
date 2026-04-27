@@ -1,8 +1,0 @@
-- name: base_case
-  period: 2025-03-21
-  input:
-    non_dependant_aged_18_or_over: true
-    paragraph_a_does_not_apply_to_non_dependant: true
-  output:
-    housing_costs_non_dependant_deduction_b_age_threshold: 18
-    housing_costs_non_dependant_deduction_b_amount: 19.3

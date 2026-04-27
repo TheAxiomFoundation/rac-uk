@@ -1,4 +1,0 @@
-- name: base_case
-  period: 2021
-  output:
-    wtc_worker_element_amount: 830

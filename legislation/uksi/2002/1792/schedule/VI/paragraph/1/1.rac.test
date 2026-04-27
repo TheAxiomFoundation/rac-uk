@@ -1,6 +1,0 @@
-- name: base_case
-  period: 2025-04-07
-  input:
-    claimant_is_lone_parent: true
-  output:
-    pc_lone_parent_earnings_disregard_weekly_amount: 20

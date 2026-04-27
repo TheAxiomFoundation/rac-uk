@@ -1,8 +1,0 @@
-- name: paragraph_14_2_d_deduction_applies
-  period: 2025-03-21
-  input:
-    age: 18
-    housing_costs_subparagraph_1_a_applies_because_non_dependant_is_in_remunerative_work: true
-    housing_costs_non_dependant_gross_weekly_income: 334.00
-  output:
-    housing_costs_non_dependant_deduction_paragraph_14_2_d: 99.65

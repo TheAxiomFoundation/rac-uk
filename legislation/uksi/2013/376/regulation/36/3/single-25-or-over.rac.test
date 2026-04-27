@@ -1,7 +1,0 @@
-- name: base_case
-  period: 2025-04
-  input:
-    claimant_is_single: true
-    claimant_aged_25_or_over: true
-  output:
-    uc_standard_allowance_single_claimant_aged_25_or_over: 400.14

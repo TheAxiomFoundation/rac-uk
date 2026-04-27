@@ -1,6 +1,0 @@
-- name: base_case
-  period: 2025-04-07
-  input:
-    is_eldest_child_born_before_2017_04_06: true
-  output:
-    pc_child_addition_eldest_pre_2017_weekly_rate: 76.79

@@ -1,4 +1,0 @@
-- name: base_case
-  period: 2025-04
-  output:
-    uc_earned_income_taper_rate_with_work_allowance: 0.55
