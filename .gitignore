@@ -2,3 +2,5 @@
 __pycache__/
 .pytest_cache/
 .venv/
+source.akn
+source.akn.xml

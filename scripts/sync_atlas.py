@@ -139,6 +139,46 @@ def instrument_title(path_parts: list[str]) -> str:
     return INSTRUMENT_TITLES.get(key, f"{path_parts[1].upper()} {path_parts[2]}/{path_parts[3]}")
 
 
+def _r2_client_from_config():
+    try:
+        import boto3
+    except ImportError as exc:
+        raise RuntimeError(
+            "Missing local AKN payload and boto3 is not installed. "
+            "Install boto3 or materialize the source.akn file from R2 first."
+        ) from exc
+
+    config_path = Path(
+        os.environ.get(
+            "RULES_XML_R2_CREDENTIALS",
+            Path.home() / ".config" / "rulesfoundation" / "r2-rules-xml-credentials.json",
+        )
+    )
+    creds = json.loads(config_path.read_text())
+    client = boto3.client(
+        "s3",
+        endpoint_url=creds["endpoint_url"],
+        aws_access_key_id=creds["access_key_id"],
+        aws_secret_access_key=creds["secret_access_key"],
+    )
+    return client, creds["bucket"]
+
+
+def read_r2_backed_source(path: Path) -> str:
+    if path.exists():
+        return path.read_text()
+    sidecar_path = path.with_name(path.name + ".r2.json")
+    if not sidecar_path.exists():
+        raise FileNotFoundError(path)
+    sidecar = json.loads(sidecar_path.read_text())
+    client, bucket = _r2_client_from_config()
+    response = client.get_object(
+        Bucket=sidecar.get("r2_bucket", bucket),
+        Key=sidecar["r2_key"],
+    )
+    return response["Body"].read().decode()
+
+
 def validate_source_path(source_path: str) -> None:
     if not source_path.startswith(SOURCE_PREFIXES):
         raise ValueError(
@@ -281,7 +321,9 @@ def leaf_source_url(case: Case) -> str | None:
 
 
 def official_source_roots() -> list[Path]:
-    return sorted(OFFICIAL_ROOT.glob("*/*/*/*/source.akn"))
+    roots = set(OFFICIAL_ROOT.glob("**/source.akn"))
+    roots.update(Path(str(path).removesuffix(".r2.json")) for path in OFFICIAL_ROOT.glob("**/source.akn.r2.json"))
+    return sorted(roots)
 
 
 def official_title(root: ET.Element) -> str | None:
@@ -342,7 +384,7 @@ def build_official_rules() -> dict[str, dict[str, Any]]:
         rel_dir = akn_path.parent.relative_to(ROOT)
         rel_parts = rel_dir.parts
         instrument_root = ["legislation", rel_parts[2], rel_parts[3], rel_parts[4]]
-        root = ET.fromstring(akn_path.read_text())
+        root = ET.fromstring(read_r2_backed_source(akn_path))
         title = official_title(root) or instrument_title(instrument_root)
         effective_date = official_point_in_time(root)
 

@@ -1,0 +1,12 @@
+{
+  "content_type": "application/akn+xml",
+  "git_head_at_upload": "9f44e3161b8a961d11214f855e29d4b21f611a85",
+  "r2_bucket": "rules-xml",
+  "r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/2005/2025-04-06/source.akn",
+  "repo": "rules-uk",
+  "schema": "rules-xml.rulespec_source_artifact.v1",
+  "sha256": "a91e09ea8eed17f22b7a87d17858faef8d907043675e9d9f59b161ea67d64067",
+  "size_bytes": 549186,
+  "source_path": "sources/official/uksi/2002/2005/2025-04-06/source.akn",
+  "uploaded_at": "2026-04-27T03:01:55.106914+00:00"
+}

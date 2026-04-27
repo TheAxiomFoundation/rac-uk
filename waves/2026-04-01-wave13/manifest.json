@@ -38,7 +38,8 @@
         "source_numeric_occurrence_count": 0,
         "covered_source_numeric_occurrence_count": 0,
         "missing_source_numeric_occurrence_count": 0
-      }
+      },
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     },
     {
       "index": 2,
@@ -61,7 +62,8 @@
         "source_numeric_occurrence_count": 0,
         "covered_source_numeric_occurrence_count": 0,
         "missing_source_numeric_occurrence_count": 0
-      }
+      },
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     },
     {
       "index": 3,
@@ -84,7 +86,8 @@
         "source_numeric_occurrence_count": 0,
         "covered_source_numeric_occurrence_count": 0,
         "missing_source_numeric_occurrence_count": 0
-      }
+      },
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     },
     {
       "index": 4,
@@ -107,7 +110,8 @@
         "source_numeric_occurrence_count": 2,
         "covered_source_numeric_occurrence_count": 2,
         "missing_source_numeric_occurrence_count": 0
-      }
+      },
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     }
   ]
 }

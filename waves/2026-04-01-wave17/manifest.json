@@ -26,7 +26,8 @@
       "repo_test_path": "legislation/uksi/2002/1792/regulation/9/a.rac.test",
       "source_path": "sources/official/uksi/2002/1792/2025-03-31/source.akn",
       "backend": "openai",
-      "model": "gpt-5.4"
+      "model": "gpt-5.4",
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     },
     {
       "index": 2,
@@ -37,7 +38,8 @@
       "repo_test_path": "legislation/uksi/2002/1792/regulation/9/b.rac.test",
       "source_path": "sources/official/uksi/2002/1792/2025-03-31/source.akn",
       "backend": "openai",
-      "model": "gpt-5.4"
+      "model": "gpt-5.4",
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     },
     {
       "index": 3,
@@ -48,7 +50,8 @@
       "repo_test_path": "legislation/uksi/2002/1792/regulation/9/c.rac.test",
       "source_path": "sources/official/uksi/2002/1792/2025-03-31/source.akn",
       "backend": "openai",
-      "model": "gpt-5.4"
+      "model": "gpt-5.4",
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     },
     {
       "index": 4,
@@ -59,7 +62,8 @@
       "repo_test_path": "legislation/uksi/2002/1792/regulation/9/d.rac.test",
       "source_path": "sources/official/uksi/2002/1792/2025-03-31/source.akn",
       "backend": "openai",
-      "model": "gpt-5.4"
+      "model": "gpt-5.4",
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     },
     {
       "index": 5,
@@ -70,7 +74,8 @@
       "repo_test_path": "legislation/uksi/2002/1792/regulation/9/e.rac.test",
       "source_path": "sources/official/uksi/2002/1792/2025-03-31/source.akn",
       "backend": "openai",
-      "model": "gpt-5.4"
+      "model": "gpt-5.4",
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     },
     {
       "index": 6,
@@ -81,7 +86,8 @@
       "repo_test_path": "legislation/uksi/2002/1792/regulation/9/f.rac.test",
       "source_path": "sources/official/uksi/2002/1792/2025-03-31/source.akn",
       "backend": "openai",
-      "model": "gpt-5.4"
+      "model": "gpt-5.4",
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     },
     {
       "index": 7,
@@ -92,7 +98,8 @@
       "repo_test_path": "legislation/uksi/2002/1792/regulation/9/g.rac.test",
       "source_path": "sources/official/uksi/2002/1792/2025-03-31/source.akn",
       "backend": "openai",
-      "model": "gpt-5.4"
+      "model": "gpt-5.4",
+      "source_r2_key": "rules-sources/rules-uk/sources/official/uksi/2002/1792/2025-03-31/source.akn"
     }
   ]
 }

@@ -25,7 +25,7 @@ For derived atomic leaves from tables or schedules that are not directly address
 
 ## Source preservation
 
-- Official legislation sources live under `sources/official/` and should include both `source.akn` and `source.xml`.
+- Official legislation metadata lives under `sources/official/`. AKN payloads live in the `rules-xml` R2 bucket; git should keep only `source.akn.r2.json` sidecars and any non-AKN metadata needed for reproducibility.
 - Normalized row or paragraph slices live under `sources/slices/`.
 - Wave-level provenance lives under `waves/`.
 
