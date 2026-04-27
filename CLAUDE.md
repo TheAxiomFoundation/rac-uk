@@ -13,4 +13,4 @@ This repo stores UK RuleSpec source registry materials and related policy metada
 
 - Reintroduce legacy executable formula payloads.
 - Put unrelated jurisdiction materials here.
-- Add AKN/XML source payloads to Git.
+- Add generated source payloads to Git.
